@@ -64,95 +64,159 @@ const Testimonials = () => {
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
 
-  const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+
+
+  const goToTestimonial = (index: number) => {
+    setCurrentIndex(index);
   };
 
   const currentTestimonial = testimonials[currentIndex];
   const nextTestimonialData = testimonials[(currentIndex + 1) % testimonials.length];
 
   return (
-    <div className="flex flex-col items-start w-full bg-[#0d1321] px-[120px] py-[100px] gap-[10px] min-h-[560px]">
-      <div className="flex flex-col w-full gap-16">
+    <div className="flex flex-col items-start w-full bg-[#0d1321] px-4 py-8 gap-8 min-h-[501px] md:px-[120px] md:py-[100px] md:gap-[10px] md:min-h-[560px]">
+      <div className="flex flex-col w-full gap-8 md:gap-16">
         {/* Section Header */}
-        <div className="flex items-center gap-3">
-          <div className="inline-flex items-center gap-2 rounded-l-lg px-3 py-[6px] pr-[60px] bg-gradient-to-r from-[#ffffff1a] to-[#0d13211a]">
-            <div className="w-2 h-2 bg-[#d4e4ff] rounded-full"></div>
-            <p className="text-white font-urbanist text-xl leading-7">TESTIMONIALS</p>
+        <div className="flex items-center gap-2 md:gap-3">
+          <div className="inline-flex items-center gap-2 rounded-l-lg px-2 py-1 pr-[60px] bg-gradient-to-r from-[#ffffff1a] to-[#0d13211a] md:px-3 md:py-[6px]">
+            <div className="w-2 h-2 bg-white rounded-full md:bg-[#d4e4ff]"></div>
+            <p className="text-white font-urbanist text-sm leading-[22px] md:text-xl md:leading-7">TESTIMONIALS</p>
           </div>
-          <div className="w-[149px] h-px bg-gradient-to-r from-[#ffffff4d] to-[#0d13214d]"></div>
+          <div className="hidden md:block w-[149px] h-px bg-gradient-to-r from-[#ffffff4d] to-[#0d13214d]"></div>
         </div>
         
         {/* Testimonial Items */}
-        <div className="flex items-center gap-[100px]">
-          {/* Main Testimonial */}
-          <div className="flex relative items-center gap-[60px] w-[800px]">
-            <Image
-              src={currentTestimonial.avatar}
-              alt={`${currentTestimonial.name} avatar`}
-              width={173}
-              height={173}
-              className="rounded-full flex-shrink-0"
-            />
-            <div className="flex flex-col flex-grow gap-6">
-              <p className="text-white font-urbanist text-[32px] leading-[38px] w-[567px]">
-                {currentTestimonial.text}
-              </p>
-              <div className="w-full h-px bg-[#ffffff1a]"></div>
-              <div className="flex items-end justify-between w-full">
-                <div className="flex flex-col gap-1">
-                  <p className="text-white font-urbanist text-xl leading-7 font-semibold">{currentTestimonial.name}</p>
-                  <p className="text-white font-urbanist text-base leading-6">{currentTestimonial.role}</p>
+        <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:gap-[100px]">
+          {/* Mobile Layout */}
+          <div className="flex flex-col items-start w-full gap-8 md:hidden">
+            {/* Mobile Testimonial Card */}
+            <div className="flex relative flex-col items-start w-full gap-8">
+              <Image
+                src={currentTestimonial.avatar}
+                alt={`${currentTestimonial.name} avatar`}
+                width={80}
+                height={80}
+                className="rounded-full flex-shrink-0"
+              />
+              <div className="flex flex-col w-full gap-5">
+                <p className="text-white font-urbanist text-lg leading-[25px] w-full">
+                  {currentTestimonial.text}
+                </p>
+                <div className="w-full h-px bg-[#ffffff1a]"></div>
+                <div className="flex items-end justify-between w-full">
+                  <div className="flex flex-col gap-1">
+                    <p className="text-white font-urbanist text-lg leading-[25px] font-semibold">{currentTestimonial.name}</p>
+                    <p className="text-white font-urbanist text-sm leading-[22px]">{currentTestimonial.role}</p>
+                  </div>
+                  <Image 
+                    src={currentTestimonial.logo} 
+                    alt={`${currentTestimonial.company} logo`} 
+                    width={100} 
+                    height={30} 
+                    className="flex-shrink-0"
+                  />
                 </div>
+              </div>
+              {/* Mobile Quote Icon Button */}
+              <div className="absolute top-[70px] left-[30px] inline-flex items-center justify-center w-5 h-5 bg-[#204199] rounded-full p-1">
                 <Image 
-                  src={currentTestimonial.logo} 
-                  alt={`${currentTestimonial.company} logo`} 
-                  width={133} 
-                  height={40} 
-                  className="flex-shrink-0"
+                  src={currentTestimonial.quoteIcon} 
+                  alt="Quote icon" 
+                  width={12} 
+                  height={12}
                 />
               </div>
             </div>
-            {/* Quote Icon Button */}
-            <div className="absolute bottom-[17px] left-[63px] inline-flex items-center justify-center w-12 h-12 bg-[#204199] rounded-full p-3">
-              <Image 
-                src={currentTestimonial.quoteIcon} 
-                alt="Quote icon" 
-                width={24} 
-                height={24}
-              />
+            
+            {/* Mobile Dots Navigation */}
+            <div className="flex items-center justify-center gap-3 w-full">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToTestimonial(index)}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    index === currentIndex 
+                      ? 'bg-[#dde2eb]' 
+                      : index === (currentIndex + 1) % testimonials.length
+                      ? 'bg-[#b5bac5]'
+                      : 'bg-[#535967]'
+                  }`}
+                />
+              ))}
             </div>
           </div>
-          
-          {/* Navigation Arrow */}
-          <button 
-            onClick={nextTestimonial}
-            className="inline-flex items-center justify-center w-24 h-24 bg-[#ffffff1a] rounded-full p-[18px] hover:bg-[#ffffff2a] transition-colors"
-          >
-            <Image 
-              src="/images/megyde84-9vgw2g8.svg" 
-              alt="Next testimonial" 
-              width={60} 
-              height={60}
-            />
-          </button>
-          
-          {/* Next Testimonial Preview */}
-          <div className="relative">
-            <Image
-              src={nextTestimonialData.avatar}
-              alt={`${nextTestimonialData.name} avatar`}
-              width={173}
-              height={173}
-              className="rounded-full flex-shrink-0"
-            />
-            <div className="absolute bottom-[17px] left-[63px] inline-flex items-center justify-center w-12 h-12 bg-[#204199] rounded-full p-3">
-              <Image 
-                src={nextTestimonialData.quoteIcon} 
-                alt="Quote icon" 
-                width={24} 
-                height={24}
+
+          {/* Desktop Layout */}
+          <div className="hidden md:flex md:items-center md:gap-[100px] md:w-full">
+            {/* Main Testimonial */}
+            <div className="flex relative items-center gap-[60px] w-[800px]">
+              <Image
+                src={currentTestimonial.avatar}
+                alt={`${currentTestimonial.name} avatar`}
+                width={173}
+                height={173}
+                className="rounded-full flex-shrink-0"
               />
+              <div className="flex flex-col flex-grow gap-6">
+                <p className="text-white font-urbanist text-[32px] leading-[38px] w-[567px]">
+                  {currentTestimonial.text}
+                </p>
+                <div className="w-full h-px bg-[#ffffff1a]"></div>
+                <div className="flex items-end justify-between w-full">
+                  <div className="flex flex-col gap-1">
+                    <p className="text-white font-urbanist text-xl leading-7 font-semibold">{currentTestimonial.name}</p>
+                    <p className="text-white font-urbanist text-base leading-6">{currentTestimonial.role}</p>
+                  </div>
+                  <Image 
+                    src={currentTestimonial.logo} 
+                    alt={`${currentTestimonial.company} logo`} 
+                    width={133} 
+                    height={40} 
+                    className="flex-shrink-0"
+                  />
+                </div>
+              </div>
+              {/* Desktop Quote Icon Button */}
+              <div className="absolute bottom-[17px] left-[63px] inline-flex items-center justify-center w-12 h-12 bg-[#204199] rounded-full p-3">
+                <Image 
+                  src={currentTestimonial.quoteIcon} 
+                  alt="Quote icon" 
+                  width={24} 
+                  height={24}
+                />
+              </div>
+            </div>
+            
+            {/* Navigation Arrow */}
+            <button 
+              onClick={nextTestimonial}
+              className="inline-flex items-center justify-center w-24 h-24 bg-[#ffffff1a] rounded-full p-[18px] hover:bg-[#ffffff2a] transition-colors"
+            >
+              <Image 
+                src="/images/megyde84-9vgw2g8.svg" 
+                alt="Next testimonial" 
+                width={60} 
+                height={60}
+              />
+            </button>
+            
+            {/* Next Testimonial Preview */}
+            <div className="relative">
+              <Image
+                src={nextTestimonialData.avatar}
+                alt={`${nextTestimonialData.name} avatar`}
+                width={173}
+                height={173}
+                className="rounded-full flex-shrink-0"
+              />
+              <div className="absolute bottom-[17px] left-[63px] inline-flex items-center justify-center w-12 h-12 bg-[#204199] rounded-full p-3">
+                <Image 
+                  src={nextTestimonialData.quoteIcon} 
+                  alt="Quote icon" 
+                  width={24} 
+                  height={24}
+                />
+              </div>
             </div>
           </div>
         </div>

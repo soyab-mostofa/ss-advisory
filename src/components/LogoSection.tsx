@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const LogoSection = () => {
   return (
-    <div className="flex items-center w-full gap-16 bg-[#f8f8f8] px-[120px] pb-[100px]">
+    <div className=" items-center w-full hidden md:flex gap-16 bg-[#f8f8f8] px-[120px] pb-[100px]">
       <div className="flex items-center py-7 overflow-hidden">
         <Image src="/images/megv1vhw-2uipje2.svg" alt="Logo 1" width={189} height={34} />
       </div>

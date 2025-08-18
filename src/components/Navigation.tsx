@@ -1,5 +1,6 @@
 'use client';
 
+import { Menu } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
@@ -68,13 +69,7 @@ const Navigation = () => {
           aria-label="Toggle navigation menu"
           aria-expanded={isDrawerOpen}
         >
-          <Image
-            src="/images/megv1vhw-88k168w.svg"
-            alt="Menu"
-            width={24}
-            height={24}
-            className="flex-shrink-0"
-          />
+          <Menu className="w-6 h-6 text-[#204199]" />
         </button>
       </div>
 

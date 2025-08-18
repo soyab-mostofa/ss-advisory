@@ -57,37 +57,37 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section className="bg-white py-25 px-30 max-w-[1440px] mx-auto">
+    <section className="bg-white py-6 px-4 sm:py-25 sm:px-30 max-w-[1440px] mx-auto">
       {/* Header */}
-      <div className="flex items-center gap-6 mb-16">
+      <div className="flex flex-col gap-4 mb-8 sm:flex-row sm:items-center sm:gap-6 sm:mb-16">
         <div className="flex items-center gap-3">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#2041991a] to-[#ffffff1a] rounded-l-lg py-1.5 px-3 pr-15">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#2041991a] to-[#ffffff1a] rounded-l-lg py-1.5 px-3 pr-6 sm:pr-15">
             <div className="w-2 h-2 bg-[#204199] rounded-full"></div>
-            <span className="text-[#041e3a] text-xl font-medium font-['Urbanist']">
+            <span className="text-[#041e3a] text-lg sm:text-xl font-medium font-['Urbanist']">
               FAQ
             </span>
           </div>
-          <div className="w-[250px] h-px bg-gradient-to-r from-[#ffffff4d] to-[#2041994d]"></div>
+          <div className="w-[150px] sm:w-[250px] h-px bg-gradient-to-r from-[#ffffff4d] to-[#2041994d]"></div>
         </div>
-        <h2 className="flex-1 text-6xl font-semibold font-['Urbanist'] leading-[77px] tracking-[-2.56px]">
+        <h2 className="text-3xl sm:text-6xl font-semibold font-['Urbanist'] leading-[40px] sm:leading-[77px] tracking-[-1.2px] sm:tracking-[-2.56px] sm:flex-1">
           <span className="text-[#535967]">What You&nbsp;</span>
           <span className="text-[#204199]">Need to Know</span>
         </h2>
       </div>
 
       {/* Content */}
-      <div className="flex items-start gap-17">
+      <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-17">
         {/* Image */}
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 w-full sm:w-auto">
           <img 
             src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20business%20meeting%20two%20men%20in%20suits%20discussing%20financial%20documents%20laptop%20modern%20office%20setting%20corporate%20environment%20consultation&image_size=portrait_4_3" 
             alt="Business consultation meeting"
-            className="w-[445px] h-[558px] rounded-xl object-cover"
+            className="w-full h-[280px] sm:w-[445px] sm:h-[558px] rounded-xl object-cover"
           />
         </div>
 
         {/* FAQ Items */}
-        <div className="flex-1 space-y-6">
+        <div className="flex-1 space-y-4 sm:space-y-6">
           {faqData.map((item) => {
             const isExpanded = expandedItem === item.id;
             
@@ -99,15 +99,15 @@ const FAQ: React.FC = () => {
                 {/* Question Header - Always Visible */}
                 <button 
                   onClick={() => toggleItem(item.id)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors duration-200"
+                  className="w-full flex items-center justify-between p-4 sm:p-6 text-left hover:bg-gray-50 transition-colors duration-200"
                   aria-expanded={isExpanded}
                 >
-                  <p className="text-xl font-medium text-[#1d1f2c] font-['Urbanist'] leading-7 pr-4">
+                  <p className="text-lg sm:text-xl font-medium text-[#1d1f2c] font-['Urbanist'] leading-6 sm:leading-7 pr-3 sm:pr-4">
                     {item.question}
                   </p>
-                  <div className="flex-shrink-0 w-7 h-7 flex items-center justify-center">
+                  <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center">
                     <ChevronDown 
-                      className={`w-7 h-7 text-[#1d1f2c] transition-transform duration-300 ease-in-out ${
+                      className={`w-6 h-6 sm:w-7 sm:h-7 text-[#1d1f2c] transition-transform duration-300 ease-in-out ${
                         isExpanded ? 'rotate-180' : 'rotate-0'
                       }`} 
                     />
@@ -120,9 +120,9 @@ const FAQ: React.FC = () => {
                     isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="px-6 pb-6">
-                    <div className="w-full h-px bg-[#dde2eb] mb-4"></div>
-                    <p className="text-lg text-[#535967] font-['Urbanist'] leading-[25px]">
+                  <div className="px-4 pb-4 sm:px-6 sm:pb-6">
+                    <div className="w-full h-px bg-[#dde2eb] mb-3 sm:mb-4"></div>
+                    <p className="text-base sm:text-lg text-[#535967] font-['Urbanist'] leading-[22px] sm:leading-[25px]">
                       {item.answer}
                     </p>
                   </div>
