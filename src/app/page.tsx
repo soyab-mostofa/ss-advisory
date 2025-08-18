@@ -9,7 +9,6 @@ import FAQ from "../components/FAQ";
 export default function Home() {
   return (
     <div className="flex flex-col items-center bg-white w-full overflow-hidden">
-      <Navigation />
       <Hero />
       <About />
       <LogoSection />

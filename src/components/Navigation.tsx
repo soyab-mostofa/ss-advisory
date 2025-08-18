@@ -1,40 +1,190 @@
+'use client';
+
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const Navigation = () => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+  };
+
+  const closeDrawer = () => {
+    setIsDrawerOpen(false);
+  };
+
+  // Close drawer when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const drawer = document.getElementById('mobile-drawer');
+      const hamburger = document.getElementById('hamburger-button');
+      
+      if (isDrawerOpen && drawer && hamburger && 
+          !drawer.contains(event.target as Node) && 
+          !hamburger.contains(event.target as Node)) {
+        closeDrawer();
+      }
+    };
+
+    if (isDrawerOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isDrawerOpen]);
+
+  // Close drawer on escape key
+  useEffect(() => {
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isDrawerOpen) {
+        closeDrawer();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscapeKey);
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKey);
+    };
+  }, [isDrawerOpen]);
+
   return (
-    <div className="flex items-center justify-center w-full gap-[351px] bg-white px-[120px] py-5">
-      <Image
-        src="/images/megv1vhw-25cglug.svg"
-        alt="SS Advisory Logo"
-        width={71}
-        height={75}
-        className="flex-shrink-0"
-      />
-      <div className="flex items-center justify-between w-[778px] min-w-[778px]">
-        <div className="inline-flex items-center gap-7 border border-[#dde2eb] rounded-xl bg-[#f8f8f8] py-[7px] px-[15px] pl-[7px]">
-          <div className="flex items-center justify-center gap-[10px] rounded-lg bg-[#d4e4ff] px-4 py-1 w-[90px]">
-            <p className="text-[#204199] font-urbanist text-lg leading-[25px]">Home</p>
-          </div>
-          <div className="relative w-px h-4">
-            <div className="absolute top-2 -left-2 bg-[#dde2eb] w-4 h-px rotate-90"></div>
-          </div>
-          <p className="text-[#545660] font-urbanist text-lg leading-[25px]">Services</p>
-          <div className="relative w-px h-4">
-            <div className="absolute top-2 -left-2 bg-[#dde2eb] w-4 h-px rotate-90"></div>
-          </div>
-          <p className="text-[#545660] font-urbanist text-lg leading-[25px]">Careers</p>
-        </div>
-        <div className="flex items-center justify-center gap-2 rounded-xl bg-[#204199] px-4 py-2 w-36 h-11">
-          <p className="text-white font-urbanist text-base font-medium leading-6">Contact</p>
+    <>
+      {/* Mobile Navigation */}
+      <div className="flex md:hidden items-center justify-between w-full px-4 py-4 bg-white">
+        <Image
+          src="/images/megv1vhw-25cglug.svg"
+          alt="SS Advisory Logo"
+          width={51}
+          height={54}
+          className="flex-shrink-0"
+        />
+        <button
+          id="hamburger-button"
+          onClick={toggleDrawer}
+          className="inline-flex items-center gap-[10px] border border-[#d4e4ff] rounded bg-[#eef8ff] p-[11px] focus:outline-none focus:ring-2 focus:ring-[#204199] focus:ring-opacity-50"
+          aria-label="Toggle navigation menu"
+          aria-expanded={isDrawerOpen}
+        >
           <Image
-            src="/images/megv1vhw-xry6gqf.svg"
-            alt="Phone icon"
-            width={18}
-            height={18}
+            src="/images/megv1vhw-88k168w.svg"
+            alt="Menu"
+            width={24}
+            height={24}
+            className="flex-shrink-0"
           />
+        </button>
+      </div>
+
+      {/* Mobile Drawer Overlay */}
+      {isDrawerOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden" />
+      )}
+
+      {/* Mobile Drawer */}
+      <div
+        id="mobile-drawer"
+        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
+          isDrawerOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex flex-col h-full">
+          {/* Drawer Header */}
+          <div className="flex items-center justify-between p-4 border-b border-[#dde2eb]">
+            <Image
+              src="/images/megv1vhw-25cglug.svg"
+              alt="SS Advisory Logo"
+              width={51}
+              height={54}
+              className="flex-shrink-0"
+            />
+            <button
+              onClick={closeDrawer}
+              className="p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#204199] focus:ring-opacity-50"
+              aria-label="Close navigation menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          {/* Navigation Links */}
+          <div className="flex flex-col p-4 space-y-4">
+            <button
+              onClick={closeDrawer}
+              className="flex items-center justify-center gap-[10px] rounded-lg bg-[#d4e4ff] px-4 py-3 w-full"
+            >
+              <p className="text-[#204199] font-urbanist text-lg leading-[25px] font-medium">Home</p>
+            </button>
+            
+            <button
+              onClick={closeDrawer}
+              className="flex items-center justify-center px-4 py-3 w-full rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              <p className="text-[#545660] font-urbanist text-lg leading-[25px]">Services</p>
+            </button>
+            
+            <button
+              onClick={closeDrawer}
+              className="flex items-center justify-center px-4 py-3 w-full rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              <p className="text-[#545660] font-urbanist text-lg leading-[25px]">Careers</p>
+            </button>
+            
+            <button
+              onClick={closeDrawer}
+              className="flex items-center justify-center gap-2 rounded-xl bg-[#204199] px-4 py-3 w-full mt-6"
+            >
+              <p className="text-white font-urbanist text-lg font-medium leading-[25px]">Contact</p>
+              <Image
+                src="/images/megv1vhw-xry6gqf.svg"
+                alt="Phone icon"
+                width={18}
+                height={18}
+              />
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex items-center justify-center w-full gap-[351px] bg-white px-[120px] py-5">
+        <Image
+          src="/images/megv1vhw-25cglug.svg"
+          alt="SS Advisory Logo"
+          width={71}
+          height={75}
+          className="flex-shrink-0"
+        />
+        <div className="flex items-center justify-between w-[778px] min-w-[778px]">
+          <div className="inline-flex items-center gap-7 border border-[#dde2eb] rounded-xl bg-[#f8f8f8] py-[7px] px-[15px] pl-[7px]">
+            <div className="flex items-center justify-center gap-[10px] rounded-lg bg-[#d4e4ff] px-4 py-1 w-[90px]">
+              <p className="text-[#204199] font-urbanist text-lg leading-[25px]">Home</p>
+            </div>
+            <div className="relative w-px h-4">
+              <div className="absolute top-2 -left-2 bg-[#dde2eb] w-4 h-px rotate-90"></div>
+            </div>
+            <p className="text-[#545660] font-urbanist text-lg leading-[25px]">Services</p>
+            <div className="relative w-px h-4">
+              <div className="absolute top-2 -left-2 bg-[#dde2eb] w-4 h-px rotate-90"></div>
+            </div>
+            <p className="text-[#545660] font-urbanist text-lg leading-[25px]">Careers</p>
+          </div>
+          <div className="flex items-center justify-center gap-2 rounded-xl bg-[#204199] px-4 py-2 w-36 h-11">
+            <p className="text-white font-urbanist text-base font-medium leading-6">Contact</p>
+            <Image
+              src="/images/megv1vhw-xry6gqf.svg"
+              alt="Phone icon"
+              width={18}
+              height={18}
+            />
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
