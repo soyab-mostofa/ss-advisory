@@ -1,5 +1,6 @@
 import Image from "next/image";
 import TextRevealAnimation from "./TextRevealAnimation";
+import ImageRevealAnimation from "./ImageRevealAnimation";
 
 const About = () => {
   return (
@@ -25,12 +26,11 @@ const About = () => {
               />
             </div>
           </div>
-          <Image
+          <ImageRevealAnimation
             src="/images/megv1vhw-9xzmxbt.png"
             alt="Main content image"
-            width={343}
-            height={229}
-            className="w-full rounded-lg"
+            aspectRatio="343 / 229"
+            className="w-full h-auto"
           />
         </div>
         <div className="flex flex-col items-start w-full h-[145px] gap-1">
@@ -106,12 +106,11 @@ const About = () => {
               />
             </div>
           </div>
-          <Image
+          <ImageRevealAnimation
             src="/images/megv1vhw-9xzmxbt.png"
             alt="Main content image"
-            width={1200}
-            height={460}
-            className="w-full rounded-lg"
+            aspectRatio="1200 / 460"
+            className="w-full h-auto max-h-[460px]"
           />
         </div>
       </div>
