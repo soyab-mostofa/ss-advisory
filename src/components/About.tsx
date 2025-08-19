@@ -1,4 +1,5 @@
 import Image from "next/image";
+import TextRevealAnimation from "./TextRevealAnimation";
 
 const About = () => {
   return (
@@ -16,10 +17,12 @@ const About = () => {
                 <p className="text-[#204199] font-urbanist text-5xl font-bold leading-[48px] tracking-[-1.92px]">12+</p>
                 <p className="text-[#0d1321] font-urbanist text-base leading-6">Years of Experience</p>
               </div>
-              <p className="text-black font-urbanist text-2xl font-medium leading-[29px] tracking-[-0.96px] w-full">
-                <span className="text-[#0d1321]">Dedicated to&nbsp;</span>
-                <span className="text-[#b5bac5]">empowering clients through strategic financial guidance and reliable, results-focused advocacy.</span>
-              </p>
+              <TextRevealAnimation
+                text="Dedicated to empowering clients through strategic financial guidance and reliable, results-focused advocacy."
+                className="text-black font-urbanist text-2xl font-medium leading-[29px] tracking-[-0.96px] w-full"
+                highlightStart="Dedicated to"
+                highlightEnd="results-focused advocacy."
+              />
             </div>
           </div>
           <Image
@@ -95,10 +98,12 @@ const About = () => {
                 <div className="w-2 h-2 bg-[#204199] rounded-full"></div>
                 <p className="text-[#041e3a] font-urbanist text-xl leading-7">ABOUT US</p>
               </div>
-              <p className="text-black font-urbanist text-5xl font-medium leading-[58px] tracking-[-1.92px] w-[789px]">
-                <span className="text-[#0d1321]">Dedicated to&nbsp;</span>
-                <span className="text-[#b5bac5]">empowering clients through strategic financial guidance and reliable, results-focused advocacy.</span>
-              </p>
+              <TextRevealAnimation
+                text="Dedicated to empowering clients through strategic financial guidance and reliable, results-focused advocacy."
+                className="text-black font-urbanist text-5xl font-medium leading-[58px] tracking-[-1.92px] w-[789px]"
+                highlightStart="Dedicated to"
+                highlightEnd="results-focused advocacy."
+              />
             </div>
           </div>
           <Image

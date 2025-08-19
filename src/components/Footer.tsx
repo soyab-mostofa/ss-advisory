@@ -7,17 +7,17 @@ const Footer = () => {
         {/* Main Content */}
         <div className="flex flex-col gap-10 lg:gap-12">
           {/* Header Section */}
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-0">
+          <div className="flex relative flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-0">
             <h2 className="text-white font-urbanist text-4xl lg:text-[72px] font-semibold leading-tight lg:leading-[79px] tracking-[-1.44px] lg:tracking-[-2.88px] max-w-[719px]">
               Let&apos;s make something great work together
             </h2>
-            <div className="flex-shrink-0 w-32 h-32 lg:w-[200px] lg:h-[200px] self-start lg:self-center">
+            <div className="flex-shrink-0 absolute right-0 -top-10 w-32 h-32 lg:w-[200px] lg:h-[200px] self-start lg:self-center">
               <Image
                 src="/images/megz9w7k-m7yknei.svg"
                 alt="Arrow icon"
                 width={200}
                 height={200}
-                className="w-full h-full"
+                className="w-full h-full "
               />
             </div>
           </div>

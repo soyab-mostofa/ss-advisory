@@ -2,10 +2,13 @@
 
 import { Menu } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
 const Navigation = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
@@ -108,26 +111,53 @@ const Navigation = () => {
 
           {/* Navigation Links */}
           <div className="flex flex-col p-4 space-y-4">
-            <button
+            <Link
+              href="/"
               onClick={closeDrawer}
-              className="flex items-center justify-center gap-[10px] rounded-lg bg-[#d4e4ff] px-4 py-3 w-full"
+              className={`flex items-center justify-center gap-[10px] rounded-lg px-4 py-3 w-full transition-colors ${
+                pathname === '/' 
+                  ? 'bg-[#d4e4ff]' 
+                  : 'hover:bg-gray-50'
+              }`}
             >
-              <p className="text-[#204199] font-urbanist text-lg leading-[25px] font-medium">Home</p>
-            </button>
+              <p className={`font-urbanist text-lg leading-[25px] ${
+                pathname === '/' 
+                  ? 'text-[#204199] font-medium' 
+                  : 'text-[#545660]'
+              }`}>Home</p>
+            </Link>
             
-            <button
+            <Link
+              href="/services"
               onClick={closeDrawer}
-              className="flex items-center justify-center px-4 py-3 w-full rounded-lg hover:bg-gray-50 transition-colors"
+              className={`flex items-center justify-center px-4 py-3 w-full rounded-lg transition-colors ${
+                pathname === '/services' 
+                  ? 'bg-[#d4e4ff]' 
+                  : 'hover:bg-gray-50'
+              }`}
             >
-              <p className="text-[#545660] font-urbanist text-lg leading-[25px]">Services</p>
-            </button>
+              <p className={`font-urbanist text-lg leading-[25px] ${
+                pathname === '/services' 
+                  ? 'text-[#204199] font-medium' 
+                  : 'text-[#545660]'
+              }`}>Services</p>
+            </Link>
             
-            <button
+            <Link
+              href="/careers"
               onClick={closeDrawer}
-              className="flex items-center justify-center px-4 py-3 w-full rounded-lg hover:bg-gray-50 transition-colors"
+              className={`flex items-center justify-center px-4 py-3 w-full rounded-lg transition-colors ${
+                pathname === '/careers' 
+                  ? 'bg-[#d4e4ff]' 
+                  : 'hover:bg-gray-50'
+              }`}
             >
-              <p className="text-[#545660] font-urbanist text-lg leading-[25px]">Careers</p>
-            </button>
+              <p className={`font-urbanist text-lg leading-[25px] ${
+                pathname === '/careers' 
+                  ? 'text-[#204199] font-medium' 
+                  : 'text-[#545660]'
+              }`}>Careers</p>
+            </Link>
             
             <button
               onClick={closeDrawer}
@@ -156,17 +186,46 @@ const Navigation = () => {
         />
         <div className="flex items-center justify-between w-[778px] min-w-[778px]">
           <div className="inline-flex items-center gap-7 border border-[#dde2eb] rounded-xl bg-[#f8f8f8] py-[7px] px-[15px] pl-[7px]">
-            <div className="flex items-center justify-center gap-[10px] rounded-lg bg-[#d4e4ff] px-4 py-1 w-[90px]">
-              <p className="text-[#204199] font-urbanist text-lg leading-[25px]">Home</p>
-            </div>
+            <Link
+              href="/"
+              className={`flex items-center justify-center gap-[10px] rounded-lg px-4 py-1 w-[90px] transition-colors ${
+                pathname === '/' 
+                  ? 'bg-[#d4e4ff]' 
+                  : 'hover:bg-[#e5e7eb]'
+              }`}
+            >
+              <p className={`font-urbanist text-lg leading-[25px] ${
+                pathname === '/' 
+                  ? 'text-[#204199]' 
+                  : 'text-[#545660]'
+              }`}>Home</p>
+            </Link>
             <div className="relative w-px h-4">
               <div className="absolute top-2 -left-2 bg-[#dde2eb] w-4 h-px rotate-90"></div>
             </div>
-            <p className="text-[#545660] font-urbanist text-lg leading-[25px]">Services</p>
+            <Link
+              href="/services"
+              className={`font-urbanist text-lg leading-[25px] px-2 py-1 rounded transition-colors ${
+                pathname === '/services' 
+                  ? 'text-[#204199] bg-[#d4e4ff]' 
+                  : 'text-[#545660] hover:bg-[#e5e7eb]'
+              }`}
+            >
+              Services
+            </Link>
             <div className="relative w-px h-4">
               <div className="absolute top-2 -left-2 bg-[#dde2eb] w-4 h-px rotate-90"></div>
             </div>
-            <p className="text-[#545660] font-urbanist text-lg leading-[25px]">Careers</p>
+            <Link
+              href="/careers"
+              className={`font-urbanist text-lg leading-[25px] px-2 py-1 rounded transition-colors ${
+                pathname === '/careers' 
+                  ? 'text-[#204199] bg-[#d4e4ff]' 
+                  : 'text-[#545660] hover:bg-[#e5e7eb]'
+              }`}
+            >
+              Careers
+            </Link>
           </div>
           <div className="flex items-center justify-center gap-2 rounded-xl bg-[#204199] px-4 py-2 w-36 h-11">
             <p className="text-white font-urbanist text-base font-medium leading-6">Contact</p>
