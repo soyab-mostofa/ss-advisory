@@ -6,7 +6,7 @@ const Component = () => {
   return (
     <div className={styles.career}>
       <div className={styles.logoContainer}>
-        <img src="../image/meqq9xfw-s0z1se9.svg" className={styles.sSaLogo} />
+        <img src="../image/mequf412-e856bfy.svg" className={styles.sSaLogo} />
         <div className={styles.navigationContainer}>
           <div className={styles.linksContainer}>
             <div className={styles.linkContainer}>
@@ -24,7 +24,7 @@ const Component = () => {
           <div className={styles.button}>
             <p className={styles.buttonText}>Contact</p>
             <img
-              src="../image/meqq9xfw-2j8g53j.svg"
+              src="../image/mequf412-vw3f21k.svg"
               className={styles.callRinging01}
             />
           </div>
@@ -36,7 +36,7 @@ const Component = () => {
             <div className={styles.sectionTitle3}>
               <div className={styles.sectionTitle2}>
                 <div className={styles.ellipse1} />
-                <p className={styles.sectionTitle}>SERVICES</p>
+                <p className={styles.sectionTitle}>Career</p>
               </div>
               <div className={styles.line6} />
             </div>
@@ -48,9 +48,9 @@ const Component = () => {
               </span>
             </p>
           </div>
-          <img src="../image/meqq9xfx-c1e30bk.png" className={styles.mainImage} />
+          <img src="../image/mequf412-bd0n5qu.png" className={styles.mainImage} />
         </div>
-        <img src="../image/meqq9xfx-hm81y2t.png" className={styles.vector} />
+        <img src="../image/mequf413-ybsb2pv.png" className={styles.vector} />
       </div>
       <div className={styles.section}>
         <div className={styles.header2}>
@@ -70,14 +70,14 @@ const Component = () => {
                 <div className={styles.header3}>
                   <div className={styles.iconContainer}>
                     <img
-                      src="../image/meqq9xfx-3xvdn0q.svg"
+                      src="../image/mequf413-jwdfb2g.svg"
                       className={styles.icon}
                     />
                   </div>
                   <p className={styles.title2}>Lorem ipsum</p>
                 </div>
                 <img
-                  src="../image/meqq9xfx-4dwih1f.png"
+                  src="../image/mequf413-jo4vvb4.png"
                   className={styles.vector2}
                 />
               </div>
@@ -93,14 +93,14 @@ const Component = () => {
                 <div className={styles.header3}>
                   <div className={styles.iconContainer}>
                     <img
-                      src="../image/meqq9xfx-p2x9hvj.svg"
+                      src="../image/mequf413-uc9dmeb.svg"
                       className={styles.icon}
                     />
                   </div>
                   <p className={styles.title2}>Lorem ipsum</p>
                 </div>
                 <img
-                  src="../image/meqq9xfx-4dwih1f.png"
+                  src="../image/mequf413-jo4vvb4.png"
                   className={styles.vector2}
                 />
               </div>
@@ -116,14 +116,14 @@ const Component = () => {
                 <div className={styles.header3}>
                   <div className={styles.iconContainer}>
                     <img
-                      src="../image/meqq9xfx-p2x9hvj.svg"
+                      src="../image/mequf413-uc9dmeb.svg"
                       className={styles.icon}
                     />
                   </div>
                   <p className={styles.title2}>Lorem ipsum</p>
                 </div>
                 <img
-                  src="../image/meqq9xfx-4dwih1f.png"
+                  src="../image/mequf413-jo4vvb4.png"
                   className={styles.vector2}
                 />
               </div>
@@ -141,14 +141,14 @@ const Component = () => {
                 <div className={styles.header3}>
                   <div className={styles.iconContainer}>
                     <img
-                      src="../image/meqq9xfx-3xvdn0q.svg"
+                      src="../image/mequf413-jwdfb2g.svg"
                       className={styles.icon}
                     />
                   </div>
                   <p className={styles.title2}>Lorem ipsum</p>
                 </div>
                 <img
-                  src="../image/meqq9xfx-4dwih1f.png"
+                  src="../image/mequf413-jo4vvb4.png"
                   className={styles.vector2}
                 />
               </div>
@@ -164,14 +164,14 @@ const Component = () => {
                 <div className={styles.header3}>
                   <div className={styles.iconContainer}>
                     <img
-                      src="../image/meqq9xfx-p2x9hvj.svg"
+                      src="../image/mequf413-uc9dmeb.svg"
                       className={styles.icon}
                     />
                   </div>
                   <p className={styles.title2}>Lorem ipsum</p>
                 </div>
                 <img
-                  src="../image/meqq9xfx-4dwih1f.png"
+                  src="../image/mequf413-jo4vvb4.png"
                   className={styles.vector2}
                 />
               </div>
@@ -187,14 +187,14 @@ const Component = () => {
                 <div className={styles.header3}>
                   <div className={styles.iconContainer}>
                     <img
-                      src="../image/meqq9xfx-p2x9hvj.svg"
+                      src="../image/mequf413-uc9dmeb.svg"
                       className={styles.icon}
                     />
                   </div>
                   <p className={styles.title2}>Lorem ipsum</p>
                 </div>
                 <img
-                  src="../image/meqq9xfx-4dwih1f.png"
+                  src="../image/mequf413-jo4vvb4.png"
                   className={styles.vector2}
                 />
               </div>
@@ -261,7 +261,7 @@ const Component = () => {
                 <div className={styles.button2}>
                   <p className={styles.buttonText}>Apply Now</p>
                   <img
-                    src="../image/meqq9xfw-1rv4ynv.svg"
+                    src="../image/mequf412-kcekh53.svg"
                     className={styles.component3}
                   />
                 </div>
@@ -304,7 +304,7 @@ const Component = () => {
                 <div className={styles.button2}>
                   <p className={styles.buttonText}>Apply Now</p>
                   <img
-                    src="../image/meqq9xfw-1rv4ynv.svg"
+                    src="../image/mequf412-kcekh53.svg"
                     className={styles.component3}
                   />
                 </div>
@@ -326,7 +326,7 @@ const Component = () => {
           <div className={styles.frame43}>
             <div className={styles.container3}>
               <img
-                src="../image/meqq9xfx-q4byho5.svg"
+                src="../image/mequf413-9z7u1mw.svg"
                 className={styles.fi11029027}
               />
               <div className={styles.testimonialContainer}>
@@ -337,7 +337,7 @@ const Component = () => {
                 <div className={styles.line503} />
                 <div className={styles.profileContainer}>
                   <img
-                    src="../image/meqq9xfx-l6d6r10.png"
+                    src="../image/mequf413-lylrlhj.png"
                     className={styles.image}
                   />
                   <div className={styles.profileInfo}>
@@ -349,7 +349,7 @@ const Component = () => {
             </div>
             <div className={styles.container3}>
               <img
-                src="../image/meqq9xfx-6wgwa4h.svg"
+                src="../image/mequf413-3ysj4c8.svg"
                 className={styles.fi11029027}
               />
               <div className={styles.testimonialContainer}>
@@ -360,7 +360,7 @@ const Component = () => {
                 <div className={styles.line503} />
                 <div className={styles.profileContainer}>
                   <img
-                    src="../image/meqq9xfx-l6d6r10.png"
+                    src="../image/mequf413-lylrlhj.png"
                     className={styles.image}
                   />
                   <div className={styles.profileInfo}>
@@ -372,7 +372,7 @@ const Component = () => {
             </div>
             <div className={styles.container3}>
               <img
-                src="../image/meqq9xfx-xr75kl7.svg"
+                src="../image/mequf413-2r8g6k2.svg"
                 className={styles.fi11029027}
               />
               <div className={styles.testimonialContainer}>
@@ -383,7 +383,7 @@ const Component = () => {
                 <div className={styles.line503} />
                 <div className={styles.profileContainer}>
                   <img
-                    src="../image/meqq9xfx-l6d6r10.png"
+                    src="../image/mequf413-lylrlhj.png"
                     className={styles.image}
                   />
                   <div className={styles.profileInfo}>
@@ -401,7 +401,7 @@ const Component = () => {
               <p className={styles.title8}>
                 Let’s make something great work together
               </p>
-              <img src="../image/meqq9xfx-at9v8hb.svg" className={styles.vector3} />
+              <img src="../image/mequf413-gqsuezm.svg" className={styles.vector3} />
             </div>
             <div className={styles.linksRow}>
               <div className={styles.linksColumn}>
@@ -425,7 +425,7 @@ const Component = () => {
               <div className={styles.linksColumn3}>
                 <div className={styles.phoneInfo}>
                   <img
-                    src="../image/meqq9xfx-gvh2rw6.svg"
+                    src="../image/mequf413-b8uin0d.svg"
                     className={styles.phoneIcon}
                   />
                   <p className={styles.quickLinksTitle2}>Call Us</p>
@@ -438,7 +438,7 @@ const Component = () => {
               <div className={styles.linksColumn4}>
                 <div className={styles.emailInfo}>
                   <img
-                    src="../image/meqq9xfx-c1t6f6m.svg"
+                    src="../image/mequf413-z72h3tk.svg"
                     className={styles.phoneIcon}
                   />
                   <p className={styles.quickLinksTitle2}>Send a Email</p>
@@ -456,7 +456,7 @@ const Component = () => {
             <div className={styles.socialMediaSection}>
               <p className={styles.copyrightText2}>FOLLOW US</p>
               <img
-                src="../image/meqq9xfx-2ilnsrp.svg"
+                src="../image/mequf413-nncncz8.svg"
                 className={styles.socialMediaIcons}
               />
             </div>

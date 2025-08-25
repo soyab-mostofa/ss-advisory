@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+.aboutUs {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 120px 100px;
+  width: 1440px;
+  height: 819px;
+  row-gap: 10px;
+
+  .infoSection {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: flex-start;
+    align-self: stretch;
+    row-gap: 45px;
+
+    .header {
+      display: flex;
+      flex-shrink: 0;
+      align-items: flex-start;
+      align-self: stretch;
+      column-gap: 24px;
+
+      .sectionTitle3 {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        column-gap: 12px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 387px;
+
+        .sectionTitle2 {
+          display: inline-flex;
+          flex-shrink: 0;
+          align-items: center;
+          column-gap: 8px;
+          border-radius: 8px 0px 0px 8px;
+          padding: 6px 60px 6px 12px;
+          background-image: linear-gradient(
+            90deg,
+            #2041991a 0%,
+            #ffffff1a 100%
+          );
+
+          .ellipse1 {
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: var(--Foundation-Blue-blue-500, #204199);
+            width: 8px;
+            height: 8px;
+          }
+
+          .sectionTitle {
+            flex-shrink: 0;
+            line-height: 28px;
+            letter-spacing: 0;
+            color: var(--Foundation-Blue-blue-500, #041e3a);
+            font-family: Urbanist, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+            font-size: 20px;
+          }
+        }
+
+        .line6 {
+          flex-shrink: 0;
+          width: 191px;
+          height: 1px;
+          background-image: linear-gradient(
+            90deg,
+            #ffffff4d 0%,
+            #2041994d 100%
+          );
+        }
+      }
+
+      .aboutUsDescription3 {
+        flex-grow: 1;
+        width: 789px;
+        line-height: 58px;
+        letter-spacing: -1.92px;
+        color: #000000;
+        font-family: Urbanist, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+        font-size: 48px;
+        font-weight: 500;
+
+        .aboutUsDescription {
+          line-height: 58px;
+          letter-spacing: -1.92px;
+          color: var(--Foundation-black-black-500, #0d1321);
+          font-family: Urbanist, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+          font-size: 48px;
+          font-weight: 500;
+        }
+
+        .aboutUsDescription2 {
+          line-height: 58px;
+          letter-spacing: -1.92px;
+          color: var(--Foundation-black-black-300, #b5bac5);
+          font-family: Urbanist, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+          font-size: 48px;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .mainImage {
+      flex-shrink: 0;
+      align-self: stretch;
+      border-radius: 8px;
+      width: 1200px;
+      height: 460px;
+    }
+  }
+
+  .vector {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    flex-shrink: 0;
+    width: 212px;
+    height: 211px;
+    rotate: -180deg;
+    backdrop-filter: blur(5px);
+  }
+}

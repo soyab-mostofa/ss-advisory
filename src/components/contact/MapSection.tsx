@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import type { DivIcon } from 'leaflet';
+import type * as L from 'leaflet';
 
 // Dynamically import Leaflet components to avoid SSR issues
 const MapContainer = dynamic(
@@ -23,15 +25,15 @@ const Popup = dynamic(
 
 // Custom marker icon component
 const CustomMarkerIcon = () => {
-  const [L, setL] = useState<any>(null);
+  const [leafletLib, setLeafletLib] = useState<typeof L | null>(null);
 
   useEffect(() => {
     // Import Leaflet only on client side
     import('leaflet').then((leaflet) => {
-      setL(leaflet.default);
+      setLeafletLib(leaflet);
       
       // Fix for default markers in react-leaflet
-      delete (leaflet.default.Icon.Default.prototype as any)._getIconUrl;
+      delete (leaflet.default.Icon.Default.prototype as unknown as Record<string, unknown>)._getIconUrl;
       leaflet.default.Icon.Default.mergeOptions({
         iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
         iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
@@ -40,9 +42,9 @@ const CustomMarkerIcon = () => {
     });
   }, []);
 
-  if (!L) return null;
+  if (!leafletLib) return null;
 
-  return L.divIcon({
+  return leafletLib.divIcon({
     html: `
       <div class="relative">
         <div class="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center shadow-lg border-2 border-white">
@@ -60,7 +62,7 @@ const CustomMarkerIcon = () => {
 
 export default function MapSection() {
   const [isClient, setIsClient] = useState(false);
-  const [customIcon, setCustomIcon] = useState<any>(null);
+  const [customIcon, setCustomIcon] = useState<DivIcon | null>(null);
 
   // SS Advisory office coordinates (Mirpur DOHS, Dhaka)
   const officePosition: [number, number] = [23.8223, 90.3654];

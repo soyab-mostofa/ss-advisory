@@ -6,9 +6,9 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Main Contact Section */}
-      <div className="flex flex-col lg:flex-row items-start justify-center gap-8 lg:gap-16 px-4 sm:px-8 lg:px-16 xl:px-32 py-12 lg:py-20">
+      <div className="flex flex-col lg:flex-row items-start justify-center gap-8 lg:gap-16  lg:px-16 xl:px-32 py-12 lg:py-20">
         {/* Left Side - Contact Info */}
-        <div className="w-full lg:w-auto lg:flex-1 lg:max-w-md">
+        <div className="w-full lg:w-auto  lg:flex-1">
           <ContactInfo />
         </div>
         
