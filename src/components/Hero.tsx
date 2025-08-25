@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect, useState, useEffect, useCallback } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 
@@ -10,6 +10,102 @@ const Hero = () => {
   const mobileContainerRef = useRef<HTMLDivElement>(null);
   const desktopContainerRef = useRef<HTMLDivElement>(null);
   const contactButtonRef = useRef<HTMLDivElement>(null);
+  const rotatingWordMobileRef = useRef<HTMLSpanElement>(null);
+  const rotatingWordDesktopRef = useRef<HTMLSpanElement>(null);
+  
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const rotatingWords = ['Results', 'Security', 'Safety'];
+  
+  // Text rotation effect with proper synchronization
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Start the animation which will handle the word change at the right moment
+      animateWordChange();
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+  
+  const animateWordChange = useCallback(() => {
+    const mobileElement = rotatingWordMobileRef.current;
+    const desktopElement = rotatingWordDesktopRef.current;
+
+    if (!mobileElement && !desktopElement) return;
+
+    // Create master timeline that handles both out and in animations with proper timing
+    const masterTimeline = gsap.timeline();
+    
+    // "Out" animation phase
+    if (mobileElement) {
+      masterTimeline.to(mobileElement, {
+        opacity: 0,
+        scale: 0.8,
+        rotationX: 90,
+        filter: "blur(4px)",
+        skewX: 10,
+        duration: 0.4,
+        ease: "power2.in"
+      }, 0);
+    }
+
+    if (desktopElement) {
+      masterTimeline.to(desktopElement, {
+        opacity: 0,
+        scale: 0.7,
+        rotationY: -90,
+        filter: "blur(6px)",
+        skewY: 15,
+        duration: 0.5,
+        ease: "power2.in"
+      }, 0);
+    }
+
+    // Word change happens exactly when out animation completes
+    masterTimeline.call(() => {
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % rotatingWords.length);
+    }, [], 0.5); // At 0.5s when out animation is complete
+
+    // "In" animation phase starts immediately after word change
+    if (mobileElement) {
+      masterTimeline.fromTo(mobileElement, 
+        {
+          opacity: 0,
+          scale: 1.2,
+          rotationX: -90,
+          filter: "blur(4px)",
+          skewX: -10
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          rotationX: 0,
+          filter: "blur(0px)",
+          skewX: 0,
+          duration: 0.6,
+          ease: "back.out(1.7)"
+        }, 0.5);
+    }
+
+    if (desktopElement) {
+      masterTimeline.fromTo(desktopElement,
+        {
+          opacity: 0,
+          scale: 1.3,
+          rotationY: 90,
+          filter: "blur(6px)",
+          skewY: -15
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          rotationY: 0,
+          filter: "blur(0px)",
+          skewY: 0,
+          duration: 0.7,
+          ease: "back.out(1.7)"
+        }, 0.5);
+    }
+  }, []);
 
   useGSAP(() => {
     // Mobile animations
@@ -130,7 +226,8 @@ const Hero = () => {
                   />
                   <p data-animate="result-mobile" className="text-black font-urbanist text-[40px] font-bold leading-[40px] tracking-[-1.6px] w-full">
                     <span className="text-[#0d1321]">That&nbsp;</span>
-                    <span className="text-[#204199]">Drives Results</span>
+                    <span className="text-[#204199]">Drives&nbsp;</span>
+                    <span ref={rotatingWordMobileRef} className="text-[#204199] inline-block transform-gpu">{rotatingWords[currentWordIndex]}</span>
                   </p>
                 </div>
                 <div className="flex flex-col items-start w-full gap-3">
@@ -184,7 +281,8 @@ const Hero = () => {
               />
               <p data-animate="result-desktop" className="text-black font-urbanist text-[100px] font-bold leading-[100px] tracking-[-4px]">
                 <span className="text-[#0d1321]">That&nbsp;</span>
-                <span className="text-[#204199]">Drives Results</span>
+                <span className="text-[#204199]">Drives&nbsp;</span>
+                <span ref={rotatingWordDesktopRef} className="text-[#204199] inline-block transform-gpu">{rotatingWords[currentWordIndex]}</span>
               </p>
             </div>
           </div>
