@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Menu } from "lucide-react";
 import Image from "next/image";
@@ -21,36 +21,40 @@ const Navigation = () => {
   // Close drawer when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const drawer = document.getElementById('mobile-drawer');
-      const hamburger = document.getElementById('hamburger-button');
-      
-      if (isDrawerOpen && drawer && hamburger && 
-          !drawer.contains(event.target as Node) && 
-          !hamburger.contains(event.target as Node)) {
+      const drawer = document.getElementById("mobile-drawer");
+      const hamburger = document.getElementById("hamburger-button");
+
+      if (
+        isDrawerOpen &&
+        drawer &&
+        hamburger &&
+        !drawer.contains(event.target as Node) &&
+        !hamburger.contains(event.target as Node)
+      ) {
         closeDrawer();
       }
     };
 
     if (isDrawerOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isDrawerOpen]);
 
   // Close drawer on escape key
   useEffect(() => {
     const handleEscapeKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && isDrawerOpen) {
+      if (event.key === "Escape" && isDrawerOpen) {
         closeDrawer();
       }
     };
 
-    document.addEventListener('keydown', handleEscapeKey);
+    document.addEventListener("keydown", handleEscapeKey);
     return () => {
-      document.removeEventListener('keydown', handleEscapeKey);
+      document.removeEventListener("keydown", handleEscapeKey);
     };
   }, [isDrawerOpen]);
 
@@ -58,13 +62,16 @@ const Navigation = () => {
     <>
       {/* Mobile Navigation */}
       <div className="flex md:hidden items-center justify-between w-full px-4 py-4 bg-white">
-        <Image
-          src="/images/megv1vhw-25cglug.svg"
-          alt="SS Advisory Logo"
-          width={51}
-          height={54}
-          className="flex-shrink-0"
-        />
+        <Link href="/">
+   
+          <Image
+            src="/images/megv1vhw-25cglug.svg"
+            alt="SS Advisory Logo"
+            width={51}
+            height={54}
+            className="flex-shrink-0"
+          />
+        </Link>
         <button
           id="hamburger-button"
           onClick={toggleDrawer}
@@ -85,7 +92,7 @@ const Navigation = () => {
       <div
         id="mobile-drawer"
         className={`fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 md:hidden ${
-          isDrawerOpen ? 'translate-x-0' : 'translate-x-full'
+          isDrawerOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex flex-col h-full">
@@ -103,8 +110,18 @@ const Navigation = () => {
               className="p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#204199] focus:ring-opacity-50"
               aria-label="Close navigation menu"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
           </div>
@@ -115,62 +132,71 @@ const Navigation = () => {
               href="/"
               onClick={closeDrawer}
               className={`flex items-center justify-center gap-[10px] rounded-lg px-4 py-3 w-full transition-colors ${
-                pathname === '/' 
-                  ? 'bg-[#d4e4ff]' 
-                  : 'hover:bg-gray-50'
+                pathname === "/" ? "bg-[#d4e4ff]" : "hover:bg-gray-50"
               }`}
             >
-              <p className={`font-urbanist text-lg leading-[25px] ${
-                pathname === '/' 
-                  ? 'text-[#204199] font-medium' 
-                  : 'text-[#545660]'
-              }`}>Home</p>
+              <p
+                className={`font-urbanist text-lg leading-[25px] ${
+                  pathname === "/"
+                    ? "text-[#204199] font-medium"
+                    : "text-[#545660]"
+                }`}
+              >
+                Home
+              </p>
             </Link>
-            
+
             <Link
               href="/services"
               onClick={closeDrawer}
               className={`flex items-center justify-center px-4 py-3 w-full rounded-lg transition-colors ${
-                pathname === '/services' 
-                  ? 'bg-[#d4e4ff]' 
-                  : 'hover:bg-gray-50'
+                pathname === "/services" ? "bg-[#d4e4ff]" : "hover:bg-gray-50"
               }`}
             >
-              <p className={`font-urbanist text-lg leading-[25px] ${
-                pathname === '/services' 
-                  ? 'text-[#204199] font-medium' 
-                  : 'text-[#545660]'
-              }`}>Services</p>
+              <p
+                className={`font-urbanist text-lg leading-[25px] ${
+                  pathname === "/services"
+                    ? "text-[#204199] font-medium"
+                    : "text-[#545660]"
+                }`}
+              >
+                Services
+              </p>
             </Link>
-            
+
             <Link
               href="/careers"
               onClick={closeDrawer}
               className={`flex items-center justify-center px-4 py-3 w-full rounded-lg transition-colors ${
-                pathname === '/careers' 
-                  ? 'bg-[#d4e4ff]' 
-                  : 'hover:bg-gray-50'
+                pathname === "/careers" ? "bg-[#d4e4ff]" : "hover:bg-gray-50"
               }`}
             >
-              <p className={`font-urbanist text-lg leading-[25px] ${
-                pathname === '/careers' 
-                  ? 'text-[#204199] font-medium' 
-                  : 'text-[#545660]'
-              }`}>Careers</p>
+              <p
+                className={`font-urbanist text-lg leading-[25px] ${
+                  pathname === "/careers"
+                    ? "text-[#204199] font-medium"
+                    : "text-[#545660]"
+                }`}
+              >
+                Careers
+              </p>
             </Link>
-            
-            <button
+
+            <Link
+              href="/contact"
               onClick={closeDrawer}
               className="flex items-center justify-center gap-2 rounded-xl bg-[#204199] px-4 py-3 w-full mt-6"
             >
-              <p className="text-white font-urbanist text-lg font-medium leading-[25px]">Contact</p>
+              <p className="text-white font-urbanist text-lg font-medium leading-[25px]">
+                Contact
+              </p>
               <Image
                 src="/images/megv1vhw-xry6gqf.svg"
                 alt="Phone icon"
                 width={18}
                 height={18}
               />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -189,16 +215,16 @@ const Navigation = () => {
             <Link
               href="/"
               className={`flex items-center justify-center gap-[10px] rounded-lg px-4 py-1 w-[90px] transition-colors ${
-                pathname === '/' 
-                  ? 'bg-[#d4e4ff]' 
-                  : 'hover:bg-[#e5e7eb]'
+                pathname === "/" ? "bg-[#d4e4ff]" : "hover:bg-[#e5e7eb]"
               }`}
             >
-              <p className={`font-urbanist text-lg leading-[25px] ${
-                pathname === '/' 
-                  ? 'text-[#204199]' 
-                  : 'text-[#545660]'
-              }`}>Home</p>
+              <p
+                className={`font-urbanist text-lg leading-[25px] ${
+                  pathname === "/" ? "text-[#204199]" : "text-[#545660]"
+                }`}
+              >
+                Home
+              </p>
             </Link>
             <div className="relative w-px h-4">
               <div className="absolute top-2 -left-2 bg-[#dde2eb] w-4 h-px rotate-90"></div>
@@ -206,9 +232,9 @@ const Navigation = () => {
             <Link
               href="/services"
               className={`font-urbanist text-lg leading-[25px] px-2 py-1 rounded transition-colors ${
-                pathname === '/services' 
-                  ? 'text-[#204199] bg-[#d4e4ff]' 
-                  : 'text-[#545660] hover:bg-[#e5e7eb]'
+                pathname === "/services"
+                  ? "text-[#204199] bg-[#d4e4ff]"
+                  : "text-[#545660] hover:bg-[#e5e7eb]"
               }`}
             >
               Services
@@ -219,23 +245,28 @@ const Navigation = () => {
             <Link
               href="/careers"
               className={`font-urbanist text-lg leading-[25px] px-2 py-1 rounded transition-colors ${
-                pathname === '/careers' 
-                  ? 'text-[#204199] bg-[#d4e4ff]' 
-                  : 'text-[#545660] hover:bg-[#e5e7eb]'
+                pathname === "/careers"
+                  ? "text-[#204199] bg-[#d4e4ff]"
+                  : "text-[#545660] hover:bg-[#e5e7eb]"
               }`}
             >
               Careers
             </Link>
           </div>
-          <div className="flex items-center justify-center gap-2 rounded-xl bg-[#204199] px-4 py-2 w-36 h-11">
-            <p className="text-white font-urbanist text-base font-medium leading-6">Contact</p>
+          <Link
+            href="/contact"
+            className="flex items-center justify-center gap-2 rounded-xl bg-[#204199] px-4 py-2 w-36 h-11 hover:bg-[#1a3580] transition-colors"
+          >
+            <p className="text-white font-urbanist text-base font-medium leading-6">
+              Contact
+            </p>
             <Image
               src="/images/megv1vhw-xry6gqf.svg"
               alt="Phone icon"
               width={18}
               height={18}
             />
-          </div>
+          </Link>
         </div>
       </div>
     </>

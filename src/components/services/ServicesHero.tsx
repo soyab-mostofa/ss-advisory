@@ -21,7 +21,7 @@ const ServicesHero: React.FC<ServicesHeroProps> = ({ className = '' }) => {
             <div className="flex items-center gap-3 md:gap-3 md:py-[10px] md:w-[387px]">
               <div className="flex items-center gap-2 bg-gradient-to-r from-[#2041991a] to-[#ffffff1a] rounded-l-lg px-3 py-[6px] pr-[60px]">
                 <div className="w-2 h-2 bg-[#204199] rounded-full"></div>
-                <span className="text-[#041e3a] text-lg md:text-xl font-medium">SERVICES</span>
+                <span className="text-[#041e3a] text-xs sm:text-sm md:text-lg lg:text-xl font-medium">SERVICES</span>
               </div>
               <div className="h-px w-[100px] md:w-[191px] bg-gradient-to-r from-[#ffffff4d] to-[#2041994d]"></div>
             </div>

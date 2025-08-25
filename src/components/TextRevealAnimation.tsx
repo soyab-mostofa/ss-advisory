@@ -77,16 +77,37 @@ const TextRevealAnimation: React.FC<TextRevealAnimationProps> = ({
     const spans = containerRef.current.querySelectorAll('.word-span');
     const container = containerRef.current;
     
-    // Set initial state
+    // Get highlight spans
+    const startHighlightSpans = highlightStart ? 
+      Array.from(spans).filter((span, index) => {
+        const startWords = highlightStart.split(' ');
+        return index < startWords.length;
+      }) : [];
+    
+    const endHighlightSpans = highlightEnd ? 
+      Array.from(spans).filter((span, index) => {
+        const endWords = highlightEnd.split(' ');
+        const totalWords = text.split(' ').length;
+        return index >= totalWords - endWords.length;
+      }) : [];
+    
+    // Set initial state for all spans
     gsap.set(spans, {
       y: 100,
       skewY: 7,
     });
-
-    // Create timeline (paused initially)
-    const tl = gsap.timeline({ paused: true });
     
-    tl.to(spans, {
+    // Set initial state for highlight spans (they start as regular color)
+    gsap.set([...startHighlightSpans, ...endHighlightSpans], {
+      color: '#b5bac5',
+      opacity: 1
+    });
+
+    // Create master timeline (paused initially)
+    const masterTl = gsap.timeline({ paused: true });
+    
+    // Phase 1: Text reveal animation
+    masterTl.to(spans, {
       y: 0,
       skewY: 0,
       ease: "power4.out",
@@ -94,19 +115,45 @@ const TextRevealAnimation: React.FC<TextRevealAnimationProps> = ({
         amount: 0.3
       }
     });
+    
+    // Phase 2: Starting highlight fade in from left (after text reveal)
+    if (startHighlightSpans.length > 0) {
+      masterTl.to(startHighlightSpans, {
+        color: '#0d1321',
+        duration: 0.6,
+        ease: "power2.out",
+        stagger: {
+          amount: 0.2,
+          from: "start"
+        }
+      }, ">+=0.3"); // Start 0.3s after text reveal completes
+    }
+    
+    // Phase 3: Ending highlight fade in from right (after starting highlight)
+    if (endHighlightSpans.length > 0) {
+      masterTl.to(endHighlightSpans, {
+        color: '#0d1321',
+        duration: 0.6,
+        ease: "power2.out",
+        stagger: {
+          amount: 0.2,
+          from: "end"
+        }
+      }, ">+=0.2"); // Start 0.2s after starting highlight completes
+    }
 
     // Intersection Observer to trigger animation on scroll
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            tl.play();
+            masterTl.play();
             observer.unobserve(entry.target); // Only animate once
           }
         });
       },
       {
-        threshold: 0.8, // Trigger when 30% of the element is visible
+        threshold: 0.8, // Trigger when 80% of the element is visible
         rootMargin: '0px'
       }
     );
@@ -114,39 +161,14 @@ const TextRevealAnimation: React.FC<TextRevealAnimationProps> = ({
     observer.observe(container);
 
     return () => {
-      tl.kill();
+      masterTl.kill();
       observer.disconnect();
     };
-  }, [wrappedLines]);
+  }, [wrappedLines, highlightStart, highlightEnd, text]);
 
-  // Helper function to determine word color
-  const getWordColor = (word: string, lineIndex: number, wordIndex: number) => {
-    const allWords = text.split(' ');
-    let globalWordIndex = 0;
-    
-    // Calculate global word index
-    for (let i = 0; i < lineIndex; i++) {
-      globalWordIndex += wrappedLines[i].length;
-    }
-    globalWordIndex += wordIndex;
-    
-    // Check if word is in highlightStart
-    if (highlightStart) {
-      const startWords = highlightStart.split(' ');
-      if (globalWordIndex < startWords.length) {
-        return 'text-[#0d1321]';
-      }
-    }
-    
-    // Check if word is in highlightEnd
-    if (highlightEnd) {
-      const endWords = highlightEnd.split(' ');
-      const totalWords = allWords.length;
-      if (globalWordIndex >= totalWords - endWords.length) {
-        return 'text-[#0d1321]';
-      }
-    }
-    
+  // Helper function to determine initial word color (all start as regular color)
+  const getInitialWordColor = () => {
+    // All words start with the regular color, highlights will be animated via GSAP
     return 'text-[#b5bac5]';
   };
 
@@ -155,7 +177,7 @@ const TextRevealAnimation: React.FC<TextRevealAnimationProps> = ({
       {wrappedLines.map((line, lineIndex) => (
         <div key={lineIndex} className="line overflow-hidden h-[29px] md:h-[58px]">
           {line.map((word, wordIndex) => {
-            const colorClass = getWordColor(word, lineIndex, wordIndex);
+            const colorClass = getInitialWordColor();
             return (
               <span
                 key={`${lineIndex}-${wordIndex}`}

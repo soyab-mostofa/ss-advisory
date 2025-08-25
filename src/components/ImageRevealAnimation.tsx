@@ -139,6 +139,8 @@ const ImageRevealAnimation = ({
             gridArea: '1 / 1 / 2 / 2',
             backgroundImage: `url(${src})`,
             borderRadius: borderRadius,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
             transform: 'scale(1.05) translateZ(0)', // Larger scale + hardware acceleration
             backfaceVisibility: 'hidden',
             willChange: 'clip-path, transform',

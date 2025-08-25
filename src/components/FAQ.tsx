@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import ImageRevealAnimation from './ImageRevealAnimation';
 
 // Simple chevron down SVG component
 const ChevronDown = ({ className }: { className?: string }) => (
@@ -79,10 +80,11 @@ const FAQ: React.FC = () => {
       <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-17">
         {/* Image */}
         <div className="flex-shrink-0 w-full sm:w-auto">
-          <img 
-            src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20business%20meeting%20two%20men%20in%20suits%20discussing%20financial%20documents%20laptop%20modern%20office%20setting%20corporate%20environment%20consultation&image_size=portrait_4_3" 
+          <ImageRevealAnimation
+            src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20business%20meeting%20two%20men%20in%20suits%20discussing%20financial%20documents%20laptop%20modern%20office%20setting%20corporate%20environment%20consultation&image_size=portrait_4_3"
             alt="Business consultation meeting"
             className="w-full h-[280px] sm:w-[445px] sm:h-[558px] rounded-xl object-cover"
+            borderRadius="0.75rem"
           />
         </div>
 
