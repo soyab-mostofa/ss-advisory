@@ -44,7 +44,7 @@ const ValueCard: React.FC<ValueCardProps> = ({
       
       {/* Card Content */}
       <div className="px-6 py-5 flex items-center justify-center">
-        <p className="text-xs sm:text-sm md:text-lg lg:text-xl lg:leading-7 text-[#545660] w-[331px]">
+        <p className="text-sm md:text-lg lg:text-xl lg:leading-7 text-[#545660] w-[331px]">
           {description}
         </p>
       </div>
