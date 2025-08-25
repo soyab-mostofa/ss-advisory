@@ -3,6 +3,7 @@
 import React from 'react';
 import SectionHeader from './SectionHeader';
 import ValueCard from './ValueCard';
+import InfiniteScroll from '../ui/InfiniteScroll';
 
 interface CoreValue {
   icon: string;
@@ -26,7 +27,7 @@ const CoreValues: React.FC<CoreValuesProps> = ({ coreValues, className = '' }) =
         />
         
         {/* Values Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="hidden md:grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {coreValues.map((value, index) => (
             <ValueCard
               key={index}
@@ -35,6 +36,16 @@ const CoreValues: React.FC<CoreValuesProps> = ({ coreValues, className = '' }) =
             />
           ))}
         </div>
+        <InfiniteScroll direction='left'  className='md:hidden'>
+          {coreValues.map((value, index) => (
+            <ValueCard
+            className='ml-4'
+              key={index}
+              title={value.title}
+              description={value.description}
+            />
+          ))}
+        </InfiniteScroll>
       </div>
     </section>
   );

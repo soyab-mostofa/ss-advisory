@@ -15,20 +15,19 @@ const ValueCard: React.FC<ValueCardProps> = ({
   className = '' 
 }) => {
   return (
-    <div className={`bg-white border border-[#d4e4ff] rounded-xl overflow-hidden w-full lg:w-[379px] h-[280px] ${className}`}>
+    <div className={`bg-white border border-[#d4e4ff] rounded-xl overflow-hidden max-w-64 md:max-w-[379px] h-[280px] ${className}`}>
       {/* Card Header with Icon and Decorative Element */}
       <div className="relative bg-[#eef8ff] p-6 flex flex-col gap-[10px]">
         <div className="flex items-center gap-5">
-          <div className="size-16 relative bg-[#204199] border border-[#4d67ad] rounded-full flex items-center justify-center">
             <Image 
-              src="/images/values-star.svg" 
+              src="/star-icon.svg" 
               alt="" 
-              className="size-8" 
+              className="size-16" 
               height={32} 
               width={32} 
             />
-          </div>
-          <h3 className="text-lg sm:text-xl md:text-2xl lg:text-[30px] lg:leading-[42px] font-semibold text-[#1d1f2c]">
+          
+          <h3 className="min-w-0 text-lg sm:text-xl md:text-2xl lg:text-[30px] lg:leading-[42px] font-semibold text-[#1d1f2c] whitespace-normal break-words hyphens-auto">
             {title}
           </h3>
         </div>
@@ -44,7 +43,7 @@ const ValueCard: React.FC<ValueCardProps> = ({
       
       {/* Card Content */}
       <div className="px-6 py-5 flex items-center justify-center">
-        <p className="text-sm md:text-lg lg:text-xl lg:leading-7 text-[#545660] w-[331px]">
+        <p className="text-sm md:text-lg lg:text-xl lg:leading-7 text-[#545660] whitespace-normal break-words font-normal hyphens-auto w-full sm:w-[331px]">
           {description}
         </p>
       </div>
