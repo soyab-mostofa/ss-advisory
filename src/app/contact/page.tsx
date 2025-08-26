@@ -4,7 +4,7 @@ import MapSection from '@/components/contact/MapSection';
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white px-4">
       {/* Main Contact Section */}
       <div className="flex flex-col lg:flex-row items-start justify-center gap-8 lg:gap-16  lg:px-16 xl:px-32 py-12 lg:py-20">
         {/* Left Side - Contact Info */}

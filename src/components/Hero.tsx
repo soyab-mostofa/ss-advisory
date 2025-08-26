@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useLayoutEffect, useState, useEffect, useCallback } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 
@@ -35,14 +35,11 @@ const Hero = () => {
     // Create master timeline that handles both out and in animations with proper timing
     const masterTimeline = gsap.timeline();
     
-    // "Out" animation phase
+    // "Out" animation phase - slide up and fade out
     if (mobileElement) {
       masterTimeline.to(mobileElement, {
         opacity: 0,
-        scale: 0.8,
-        rotationX: 90,
-        filter: "blur(4px)",
-        skewX: 10,
+        y: -30,
         duration: 0.4,
         ease: "power2.in"
       }, 0);
@@ -51,10 +48,7 @@ const Hero = () => {
     if (desktopElement) {
       masterTimeline.to(desktopElement, {
         opacity: 0,
-        scale: 0.7,
-        rotationY: -90,
-        filter: "blur(6px)",
-        skewY: 15,
+        y: -40,
         duration: 0.5,
         ease: "power2.in"
       }, 0);
@@ -65,24 +59,18 @@ const Hero = () => {
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % rotatingWords.length);
     }, [], 0.5); // At 0.5s when out animation is complete
 
-    // "In" animation phase starts immediately after word change
+    // "In" animation phase - slide up from below with smooth easing
     if (mobileElement) {
       masterTimeline.fromTo(mobileElement, 
         {
           opacity: 0,
-          scale: 1.2,
-          rotationX: -90,
-          filter: "blur(4px)",
-          skewX: -10
+          y: 30
         },
         {
           opacity: 1,
-          scale: 1,
-          rotationX: 0,
-          filter: "blur(0px)",
-          skewX: 0,
+          y: 0,
           duration: 0.6,
-          ease: "back.out(1.7)"
+          ease: "power2.out"
         }, 0.5);
     }
 
@@ -90,19 +78,13 @@ const Hero = () => {
       masterTimeline.fromTo(desktopElement,
         {
           opacity: 0,
-          scale: 1.3,
-          rotationY: 90,
-          filter: "blur(6px)",
-          skewY: -15
+          y: 40
         },
         {
           opacity: 1,
-          scale: 1,
-          rotationY: 0,
-          filter: "blur(0px)",
-          skewY: 0,
+          y: 0,
           duration: 0.7,
-          ease: "back.out(1.7)"
+          ease: "power2.out"
         }, 0.5);
     }
   }, []);
@@ -227,7 +209,9 @@ const Hero = () => {
                   <p data-animate="result-mobile" className="text-black font-urbanist text-[40px] font-bold leading-[40px] tracking-[-1.6px] w-full">
                     <span className="text-[#0d1321]">That&nbsp;</span>
                     <span className="text-[#204199]">Drives&nbsp;</span>
-                    <span ref={rotatingWordMobileRef} className="text-[#204199] inline-block transform-gpu">{rotatingWords[currentWordIndex]}</span>
+                    <span className="text-[#204199] inline-block w-[140px] text-left">
+                      <span ref={rotatingWordMobileRef} className="inline-block transform-gpu">{rotatingWords[currentWordIndex]}</span>
+                    </span>
                   </p>
                 </div>
                 <div className="flex flex-col items-start w-full gap-3">
@@ -282,7 +266,9 @@ const Hero = () => {
               <p data-animate="result-desktop" className="text-black font-urbanist text-[100px] font-bold leading-[100px] tracking-[-4px]">
                 <span className="text-[#0d1321]">That&nbsp;</span>
                 <span className="text-[#204199]">Drives&nbsp;</span>
-                <span ref={rotatingWordDesktopRef} className="text-[#204199] inline-block transform-gpu">{rotatingWords[currentWordIndex]}</span>
+                <span className="text-[#204199] inline-block w-[280px] text-left">
+                  <span ref={rotatingWordDesktopRef} className="inline-block transform-gpu">{rotatingWords[currentWordIndex]}</span>
+                </span>
               </p>
             </div>
           </div>
