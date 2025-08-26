@@ -90,7 +90,7 @@ const Counter: React.FC<CounterProps> = ({
   return (
     <span 
       ref={counterRef} 
-      className={className}
+      className={`md:w-16 md:inline-block md:text-center ${className}`}
     >
       {prefix}0{suffix}
     </span>

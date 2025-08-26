@@ -1,37 +1,40 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { useState } from "react";
+import { ArrowRight } from "lucide-react";
+import TextRevealAnimation from "../TextRevealAnimation";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: '',
-    agreeToTerms: false
+    fullName: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+    agreeToTerms: false,
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      agreeToTerms: e.target.checked
+      agreeToTerms: e.target.checked,
     }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
   };
 
   return (
@@ -39,12 +42,18 @@ export default function ContactForm() {
       {/* Form Container */}
       <div className="flex flex-col gap-8 lg:gap-10 w-full">
         {/* Form Title */}
-        <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 leading-tight w-full">
-          Send Us a Message
-        </h2>
-        
+        <TextRevealAnimation
+          highlightStart="Send Us A"
+          highlightEnd="Message"
+          text="Send Us A Message"
+          fontClass="text-2xl md:text-3xl font-semibold text-gray-900 leading-tight"
+        />
+
         {/* Form Fields */}
-        <form onSubmit={handleSubmit} className="flex flex-col gap-5 lg:gap-6 w-full">
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col gap-5 lg:gap-6 w-full"
+        >
           <div className="flex flex-col gap-5 lg:gap-7 w-full">
             {/* Full Name */}
             <div className="flex flex-col gap-2 w-full">
@@ -64,7 +73,7 @@ export default function ContactForm() {
                 />
               </div>
             </div>
-            
+
             {/* Email */}
             <div className="flex flex-col gap-2 w-full">
               <label className="text-sm text-gray-600 leading-5">
@@ -83,7 +92,7 @@ export default function ContactForm() {
                 />
               </div>
             </div>
-            
+
             {/* Phone */}
             <div className="flex flex-col gap-2 w-full">
               <label className="text-sm text-gray-600 leading-5">
@@ -102,7 +111,7 @@ export default function ContactForm() {
                 />
               </div>
             </div>
-            
+
             {/* Subject */}
             <div className="flex flex-col gap-2 w-full">
               <label className="text-sm text-gray-600 leading-5">
@@ -121,7 +130,7 @@ export default function ContactForm() {
                 />
               </div>
             </div>
-            
+
             {/* Message */}
             <div className="flex flex-col gap-2 w-full">
               <label className="text-sm text-gray-600 leading-5">
@@ -141,7 +150,7 @@ export default function ContactForm() {
               </div>
             </div>
           </div>
-          
+
           {/* Terms Checkbox */}
           <div className="flex items-center gap-2.5 w-full mr-56">
             <div className="relative">
@@ -156,22 +165,32 @@ export default function ContactForm() {
               />
               {formData.agreeToTerms && (
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <svg
+                    className="w-3 h-3 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 </div>
               )}
             </div>
-            <label htmlFor="terms" className="text-base text-gray-600 leading-6">
-              I agree to the{' '}
-              <span className="underline">Terms & Conditions</span>
-              {' '}and{' '}
+            <label
+              htmlFor="terms"
+              className="text-base text-gray-600 leading-6"
+            >
+              I agree to the{" "}
+              <span className="underline">Terms & Conditions</span> and{" "}
               <span className="underline">Privacy Policy</span>.
             </label>
           </div>
         </form>
       </div>
-      
+
       {/* Submit Button */}
       <button
         type="submit"
@@ -179,7 +198,9 @@ export default function ContactForm() {
         className="flex items-center justify-center gap-2 w-full border border-blue-600 rounded-xl bg-blue-600 px-4 py-4 hover:bg-blue-700 transition-colors"
       >
         <ArrowRight className="w-5 h-5 text-white" />
-        <span className="text-base font-medium text-white leading-6">Submit</span>
+        <span className="text-base font-medium text-white leading-6">
+          Submit
+        </span>
         <ArrowRight className="w-5 h-5 text-white" />
       </button>
     </div>

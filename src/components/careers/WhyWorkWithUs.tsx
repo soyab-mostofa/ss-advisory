@@ -115,7 +115,7 @@ const WhyWorkWithUs = () => {
   return (
     <div className="flex flex-col items-start md:items-center  bg-[#f8f8f8] px-4  py-[60px] md:py-[100px] w-full  gap-8 md:gap-16">
       {/* Header */}
-      <div className="flex flex-col container mx-auto md:flex-row items-start md:items-center self-stretch gap-4 md:gap-6">
+      <div className="flex flex-col container mx-auto md:flex-row items-start md:items-center self-stretch gap-6 md:gap-0">
         {/* Section Title */}
         <div className="w-full md:w-[387px]">
           <SectionLabel
