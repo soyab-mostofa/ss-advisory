@@ -53,9 +53,7 @@ const ScrollAnimationExamples: React.FC = () => {
       {/* Basic Fade Animation */}
       <section className="container mx-auto px-4 py-16">
         <ScrollTriggeredAnimation
-          animationType="fade"
-          duration={1.2}
-          start="top 85%"
+          animationType="fadeIn"
           className="max-w-4xl mx-auto"
         >
           <div className="bg-white rounded-lg shadow-lg p-8 text-center">
@@ -72,10 +70,7 @@ const ScrollAnimationExamples: React.FC = () => {
       <section className="container mx-auto px-4 py-16">
         <ScrollTriggeredAnimation
           animationType="slideUp"
-          duration={0.8}
-          delay={0.2}
-          start="top 80%"
-          ease="power3.out"
+          delay={200}
           className="max-w-4xl mx-auto"
         >
           <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg shadow-lg p-8 text-center text-white">
@@ -96,20 +91,18 @@ const ScrollAnimationExamples: React.FC = () => {
         </div>
         
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {[0, 0.2, 0.4].map((delay, index) => (
+          {[0, 200, 400].map((delay, index) => (
             <ScrollTriggeredAnimation
               key={index}
               animationType="slideUp"
-              duration={0.6}
               delay={delay}
-              start="top 85%"
               className="h-full"
             >
               <div className="bg-white rounded-lg shadow-md p-6 h-full">
                 <div className="w-12 h-12 bg-blue-500 rounded-full mb-4 mx-auto"></div>
                 <h3 className="text-xl font-semibold mb-2 text-center">Feature {index + 1}</h3>
                 <p className="text-gray-600 text-center">
-                  This card appears with a {delay}s delay, creating a beautiful staggered effect.
+                  This card appears with a {delay}ms delay, creating a beautiful staggered effect.
                 </p>
               </div>
             </ScrollTriggeredAnimation>
@@ -121,9 +114,6 @@ const ScrollAnimationExamples: React.FC = () => {
       <section className="container mx-auto px-4 py-16">
         <ScrollTriggeredAnimation
           animationType="scale"
-          duration={1}
-          start="top 75%"
-          ease="back.out(1.2)"
           className="max-w-4xl mx-auto"
         >
           <div className="bg-green-500 rounded-full w-32 h-32 mx-auto flex items-center justify-center mb-8">
@@ -147,8 +137,6 @@ const ScrollAnimationExamples: React.FC = () => {
         <div className="space-y-8 max-w-4xl mx-auto">
           <ScrollTriggeredAnimation
             animationType="slideLeft"
-            duration={0.8}
-            start="top 80%"
           >
             <div className="bg-orange-500 text-white p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-2">Slide from Right</h3>
@@ -158,8 +146,6 @@ const ScrollAnimationExamples: React.FC = () => {
           
           <ScrollTriggeredAnimation
             animationType="slideRight"
-            duration={0.8}
-            start="top 80%"
           >
             <div className="bg-teal-500 text-white p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-2">Slide from Left</h3>
@@ -172,13 +158,7 @@ const ScrollAnimationExamples: React.FC = () => {
       {/* Custom Animation */}
       <section className="container mx-auto px-4 py-16">
         <ScrollTriggeredAnimation
-          animationType="custom"
-          customAnimation={customBounceAnimation}
-          duration={1.5}
-          start="top 80%"
-          onStart={handleAnimationStart}
-          onComplete={handleAnimationComplete}
-          onUpdate={handleProgress}
+          animationType="fadeIn"
           className="max-w-4xl mx-auto"
         >
           <div className="bg-gradient-to-r from-yellow-400 to-red-500 rounded-lg shadow-lg p-8 text-center text-white">
@@ -199,14 +179,7 @@ const ScrollAnimationExamples: React.FC = () => {
         </div>
         
         <ScrollTriggeredAnimation
-          animationType="custom"
-          customAnimation={{
-            from: { rotation: 0, scale: 1 },
-            to: { rotation: 360, scale: 1.5 }
-          }}
-          start="top bottom"
-          end="bottom top"
-          scrub={1}
+          animationType="slideUp"
           className="max-w-md mx-auto"
         >
           <div className="w-32 h-32 bg-purple-600 rounded-lg mx-auto flex items-center justify-center">

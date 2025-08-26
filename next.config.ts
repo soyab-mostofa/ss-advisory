@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: ['trae-api-sg.mchost.guru'],
+  },
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'gsap'],
+  },
 };
 
 export default nextConfig;

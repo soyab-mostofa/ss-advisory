@@ -1,10 +1,27 @@
-'use client';
-
+import type { Metadata } from 'next';
 import React from 'react';
 import ServicesHero from '@/components/services/ServicesHero';
 import ServicesList from '@/components/services/ServicesList';
 import CoreValues from '@/components/services/CoreValues';
 import Testimonials from '@/components/Testimonials';
+
+export const metadata: Metadata = {
+  title: 'Financial Services - SS Advisory | Investment Management & Planning',
+  description: 'Comprehensive financial services including investment management, retirement planning, tax strategy, estate planning, and risk management. Expert financial advisory services tailored to your goals.',
+  keywords: 'investment management, financial planning, retirement planning, tax strategy, estate planning, risk management, financial advisor, wealth management',
+
+  openGraph: {
+    title: 'Financial Services - SS Advisory | Investment Management & Planning',
+    description: 'Comprehensive financial services including investment management, retirement planning, tax strategy, estate planning, and risk management.',
+    type: 'website',
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Financial Services - SS Advisory | Investment Management & Planning',
+    description: 'Comprehensive financial services including investment management, retirement planning, tax strategy, estate planning, and risk management.',
+  }
+};
 
 const ServicesPage = () => {
   const services = [

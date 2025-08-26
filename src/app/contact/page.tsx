@@ -1,6 +1,25 @@
+import type { Metadata } from 'next';
 import ContactInfo from '@/components/contact/ContactInfo';
 import ContactForm from '@/components/contact/ContactForm';
 import MapSection from '@/components/contact/MapSection';
+
+export const metadata: Metadata = {
+  title: 'Contact Us - SS Advisory | Get Expert Financial Consultation',
+  description: 'Contact SS Advisory for professional financial consultation and advisory services. Schedule a meeting with our expert financial advisors. Phone, email, and office location available.',
+  keywords: 'contact financial advisor, financial consultation, SS Advisory contact, financial planning meeting, investment consultation',
+
+  openGraph: {
+    title: 'Contact Us - SS Advisory | Get Expert Financial Consultation',
+    description: 'Contact SS Advisory for professional financial consultation and advisory services. Schedule a meeting with our expert financial advisors.',
+    type: 'website',
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us - SS Advisory | Get Expert Financial Consultation',
+    description: 'Contact SS Advisory for professional financial consultation and advisory services. Schedule a meeting with our expert financial advisors.',
+  }
+};
 
 export default function ContactPage() {
   return (
