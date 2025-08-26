@@ -21,7 +21,7 @@ interface ServiceItem {
 }
 
 const Services = () => {
-  const [expandedService, setExpandedService] = useState<string>('02');
+  const [expandedService, setExpandedService] = useState<string>('01');
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
@@ -115,40 +115,10 @@ const Services = () => {
     const arrow = containerRef.current?.querySelector(`[data-arrow="${serviceId}"]`);
     
     if (content && arrow) {
-      const tl = gsap.timeline({
-        onComplete: () => {
-          // Clear will-change after animation completes for better performance
-          gsap.set(content, { willChange: 'auto' });
-          gsap.set(content.querySelectorAll('.animate-in'), { willChange: 'auto' });
-          gsap.set(arrow, { willChange: 'auto' });
-        }
-      });
-      
-      // Set will-change before animation starts
-      gsap.set([content, arrow], { willChange: 'height, opacity, transform' });
-      gsap.set(content.querySelectorAll('.animate-in'), { willChange: 'transform, opacity' });
-      
-      // Animate inner elements out first
-      tl.to(content.querySelectorAll('.animate-in'), {
-        y: -10,
-        autoAlpha: 0,
-        duration: 0.3,
-        stagger: 0.05,
-        ease: 'power2.in'
-      })
-      // Then collapse content
-      .to(content, {
-        height: 0,
-        autoAlpha: 0,
-        duration: 0.5,
-        ease: 'power2.in'
-      }, 0.1)
-      // Rotate arrow back
-      .to(arrow, {
-        rotation: 0,
-        duration: 0.4,
-        ease: 'power2.out'
-      }, 0);
+      // Instant collapse without animations
+      gsap.set(content, { height: 0, autoAlpha: 0, willChange: 'auto' });
+      gsap.set(content.querySelectorAll('.animate-in'), { y: 20, autoAlpha: 0, willChange: 'auto' });
+      gsap.set(arrow, { rotation: 0, willChange: 'auto' });
     }
   });
 
@@ -179,12 +149,22 @@ const Services = () => {
     services.forEach(service => {
       const content = contentRefs.current[service.id];
       if (content) {
-        // Always set initial collapsed state for all items
-        gsap.set(content, { height: 0, autoAlpha: 0, willChange: 'height, opacity' });
-        gsap.set(content.querySelectorAll('.animate-in'), { y: 20, autoAlpha: 0, willChange: 'transform, opacity' });
-        const arrow = containerRef.current?.querySelector(`[data-arrow="${service.id}"]`);
-        if (arrow) {
-          gsap.set(arrow, { rotation: 0, willChange: 'transform' });
+        if (service.id === '01') {
+          // Set first service as expanded by default
+          gsap.set(content, { height: 'auto', autoAlpha: 1, willChange: 'auto' });
+          gsap.set(content.querySelectorAll('.animate-in'), { y: 0, autoAlpha: 1, willChange: 'auto' });
+          const arrow = containerRef.current?.querySelector(`[data-arrow="${service.id}"]`);
+          if (arrow) {
+            gsap.set(arrow, { rotation: -45, willChange: 'auto' });
+          }
+        } else {
+          // Set other services as collapsed
+          gsap.set(content, { height: 0, autoAlpha: 0, willChange: 'height, opacity' });
+          gsap.set(content.querySelectorAll('.animate-in'), { y: 20, autoAlpha: 0, willChange: 'transform, opacity' });
+          const arrow = containerRef.current?.querySelector(`[data-arrow="${service.id}"]`);
+          if (arrow) {
+            gsap.set(arrow, { rotation: 0, willChange: 'transform' });
+          }
         }
       }
     });

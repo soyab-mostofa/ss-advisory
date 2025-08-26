@@ -2,6 +2,7 @@
 
 import React from 'react';
 import TextRevealAnimation from './TextRevealAnimation';
+import ImageRevealAnimation from './ImageRevealAnimation';
 import { SectionLabel } from './ui/SectionLabel';
 
 interface PageHeroProps {
@@ -64,16 +65,21 @@ const PageHero: React.FC<PageHeroProps> = ({
         
         {/* Main Image */}
         <div className="w-full">
-          <img 
+          <ImageRevealAnimation
             src={imageSrc}
             alt={imageAlt}
-            className="w-full h-[250px] md:h-[460px] object-cover rounded-lg"
+            className="w-full h-[250px] md:h-[460px]"
+            aspectRatio="16 / 9"
+            borderRadius="0.5rem"
+            triggerPosition="top 85%"
+            duration={1.4}
+            ease="power2.out"
           />
         </div>
       </div>
       
       {/* Decorative Vector */}
-      <div className="absolute bottom-10 right-4 md:bottom-10 md:right-10 w-[100px] md:w-[212px] h-[100px] md:h-[211px]">
+      <div className="absolute bottom-10 right-4 md:bottom-10 md:right-10 w-[100px] md:w-[212px] h-[100px] md:h-[211px] z-10">
         <img 
           src="/images/blur-vector.svg" 
           alt="Decorative vector" 

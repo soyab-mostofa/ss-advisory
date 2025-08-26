@@ -14,7 +14,6 @@ interface HTwoTextAnimationProps {
   className?: string;
   highlightStart?: string;
   highlightEnd?: string;
-  triggerThreshold?: number;
   dark?: boolean;
 }
 
@@ -23,7 +22,6 @@ const HTwoTextAnimation: React.FC<HTwoTextAnimationProps> = ({
   className = '', 
   highlightStart, 
   highlightEnd,
-  triggerThreshold = 0.8,
   dark
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -181,7 +179,6 @@ const HTwoTextAnimation: React.FC<HTwoTextAnimationProps> = ({
       trigger: container,
       start: "top 80%",
       end: "bottom 20%",
-      threshold: triggerThreshold,
       onEnter: () => {
         masterTl.play();
       },
@@ -192,7 +189,7 @@ const HTwoTextAnimation: React.FC<HTwoTextAnimationProps> = ({
       masterTl.kill();
       scrollTrigger.kill();
     };
-  }, [wrappedLines, highlightStart, highlightEnd, text, triggerThreshold, dark]);
+  }, [wrappedLines, highlightStart, highlightEnd, text, dark]);
 
   // Helper function to determine initial word color
   const getInitialWordColor = () => {

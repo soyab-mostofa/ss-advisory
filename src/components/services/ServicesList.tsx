@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Check, ArrowRight } from 'lucide-react';
+import ImageRevealAnimation from '../ImageRevealAnimation';
 import SectionLabel from '../ui/SectionLabel';
 import HTwoTextAnimation from '../HTwoTextAnimation';
 
@@ -74,10 +75,15 @@ const ServicesList: React.FC<ServicesListProps> = ({ services, className = '' })
                   
                   {/* Service Image */}
                   <div className="flex-shrink-0">
-                    <img 
+                    <ImageRevealAnimation
                       src={`https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20financial%20service%20${service.title.toLowerCase().replace(/[^a-z0-9]/g, '%20')}%20modern%20office%20business%20setting&image_size=landscape_4_3`}
                       alt={service.title}
-                      className="w-full md:w-[540px] h-[250px] md:h-[332px] object-cover rounded-xl"
+                      className="w-full md:w-[540px] h-[250px] md:h-[332px]"
+                      aspectRatio="4 / 3"
+                      borderRadius="0.75rem"
+                      triggerPosition="top 80%"
+                      duration={1.2}
+                      ease="power3.out"
                     />
                   </div>
                 </div>

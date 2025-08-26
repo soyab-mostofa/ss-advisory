@@ -98,13 +98,15 @@ const Navigation = () => {
         <div className="flex flex-col h-full">
           {/* Drawer Header */}
           <div className="flex items-center justify-between p-4 border-b border-[#dde2eb]">
-            <Image
-              src="/images/megv1vhw-25cglug.svg"
-              alt="SS Advisory Logo"
-              width={51}
-              height={54}
-              className="flex-shrink-0"
-            />
+            <Link href="/">
+              <Image
+                src="/images/megv1vhw-25cglug.svg"
+                alt="SS Advisory Logo"
+                width={51}
+                height={54}
+                className="flex-shrink-0"
+              />
+            </Link>
             <button
               onClick={closeDrawer}
               className="p-2 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#204199] focus:ring-opacity-50"
@@ -203,13 +205,15 @@ const Navigation = () => {
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center justify-center w-full gap-[351px] bg-white px-[120px] py-5">
-        <Image
-          src="/images/megv1vhw-25cglug.svg"
-          alt="SS Advisory Logo"
-          width={71}
-          height={75}
-          className="flex-shrink-0"
-        />
+        <Link href="/" className="flex-shrink-0">
+          <Image
+            src="/images/megv1vhw-25cglug.svg"
+            alt="SS Advisory Logo"
+            width={71}
+            height={75}
+            className="flex-shrink-0 hover:opacity-80 transition-opacity cursor-pointer"
+          />
+        </Link>
         <div className="flex items-center justify-between w-[778px] min-w-[778px]">
           <div className="inline-flex items-center gap-7 border border-[#dde2eb] rounded-xl bg-[#f8f8f8] py-[7px] px-[15px] pl-[7px]">
             <Link

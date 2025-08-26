@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import React from 'react';
+import ImageRevealAnimation from '../ImageRevealAnimation';
 
 interface ValueCardProps {
   title: string;
@@ -32,13 +33,18 @@ const ValueCard: React.FC<ValueCardProps> = ({
           </h3>
         </div>
         {/* Decorative Vector */}
-        <Image 
-          src="/images/meh65pgq-pvvc68r.png" 
-          alt="" 
-          className="absolute bottom-0 right-0 w-[60px] h-[60px] transform rotate-180"
-          width={60}
-          height={60}
-        />
+        <div className="absolute bottom-0 right-0 w-[60px] h-[60px] transform rotate-180">
+          <ImageRevealAnimation
+            src="/images/meh65pgq-pvvc68r.png"
+            alt=""
+            className="w-[60px] h-[60px]"
+            aspectRatio="1 / 1"
+            borderRadius="0"
+            triggerPosition="top 90%"
+            duration={0.8}
+            ease="power2.out"
+          />
+        </div>
       </div>
       
       {/* Card Content */}
