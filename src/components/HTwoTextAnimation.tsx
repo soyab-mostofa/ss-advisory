@@ -177,7 +177,7 @@ const HTwoTextAnimation: React.FC<HTwoTextAnimationProps> = ({
     // ScrollTrigger to trigger animation on scroll
     const scrollTrigger = ScrollTrigger.create({
       trigger: container,
-      start: "top 80%",
+      start: "top 70%", // Trigger when 30% of element is visible (100% - 30% = 70%)
       end: "bottom 20%",
       onEnter: () => {
         masterTl.play();
