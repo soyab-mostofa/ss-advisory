@@ -4,6 +4,7 @@ import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+import { SectionLabel } from './ui/SectionLabel';
 
 // Register the useGSAP plugin
 gsap.registerPlugin(useGSAP);
@@ -208,15 +209,11 @@ const Services = () => {
       <div className="flex flex-col items-start px-4 py-12 gap-8 md:px-[120px] md:py-[100px] md:gap-16">
         {/* Section Header */}
         <div className="flex flex-col items-start self-stretch gap-4 md:flex-row md:items-center md:gap-6">
-          <div className="flex items-center gap-2 md:gap-3">
-            <div className="inline-flex items-center gap-2 rounded-l-lg px-2 py-1 md:px-3 md:py-1.5 bg-gradient-to-r from-[#2041991a] to-[#ffffff1a]">
-              <div className="w-2 h-2 bg-[#204199] rounded-full flex-shrink-0"></div>
-              <span className="font-urbanist text-sm md:text-[20px] leading-[22px] md:leading-[28px] text-[#041e3a]">
-                SERVICES
-              </span>
-            </div>
-            <div className="hidden md:block flex-shrink-0 w-[191px] h-px bg-gradient-to-r from-[#ffffff4d] to-[#2041994d]"></div>
-          </div>
+          <SectionLabel 
+            label="SERVICES" 
+            lineWidth="w-[191px]"
+            textSize="text-sm md:text-[20px]"
+          />
           <h2 className="font-urbanist font-semibold text-[40px] leading-[48px] md:text-[64px] md:leading-[77px] tracking-[-1.6px] md:tracking-[-2.56px] text-black">
             <span className="text-[#535967]">Expertise</span>
             <br className="md:hidden" />

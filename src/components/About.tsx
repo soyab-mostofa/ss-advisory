@@ -1,6 +1,7 @@
 import Image from "next/image";
 import TextRevealAnimation from "./TextRevealAnimation";
 import ImageRevealAnimation from "./ImageRevealAnimation";
+import { SectionLabel } from "./ui/SectionLabel";
 
 const About = () => {
   return (
@@ -9,10 +10,11 @@ const About = () => {
       <div className="flex flex-col items-start w-full bg-[#f8f8f8] px-4 py-12 gap-6 md:hidden">
         <div className="flex flex-col items-start w-full gap-7">
           <div className="flex flex-col items-start w-full gap-4">
-            <div className="inline-flex items-center gap-2 rounded-l-lg px-2 py-1 pr-[60px] bg-gradient-to-r from-[#2041991a] to-[#ffffff1a]">
-              <div className="w-2 h-2 bg-[#204199] rounded-full"></div>
-              <p className="text-[#041e3a] font-urbanist text-sm leading-[22px]">ABOUT US</p>
-            </div>
+            <SectionLabel 
+              label="ABOUT US" 
+              showLine={false}
+              textSize="text-sm"
+            />
             <div className="flex flex-col items-start w-full gap-3">
               <div className="flex flex-col items-start w-full gap-1">
                 <p className="text-[#204199] font-urbanist text-5xl font-bold leading-[48px] tracking-[-1.92px]">12+</p>
@@ -94,10 +96,12 @@ const About = () => {
               <p className="text-[#0d1321] font-urbanist text-xl leading-7">Years of Experience</p>
             </div>
             <div className="flex flex-col items-start w-full gap-6">
-              <div className="inline-flex items-center gap-2 mr-[605px] rounded-l-lg px-3 py-[6px] pr-[60px] bg-gradient-to-r from-[#2041991a] to-[#ffffff1a]">
-                <div className="w-2 h-2 bg-[#204199] rounded-full"></div>
-                <p className="text-[#041e3a] font-urbanist text-xl leading-7">ABOUT US</p>
-              </div>
+              <SectionLabel 
+                label="ABOUT US" 
+                showLine={false}
+                textSize="text-xl"
+                className="mr-[605px]"
+              />
               <TextRevealAnimation
                 text="Dedicated to empowering clients through strategic financial guidance and reliable, results-focused advocacy."
                 className="text-black font-urbanist text-5xl font-medium leading-[58px] tracking-[-1.92px] w-[789px]"

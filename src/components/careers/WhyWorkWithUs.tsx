@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useCallback, useState } from 'react';
 import { gsap } from 'gsap';
 import ValueCard from '@/components/services/ValueCard';
 import InfiniteScroll from '../ui/InfiniteScroll';
+import SectionLabel from '../ui/SectionLabel';
 
 const WhyWorkWithUs = () => {
   const values = [
@@ -106,16 +107,13 @@ const WhyWorkWithUs = () => {
       {/* Header */}
       <div className="flex flex-col md:flex-row items-start md:items-center self-stretch gap-4 md:gap-6">
         {/* Section Title */}
-        <div className="flex items-center gap-3 w-full md:w-[387px]">
-          <div className="flex items-center gap-3">
-            <div className="inline-flex items-center gap-2 rounded-l-lg px-3 py-[6px] pr-[60px] bg-gradient-to-r from-[#2041991a] to-[#ffffff1a]">
-              <div className="w-2 h-2 rounded-full bg-[#204199]" />
-              <p className="text-lg md:text-xl leading-6 md:leading-7 text-[#041e3a] font-urbanist">
-                SERVICES
-              </p>
-            </div>
-            <div className="w-[120px] md:w-[191px] h-px bg-gradient-to-r from-[#ffffff4d] to-[#2041994d]" />
-          </div>
+        <div className="w-full md:w-[387px]">
+          <SectionLabel 
+            label="SERVICES" 
+            lineWidth="w-[120px] md:w-[191px]" 
+            textSize="text-lg md:text-xl"
+            className="md:py-[10px] md:w-[387px]"
+          />
         </div>
         
         {/* Title */}

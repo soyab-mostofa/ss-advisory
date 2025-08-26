@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import ImageRevealAnimation from './ImageRevealAnimation';
+import SectionLabel from './ui/SectionLabel';
 
 // Simple chevron down SVG component
 const ChevronDown = ({ className }: { className?: string }) => (
@@ -61,15 +62,11 @@ const FAQ: React.FC = () => {
     <section className="bg-white py-6 px-4 sm:py-25 sm:px-30 max-w-[1440px] mx-auto">
       {/* Header */}
       <div className="flex flex-col gap-4 mb-8 sm:flex-row sm:items-center sm:gap-6 sm:mb-16">
-        <div className="flex items-center gap-3">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#2041991a] to-[#ffffff1a] rounded-l-lg py-1.5 px-3 pr-6 sm:pr-15">
-            <div className="w-2 h-2 bg-[#204199] rounded-full"></div>
-            <span className="text-[#041e3a] text-lg sm:text-xl font-medium font-['Urbanist']">
-              FAQ
-            </span>
-          </div>
-          <div className="w-[150px] sm:w-[250px] h-px bg-gradient-to-r from-[#ffffff4d] to-[#2041994d]"></div>
-        </div>
+        <SectionLabel 
+          label="FAQ" 
+          lineWidth="w-[150px] sm:w-[250px]" 
+          textSize="text-lg sm:text-xl"
+        />
         <h2 className="text-3xl sm:text-6xl font-semibold font-['Urbanist'] leading-[40px] sm:leading-[77px] tracking-[-1.2px] sm:tracking-[-2.56px] sm:flex-1">
           <span className="text-[#535967]">What You&nbsp;</span>
           <span className="text-[#204199]">Need to Know</span>

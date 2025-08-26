@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import TextRevealAnimation from "../TextRevealAnimation";
+import SectionLabel from "../ui/SectionLabel";
 
 export default function ContactInfo() {
   return (
@@ -7,15 +8,13 @@ export default function ContactInfo() {
       {/* Header Section */}
       <div className="flex flex-col items-start gap-6 w-full">
         {/* Section Title */}
-        <div className="flex items-center gap-3 py-2.5 w-full max-w-96">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500/10 to-white/10 rounded-l-lg px-3 py-1.5">
-            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-            <span className="text-blue-900 text-xl font-medium">
-              Contact Us
-            </span>
-          </div>
-          <div className="flex-1 h-px bg-gradient-to-r from-white/30 to-blue-500/30"></div>
-        </div>
+        <SectionLabel 
+          label="Contact Us" 
+          showLine={true} 
+          lineWidth="flex-1" 
+          textSize="text-xl" 
+          className="py-2.5 w-full max-w-96" 
+        />
 
         {/* Main Title */}
         <TextRevealAnimation
