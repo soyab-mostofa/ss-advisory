@@ -212,7 +212,6 @@ const Services = () => {
           <SectionLabel 
             label="SERVICES" 
             lineWidth="w-[191px]"
-            textSize="text-sm md:text-[20px]"
           />
           <h2 className="font-urbanist font-semibold text-[40px] leading-[48px] md:text-[64px] md:leading-[77px] tracking-[-1.6px] md:tracking-[-2.56px] text-black">
             <span className="text-[#535967]">Expertise</span>

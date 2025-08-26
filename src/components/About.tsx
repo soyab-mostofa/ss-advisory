@@ -13,7 +13,6 @@ const About = () => {
             <SectionLabel 
               label="ABOUT US" 
               showLine={false}
-              textSize="text-sm"
             />
             <div className="flex flex-col items-start w-full gap-3">
               <div className="flex flex-col items-start w-full gap-1">
@@ -99,7 +98,6 @@ const About = () => {
               <SectionLabel 
                 label="ABOUT US" 
                 showLine={false}
-                textSize="text-xl"
                 className="mr-[605px]"
               />
               <TextRevealAnimation

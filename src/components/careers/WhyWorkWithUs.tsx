@@ -111,7 +111,6 @@ const WhyWorkWithUs = () => {
           <SectionLabel 
             label="SERVICES" 
             lineWidth="w-[120px] md:w-[191px]" 
-            textSize="text-lg md:text-xl"
             className="md:py-[10px] md:w-[387px]"
           />
         </div>

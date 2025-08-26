@@ -18,20 +18,17 @@ interface ServicesListProps {
 
 const ServicesList: React.FC<ServicesListProps> = ({ services, className = '' }) => {
   return (
-    <section className={`bg-[#f8f8f8] px-4 md:px-[120px] py-16 md:py-[100px] ${className}`}>
+    <section className={`bg-[#f8f8f8] overflow-hidden px-4 md:px-[120px] py-16 md:py-[100px] ${className}`}>
       <div className="flex flex-col gap-12 md:gap-16">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-6">
           {/* Section Title */}
-          <div className="md:w-[387px]">
-            <SectionLabel 
+            <SectionLabel  
               label="SERVICES" 
               lineWidth="w-[100px] md:w-[191px]" 
-              textSize="text-xs sm:text-sm md:text-lg lg:text-xl"
-              className="md:py-[10px] md:w-[387px]"
+              
             />
-          </div>
-          
+        
           {/* Main Title */}
           <div className="flex-1">
             <h2 className="font-urbanist font-semibold text-[40px] leading-[48px] md:text-[64px] md:leading-[77px] tracking-[-1.6px] md:tracking-[-2.56px] text-black">
@@ -52,7 +49,7 @@ const ServicesList: React.FC<ServicesListProps> = ({ services, className = '' })
                     <span className="text-2xl md:text-2xl font-medium text-[#535967] md:w-[31px]">{String(index + 1).padStart(2, '0')}</span>
                     <h3 className="text-2xl md:text-[40px] md:leading-[40px] md:tracking-[-1.6px] font-bold text-[#0d1321] flex-1">{service.title}</h3>
                   </div>
-                  <p className="text-xs sm:text-sm md:text-lg lg:text-xl lg:leading-7 text-[#535967] md:w-[513px] md:h-14 flex items-center">{service.description}</p>
+                  <p className="text-sm md:text-lg lg:text-xl lg:leading-7 text-[#535967] md:w-[513px] md:h-14 flex items-center">{service.description}</p>
                 </div>
                 
                 {/* Service Content */}
@@ -64,7 +61,7 @@ const ServicesList: React.FC<ServicesListProps> = ({ services, className = '' })
                       {service.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center gap-2">
                           <Check className="w-6 h-6 text-[#204199] flex-shrink-0" />
-                          <span className="text-xs sm:text-sm md:text-lg lg:text-xl lg:leading-7 text-[#545a62] flex-1">{feature}</span>
+                          <span className="text-sm md:text-lg lg:text-xl lg:leading-7 text-[#545a62] flex-1">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -72,7 +69,7 @@ const ServicesList: React.FC<ServicesListProps> = ({ services, className = '' })
                     {/* Button */}
                     <button className="flex items-center justify-center gap-2 border border-[#204199] bg-[#eef8ff] rounded-xl px-4 py-[15px] w-full md:w-[205px] hover:bg-[#d4e4ff] transition-colors">
                       <ArrowRight className="w-5 h-5 text-[#204199]" />
-                      <span className="text-xs sm:text-sm md:text-base font-medium text-[#204199]">Learn More</span>
+                      <span className="text-sm md:text-base font-medium text-[#204199]">Learn More</span>
                       <ArrowRight className="w-5 h-5 text-[#204199]" />
                     </button>
                   </div>

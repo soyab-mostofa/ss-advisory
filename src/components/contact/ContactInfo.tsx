@@ -12,8 +12,7 @@ export default function ContactInfo() {
           label="Contact Us" 
           showLine={true} 
           lineWidth="flex-1" 
-          textSize="text-xl" 
-          className="py-2.5 w-full max-w-96" 
+          className="py-2.5 w-full max-w-96"
         />
 
         {/* Main Title */}

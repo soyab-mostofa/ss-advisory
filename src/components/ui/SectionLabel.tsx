@@ -12,7 +12,7 @@ export const SectionLabel: React.FC<SectionLabelProps> = ({
   label,
   showLine = true,
   lineWidth = 'w-[100px] md:w-[191px]',
-  textSize = 'text-xs sm:text-sm md:text-lg lg:text-xl',
+  textSize = 'text-sm md:text-lg lg:text-xl',
   className
 }) => {
   return (
