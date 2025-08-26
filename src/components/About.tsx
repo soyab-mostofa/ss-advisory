@@ -2,6 +2,7 @@ import Image from "next/image";
 import TextRevealAnimation from "./TextRevealAnimation";
 import ImageRevealAnimation from "./ImageRevealAnimation";
 import { SectionLabel } from "./ui/SectionLabel";
+import Counter from "./Counter";
 
 const About = () => {
   return (
@@ -16,7 +17,9 @@ const About = () => {
             />
             <div className="flex flex-col items-start w-full gap-3">
               <div className="flex flex-col items-start w-full gap-1">
-                <p className="text-[#204199] font-urbanist text-5xl font-bold leading-[48px] tracking-[-1.92px]">12+</p>
+                <p className="text-[#204199] font-urbanist text-5xl font-bold leading-[48px] tracking-[-1.92px]">
+                  <Counter target={12} suffix="+" className="" />
+                </p>
                 <p className="text-[#0d1321] font-urbanist text-base leading-6">Years of Experience</p>
               </div>
               <TextRevealAnimation
@@ -91,7 +94,9 @@ const About = () => {
         <div className="flex flex-col items-start w-full gap-[45px]">
           <div className="flex items-center w-full gap-[237px]">
             <div className="flex flex-col items-start gap-2">
-              <p className="text-[#204199] font-urbanist text-[100px] font-bold leading-[100px] tracking-[-4px]">12+</p>
+              <p className="text-[#204199] font-urbanist text-[100px] font-bold leading-[100px] tracking-[-4px]">
+                <Counter target={12} suffix="+" className="" />
+              </p>
               <p className="text-[#0d1321] font-urbanist text-xl leading-7">Years of Experience</p>
             </div>
             <div className="flex flex-col items-start w-full gap-6">

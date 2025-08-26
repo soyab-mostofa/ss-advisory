@@ -137,9 +137,11 @@ const Footer = () => {
             />
           </div>
           
-          <p className="text-white/80 font-urbanist text-lg leading-[25px] max-w-[280px] text-center lg:text-right">
-            Made with Love by Jamroll Studio
-          </p>
+          <div className="text-white/80 font-urbanist text-lg w-full leading-[25px] md:max-w-[280px] text-center md:text-center lg:text-right">
+            <p>
+              Made with Love by Jamroll Studio
+            </p>
+          </div>
         </div>
       </div>
     </footer>

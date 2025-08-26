@@ -37,7 +37,7 @@ const JobCard: React.FC<JobCardProps> = ({
           </h3>
           
           {/* Tags and Date */}
-          <div className="flex items-center self-stretch justify-between">
+          <div className="flex flex-col md:flex-row md:items-center self-stretch md:justify-between gap-2 md:gap-0">
             {/* Tags */}
             <div className="inline-flex items-center gap-3">
               {tags.map((tag, index) => (

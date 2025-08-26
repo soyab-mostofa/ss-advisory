@@ -113,9 +113,9 @@ const WhyWorkWithUs = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-start bg-[#f8f8f8] px-4 md:px-[120px] py-[60px] md:py-[100px] w-full md:w-[1440px] gap-8 md:gap-16">
+    <div className="flex flex-col items-start md:items-center  bg-[#f8f8f8] px-4  py-[60px] md:py-[100px] w-full  gap-8 md:gap-16">
       {/* Header */}
-      <div className="flex flex-col md:flex-row items-start md:items-center self-stretch gap-4 md:gap-6">
+      <div className="flex flex-col container mx-auto md:flex-row items-start md:items-center self-stretch gap-4 md:gap-6">
         {/* Section Title */}
         <div className="w-full md:w-[387px]">
           <SectionLabel
@@ -142,7 +142,7 @@ const WhyWorkWithUs = () => {
       </InfiniteScroll>
 
       {/* Desktop Grid */}
-      <div className="hidden md:flex flex-col items-start self-stretch -mr-px gap-8">
+      <div className="hidden md:flex flex-col items-start self-stretch -mr-px gap-8 container mx-auto">
         {/* First Row */}
         <div className="flex items-center self-stretch gap-8">
           {values.slice(0, 3).map((value, index) => (

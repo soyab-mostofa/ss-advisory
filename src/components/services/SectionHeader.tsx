@@ -2,7 +2,6 @@
 
 import React from 'react';
 import SectionLabel from '../ui/SectionLabel';
-import HTwoTextAnimation from '../HTwoTextAnimation';
 import TextRevealAnimation from '../TextRevealAnimation';
 
 interface SectionHeaderProps {
