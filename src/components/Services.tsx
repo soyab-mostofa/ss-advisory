@@ -238,16 +238,16 @@ const Services = () => {
                     </div>
                     
                     {/* Description Section */}
-                    <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-[47px]">
-                      <p className="font-urbanist text-base md:text-xl leading-6 md:leading-7 text-[#535967] md:w-[378px]">
+                    <div className="flex items-center justify-between gap-4 md:flex-row md:gap-[47px]">
+                      <p className="font-urbanist text-base md:text-xl leading-6 md:leading-7 text-[#535967] md:w-[378px] flex-grow">
                         {service.description}
                       </p>
-                      <div className={`hidden md:inline-flex items-center rounded-full border-2 transition-all duration-300 p-1.5 ${
+                      <div className={`inline-flex items-center rounded-full border-2 transition-all duration-300 p-1 md:p-1.5 ${
                         isExpanded 
                           ? 'bg-[#204199] border-[#204199]' 
                           : 'border-[#4d67ad] bg-[#eef8ff] group-hover:bg-[#204199]'
                       }`}>
-                        <svg data-arrow={service.id} width="40" height="40" viewBox="0 0 40 40" fill="none" className="transition-colors duration-300">
+                        <svg data-arrow={service.id} width="32" height="32" viewBox="0 0 40 40" fill="none" className="md:w-10 md:h-10 transition-colors duration-300">
                           <path d="M13.3333 26.6667L26.6667 13.3333M26.6667 13.3333H16.6667M26.6667 13.3333V23.3333" 
                                 stroke={isExpanded ? "#ffffff" : "#204199"} 
                                 strokeWidth="2" 
