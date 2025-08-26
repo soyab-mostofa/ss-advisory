@@ -121,7 +121,7 @@ const Footer = () => {
 
         {/* Footer Bottom Section */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-0">
-          <p className="text-white/80 font-urbanist text-lg leading-[25px] max-w-[280px]">
+          <p className="text-white/80 font-urbanist text-center md:text-left text-lg leading-[25px] max-w-[280px]">
             Copyright © 2025 SS Advisory
           </p>
           
@@ -138,7 +138,7 @@ const Footer = () => {
             />
           </div>
           
-          <p className="text-white/80 font-urbanist text-lg leading-[25px] max-w-[280px] lg:text-right">
+          <p className="text-white/80 font-urbanist text-lg leading-[25px] max-w-[280px] text-center lg:text-right">
             Made with Love by Jamroll Studio
           </p>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Quote } from 'lucide-react';
+import { SectionLabel } from '@/components/ui/SectionLabel';
 
 interface TestimonialData {
   id: number;
@@ -40,13 +41,12 @@ const CareerTestimonials: React.FC = () => {
         {/* Section Header */}
         <div className="mb-16 flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-6">
           {/* Section Label */}
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2 rounded-l-lg bg-gradient-to-r from-white/10 to-[#0d1321]/10 px-3 py-1.5 pr-15">
-              <div className="h-2 w-2 rounded-full bg-[#d4e4ff]"></div>
-              <span className="font-urbanist text-xl text-white">TESTIMONIALS</span>
-            </div>
-            <div className="h-px w-[149px] bg-gradient-to-r from-white/30 to-[#0d1321]/30"></div>
-          </div>
+          <SectionLabel 
+            label="TESTIMONIALS" 
+            variant="dark" 
+            lineWidth="w-[149px]" 
+            textSize="text-xl" 
+          />
           
           {/* Section Title */}
           <h2 className="flex-1 font-urbanist text-4xl font-semibold leading-[77px] text-white md:text-6xl">

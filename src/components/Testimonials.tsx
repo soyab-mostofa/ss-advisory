@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { SectionLabel } from '@/components/ui/SectionLabel';
 
 interface Testimonial {
   id: number;
@@ -77,13 +78,13 @@ const Testimonials = () => {
     <div className="flex flex-col items-start w-full bg-[#0d1321] px-4 py-8 gap-8 min-h-[501px] md:px-[120px] md:py-[100px] md:gap-[10px] md:min-h-[560px]">
       <div className="flex flex-col w-full gap-8 md:gap-16">
         {/* Section Header */}
-        <div className="flex items-center gap-2 md:gap-3">
-          <div className="inline-flex items-center gap-2 rounded-l-lg px-2 py-1 pr-[60px] bg-gradient-to-r from-[#ffffff1a] to-[#0d13211a] md:px-3 md:py-[6px]">
-            <div className="w-2 h-2 bg-white rounded-full md:bg-[#d4e4ff]"></div>
-            <p className="text-white font-urbanist text-sm leading-[22px] md:text-xl md:leading-7">TESTIMONIALS</p>
-          </div>
-          <div className="hidden md:block w-[149px] h-px bg-gradient-to-r from-[#ffffff4d] to-[#0d13214d]"></div>
-        </div>
+        <SectionLabel 
+          label="TESTIMONIALS" 
+          variant="dark" 
+          lineWidth="w-[149px]" 
+          textSize="text-sm md:text-xl" 
+          className="md:gap-3"
+        />
         
         {/* Testimonial Items */}
         <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:gap-[100px]">
