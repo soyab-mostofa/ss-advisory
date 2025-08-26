@@ -15,7 +15,7 @@ const ValueCard: React.FC<ValueCardProps> = ({
   className = '' 
 }) => {
   return (
-    <div className={`bg-white border border-[#d4e4ff] rounded-xl overflow-hidden max-w-[300px] md:max-w-[379px] h-40  md:h-[280px] ${className}`}>
+    <div className={`bg-white border border-[#d4e4ff] rounded-xl overflow-hidden max-w-[300px] md:max-w-[379px] h-64  md:h-[280px] ${className}`}>
       {/* Card Header with Icon and Decorative Element */}
       <div className="relative bg-[#eef8ff] p-6 flex flex-col gap-[10px]">
         <div className="flex items-center gap-5">
@@ -27,7 +27,7 @@ const ValueCard: React.FC<ValueCardProps> = ({
               width={32} 
             />
           
-          <h3 className="min-w-0 text-base sm:text-xl md:text-2xl lg:text-[30px] lg:leading-[42px] font-semibold text-[#1d1f2c] whitespace-normal break-words hyphens-auto">
+          <h3 className="min-w-0 text-base sm:text-xl  font-semibold text-[#1d1f2c] whitespace-normal break-words hyphens-auto">
             {title}
           </h3>
         </div>

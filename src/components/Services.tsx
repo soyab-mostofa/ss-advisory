@@ -5,6 +5,7 @@ import Image from 'next/image';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { SectionLabel } from './ui/SectionLabel';
+import HTwoTextAnimation from './HTwoTextAnimation';
 
 // Register the useGSAP plugin
 gsap.registerPlugin(useGSAP);
@@ -213,12 +214,7 @@ const Services = () => {
             label="SERVICES" 
             lineWidth="w-[191px]"
           />
-          <h2 className="font-urbanist font-semibold text-[40px] leading-[48px] md:text-[64px] md:leading-[77px] tracking-[-1.6px] md:tracking-[-2.56px] text-black">
-            <span className="text-[#535967]">Expertise</span>
-            <br className="md:hidden" />
-            <span className="text-[#535967] hidden md:inline">&nbsp;</span>
-            <span className="text-[#204199]">You Can Trust</span>
-          </h2>
+          <HTwoTextAnimation text="Expertise You Can Trust" highlightStart='Expertise' highlightEnd='You can trust' className='font-urbanist font-semibold text-[40px] leading-[48px] md:text-[64px] md:leading-[77px] tracking-[-1.6px] md:tracking-[-2.56px] w-full'/>
         </div>
 
         {/* Services List */}

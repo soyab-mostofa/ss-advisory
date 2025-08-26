@@ -3,6 +3,7 @@
 import React from 'react';
 import { Check, ArrowRight } from 'lucide-react';
 import SectionLabel from '../ui/SectionLabel';
+import HTwoTextAnimation from '../HTwoTextAnimation';
 
 interface Service {
   title: string;
@@ -31,10 +32,7 @@ const ServicesList: React.FC<ServicesListProps> = ({ services, className = '' })
         
           {/* Main Title */}
           <div className="flex-1">
-            <h2 className="font-urbanist font-semibold text-[40px] leading-[48px] md:text-[64px] md:leading-[77px] tracking-[-1.6px] md:tracking-[-2.56px] text-black">
-              <span className="text-[#535967]">Expertise&nbsp;</span> <br />
-              <span className="text-[#204199]">You Can Trust</span>
-            </h2>
+            <HTwoTextAnimation text="Expertise You Can Trust" className="w-[250px] md:w-full" />
           </div>
         </div>
         
@@ -46,8 +44,8 @@ const ServicesList: React.FC<ServicesListProps> = ({ services, className = '' })
                 {/* Service Header */}
                 <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-[71px]">
                   <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-[72px] md:w-[616px]">
-                    <span className="text-2xl md:text-2xl font-medium text-[#535967] md:w-[31px]">{String(index + 1).padStart(2, '0')}</span>
-                    <h3 className="text-2xl md:text-[40px] md:leading-[40px] md:tracking-[-1.6px] font-bold text-[#0d1321] flex-1">{service.title}</h3>
+                    <span className="text-xl md:text-2xl font-medium text-[#535967] md:w-[31px]">{String(index + 1).padStart(2, '0')}</span>
+                   <HTwoTextAnimation className='text-xl md:text-[40px] md:leading-[40px] md:tracking-[-1.6px] font-bold text-[#0d1321] flex-1' text={service.title}/>
                   </div>
                   <p className="text-sm md:text-lg lg:text-xl lg:leading-7 text-[#535967] md:w-[513px] md:h-14 flex items-center">{service.description}</p>
                 </div>

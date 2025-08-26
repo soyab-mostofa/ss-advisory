@@ -3,6 +3,7 @@
 import React from 'react';
 import JobCard from './JobCard';
 import SectionLabel from '../ui/SectionLabel';
+import HTwoTextAnimation from '../HTwoTextAnimation';
 
 const OpeningRoles = () => {
   const jobListings = [
@@ -36,17 +37,13 @@ const OpeningRoles = () => {
           <SectionLabel 
             label="OPPORTUNITY" 
             lineWidth="hidden md:block w-[200px]" 
-            textSize="text-lg md:text-xl"
-            className="md:py-[10px] md:w-[387px]"
+         
           />
         </div>
         
         {/* Title */}
         <div className="w-full md:w-[745px]">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl leading-tight md:leading-[77px] tracking-[-2.56px] font-semibold font-urbanist">
-            <span className="text-[#535967]">Opening&nbsp;</span>
-            <span className="text-[#204199]">Roles</span>
-          </h2>
+         <HTwoTextAnimation text="Opening Roles"  highlightStart='Opening' highlightEnd='Roles'/>
         </div>
       </div>
       

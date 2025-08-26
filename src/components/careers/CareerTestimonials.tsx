@@ -1,6 +1,7 @@
 import React from 'react';
 import { Quote } from 'lucide-react';
 import { SectionLabel } from '@/components/ui/SectionLabel';
+import HTwoTextAnimation from '../HTwoTextAnimation';
 
 interface TestimonialData {
   id: number;
@@ -44,14 +45,10 @@ const CareerTestimonials: React.FC = () => {
           <SectionLabel 
             label="TESTIMONIALS" 
             variant="dark" 
-            lineWidth="w-[149px]" 
-            textSize="text-xl" 
           />
           
           {/* Section Title */}
-          <h2 className="flex-1 font-urbanist text-4xl font-semibold leading-[77px] text-white md:text-6xl">
-            Employee Testimonial
-          </h2>
+         <HTwoTextAnimation text="Employee Testimonial" className='w-full' dark />    
         </div>
 
         {/* Testimonials Grid */}

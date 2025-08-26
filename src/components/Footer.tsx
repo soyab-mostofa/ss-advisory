@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HTwoTextAnimation from "./HTwoTextAnimation";
 
 const Footer = () => {
   return (
@@ -8,9 +9,7 @@ const Footer = () => {
         <div className="flex flex-col gap-10 lg:gap-12">
           {/* Header Section */}
           <div className="flex relative flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-0">
-            <h2 className="text-white font-urbanist text-4xl lg:text-[72px] font-semibold leading-tight lg:leading-[79px] tracking-[-1.44px] lg:tracking-[-2.88px] max-w-[719px]">
-              Let&apos;s make something great work together
-            </h2>
+            <HTwoTextAnimation dark text="Let&apos;s make something great work together" className="w-full" />
             <div className="flex-shrink-0 absolute right-0 -top-10 w-32 h-32 lg:w-[200px] lg:h-[200px] self-start lg:self-center">
               <Image
                 src="/images/megz9w7k-m7yknei.svg"
@@ -121,7 +120,7 @@ const Footer = () => {
 
         {/* Footer Bottom Section */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-0">
-          <p className="text-white/80 font-urbanist text-center md:text-left text-lg leading-[25px] max-w-[280px]">
+          <p className="text-white/80 font-urbanist text-center text-lg leading-[25px] max-w-[280px] mx-auto lg:mx-0">
             Copyright © 2025 SS Advisory
           </p>
           

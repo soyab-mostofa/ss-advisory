@@ -2,6 +2,8 @@
 
 import React from 'react';
 import SectionLabel from '../ui/SectionLabel';
+import HTwoTextAnimation from '../HTwoTextAnimation';
+import TextRevealAnimation from '../TextRevealAnimation';
 
 interface SectionHeaderProps {
   sectionLabel: string;
@@ -28,9 +30,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
       
       {/* Main Title */}
       <div className="flex-1">
-        <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-[64px] lg:leading-[77px] lg:tracking-[-2.56px] font-semibold text-[#535967]">
-          {title}
-        </h2>
+        <TextRevealAnimation highlightEnd='Core Values' className='text-xl sm:text-2xl md:text-4xl lg:text-[64px] lg:tracking-[-2.56px] font-semibold text-[#535967]' text={title}/>
       </div>
     </div>
   );
