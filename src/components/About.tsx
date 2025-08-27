@@ -11,16 +11,15 @@ const About = () => {
       <div className="flex flex-col items-start w-full bg-[#f8f8f8] px-4 py-12 gap-6 md:hidden">
         <div className="flex flex-col items-start w-full gap-7">
           <div className="flex flex-col items-start w-full gap-4">
-            <SectionLabel 
-              label="ABOUT US" 
-              showLine={false}
-            />
+            <SectionLabel label="ABOUT US" showLine={false} />
             <div className="flex flex-col items-start w-full gap-3">
               <div className="flex flex-col items-start w-full gap-1">
                 <p className="text-[#204199] font-urbanist text-5xl font-bold leading-[48px] tracking-[-1.92px]">
                   <Counter target={12} suffix="+" className="" />
                 </p>
-                <p className="text-[#0d1321] font-urbanist text-base leading-6">Years of Experience</p>
+                <p className="text-[#0d1321] font-urbanist text-base leading-6">
+                  Years of Experience
+                </p>
               </div>
               <TextRevealAnimation
                 text="Dedicated to empowering clients through strategic financial guidance and reliable, results-focused advocacy."
@@ -62,7 +61,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-center w-full gap-4 justify-between h-[70px]">
+          <div className="flex items-center w-full gap-4 justify-evenly h-[70px] md:justify-between">
             <div className="flex items-center p-0 overflow-hidden">
               <div className="w-[148px] h-[27px] overflow-hidden">
                 <Image
@@ -97,11 +96,13 @@ const About = () => {
               <p className="text-[#204199] font-urbanist text-[100px] font-bold leading-[100px] tracking-[-4px]">
                 <Counter target={12} suffix="+" className="" />
               </p>
-              <p className="text-[#0d1321] font-urbanist text-xl leading-7">Years of Experience</p>
+              <p className="text-[#0d1321] font-urbanist text-xl leading-7">
+                Years of Experience
+              </p>
             </div>
             <div className="flex flex-col items-start w-full gap-6">
-              <SectionLabel 
-                label="ABOUT US" 
+              <SectionLabel
+                label="ABOUT US"
                 showLine={false}
                 className="mr-[605px]"
               />

@@ -6,7 +6,7 @@ export default function ContactInfo() {
   return (
     <div className="flex flex-col items-start gap-12 lg:gap-20 w-full max-w-md">
       {/* Header Section */}
-      <div className="flex flex-col items-start gap-6 w-full">
+      <div className="flex flex-col items-start gap-2 md:gap-6 w-full">
         {/* Section Title */}
         <SectionLabel
           label="Contact Us"
