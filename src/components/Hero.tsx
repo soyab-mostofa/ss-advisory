@@ -14,17 +14,31 @@ const Hero = () => {
   const rotatingWordDesktopRef = useRef<HTMLSpanElement>(null);
   
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [hasAnimationStarted, setHasAnimationStarted] = useState(false);
   const rotatingWords = ['Results', 'Security', 'Safety'];
   
-  // Text rotation effect with proper synchronization
+  // One-time text rotation effect that cycles through all words once
   useEffect(() => {
-    const interval = setInterval(() => {
-      // Start the animation which will handle the word change at the right moment
-      animateWordChange();
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
+    if (hasAnimationStarted) return;
+    
+    setHasAnimationStarted(true);
+    
+    // Create a sequence that plays through all words once
+    const playSequence = async () => {
+      // Start with first transition after 2 seconds
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      // Animate through remaining words (Results -> Security -> Safety)
+      for (let i = 1; i < rotatingWords.length; i++) {
+        animateWordChange();
+        if (i < rotatingWords.length - 1) { // Don't wait after the last word
+          await new Promise(resolve => setTimeout(resolve, 4000));
+        }
+      }
+    };
+    
+    playSequence();
+  }, [hasAnimationStarted]);
   
   const animateWordChange = useCallback(() => {
     const mobileElement = rotatingWordMobileRef.current;
@@ -56,7 +70,11 @@ const Hero = () => {
 
     // Word change happens exactly when out animation completes
     masterTimeline.call(() => {
-      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % rotatingWords.length);
+      setCurrentWordIndex((prevIndex) => {
+        const nextIndex = prevIndex + 1;
+        // Increment to next word in sequence, no cycling back to start
+        return nextIndex < rotatingWords.length ? nextIndex : rotatingWords.length - 1;
+      });
     }, [], 0.5); // At 0.5s when out animation is complete
 
     // "In" animation phase - slide up from below with smooth easing

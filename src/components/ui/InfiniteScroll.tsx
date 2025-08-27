@@ -9,6 +9,7 @@ interface InfiniteScrollProps {
   direction?: 'left' | 'right';
   className?: string;
   pauseOnHover?: boolean;
+  disableInfinite?: boolean; // Option to disable infinite looping
 }
 
 const InfiniteScroll: React.FC<InfiniteScrollProps> = ({
@@ -17,6 +18,7 @@ const InfiniteScroll: React.FC<InfiniteScrollProps> = ({
   direction = 'left',
   className = '',
   pauseOnHover = false,
+  disableInfinite = false,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -36,8 +38,8 @@ const InfiniteScroll: React.FC<InfiniteScrollProps> = ({
     // Get content width for seamless looping
     const contentWidth = content.scrollWidth / 2; // Divide by 2 because we duplicate content
     
-    // Set up GSAP timeline for infinite scroll
-    timelineRef.current = gsap.timeline({ repeat: -1 });
+    // Set up GSAP timeline for scroll (infinite or one-time)
+    timelineRef.current = gsap.timeline({ repeat: disableInfinite ? 0 : -1 });
     
     const duration = contentWidth / speed;
     const xMovement = direction === 'left' ? -contentWidth : contentWidth;
@@ -50,7 +52,7 @@ const InfiniteScroll: React.FC<InfiniteScrollProps> = ({
 
     // Reset position for seamless loop
     timelineRef.current.set(content, { x: 0 });
-  }, [speed, direction]);
+  }, [speed, direction, disableInfinite]);
 
   const handleResize = useCallback(() => {
     // Debounce resize handling

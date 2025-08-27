@@ -87,6 +87,11 @@ const TextRevealAnimation: React.FC<TextRevealAnimationProps> = ({
     const spans = containerRef.current.querySelectorAll(".word-span");
     const container = containerRef.current;
 
+    // Check if animation has already been triggered
+    if (container.dataset.animationTriggered === 'true') {
+      return;
+    }
+
     // Get highlight spans
     const startHighlightSpans = highlightStart
       ? Array.from(spans).filter((span, index) => {
@@ -116,7 +121,13 @@ const TextRevealAnimation: React.FC<TextRevealAnimationProps> = ({
     });
 
     // Create master timeline (paused initially)
-    const masterTl = gsap.timeline({ paused: true });
+    const masterTl = gsap.timeline({ 
+      paused: true,
+      onComplete: () => {
+        // Mark animation as completed to prevent re-triggering
+        container.dataset.animationCompleted = 'true';
+      }
+    });
 
     // Phase 1: Text reveal animation
     masterTl.to(spans, {
@@ -166,7 +177,9 @@ const TextRevealAnimation: React.FC<TextRevealAnimationProps> = ({
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && container.dataset.animationTriggered !== 'true') {
+            // Mark as triggered immediately to prevent multiple triggers
+            container.dataset.animationTriggered = 'true';
             masterTl.play();
             observer.unobserve(entry.target); // Only animate once
           }

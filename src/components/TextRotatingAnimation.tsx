@@ -15,23 +15,37 @@ export const TextRotatingAnimation: React.FC<TextRotatingAnimationProps> = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [hasCompleted, setHasCompleted] = useState(false);
 
   useEffect(() => {
-    if (texts.length === 0) return;
+    if (texts.length === 0 || hasCompleted) return;
 
     const intervalDuration = duration / texts.length;
+    let animationCount = 0;
     
     const interval = setInterval(() => {
       setIsAnimating(true);
       
       setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
+        setCurrentIndex((prevIndex) => {
+          const nextIndex = prevIndex + 1;
+          animationCount++;
+          
+          // Stop after cycling through all texts once
+          if (animationCount >= texts.length - 1) {
+            setHasCompleted(true);
+            clearInterval(interval);
+            return texts.length - 1; // Stay on last text
+          }
+          
+          return nextIndex;
+        });
         setIsAnimating(false);
       }, 300); // Animation transition time
     }, intervalDuration);
 
     return () => clearInterval(interval);
-  }, [texts.length, duration]);
+  }, [texts.length, duration, hasCompleted]);
 
   if (texts.length === 0) return null;
 

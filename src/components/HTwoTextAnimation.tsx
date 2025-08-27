@@ -100,6 +100,11 @@ const HTwoTextAnimation: React.FC<HTwoTextAnimationProps> = ({
     const spans = containerRef.current.querySelectorAll('.h2-word-span');
     const container = containerRef.current;
     
+    // Check if animation has already been triggered
+    if (container.dataset.animationTriggered === 'true') {
+      return;
+    }
+    
     // Get highlight spans
     const startHighlightSpans = highlightStart ? 
       Array.from(spans).filter((span, index) => {
@@ -132,7 +137,13 @@ const HTwoTextAnimation: React.FC<HTwoTextAnimationProps> = ({
     });
 
     // Create master timeline (paused initially)
-    const masterTl = gsap.timeline({ paused: true });
+    const masterTl = gsap.timeline({ 
+      paused: true,
+      onComplete: () => {
+        // Mark animation as completed to prevent re-triggering
+        container.dataset.animationCompleted = 'true';
+      }
+    });
     
     // Phase 1: Text reveal animation from above with cheese up easing
     masterTl.to(spans, {
@@ -180,7 +191,11 @@ const HTwoTextAnimation: React.FC<HTwoTextAnimationProps> = ({
       start: "top 70%", // Trigger when 30% of element is visible (100% - 30% = 70%)
       end: "bottom 20%",
       onEnter: () => {
-        masterTl.play();
+        // Double-check to prevent multiple triggers
+        if (container.dataset.animationTriggered !== 'true') {
+          container.dataset.animationTriggered = 'true';
+          masterTl.play();
+        }
       },
       once: true // Only animate once
     });

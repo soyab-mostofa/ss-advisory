@@ -1,19 +1,26 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import ImageRevealAnimation from './ImageRevealAnimation';
-import SectionLabel from './ui/SectionLabel';
+import React, { useState } from "react";
+import ImageRevealAnimation from "./ImageRevealAnimation";
+import SectionLabel from "./ui/SectionLabel";
+import TextRevealAnimation from "./TextRevealAnimation";
+import HTwoTextAnimation from "./HTwoTextAnimation";
 
 // Simple chevron down SVG component
 const ChevronDown = ({ className }: { className?: string }) => (
-  <svg 
-    className={className} 
-    fill="none" 
-    stroke="currentColor" 
-    viewBox="0 0 24 24" 
+  <svg
+    className={className}
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M19 9l-7 7-7-7"
+    />
   </svg>
 );
 
@@ -27,28 +34,33 @@ const faqData: FAQItem[] = [
   {
     id: 1,
     question: "What types of financial services do you offer?",
-    answer: "We offer comprehensive financial services including investment management, financial planning, retirement planning, tax optimization, and wealth preservation strategies tailored to your specific needs."
+    answer:
+      "We offer comprehensive financial services including investment management, financial planning, retirement planning, tax optimization, and wealth preservation strategies tailored to your specific needs.",
   },
   {
     id: 2,
     question: "How does your advocacy service work?",
-    answer: "Our advocacy team supports clients in legal, regulatory, and business matters to protect their interests and resolve challenges."
+    answer:
+      "Our advocacy team supports clients in legal, regulatory, and business matters to protect their interests and resolve challenges.",
   },
   {
     id: 3,
     question: "Who can benefit from your services?",
-    answer: "Our services are designed for individuals, families, and businesses seeking professional financial guidance, from young professionals starting their wealth journey to established entrepreneurs and retirees."
+    answer:
+      "Our services are designed for individuals, families, and businesses seeking professional financial guidance, from young professionals starting their wealth journey to established entrepreneurs and retirees.",
   },
   {
     id: 4,
     question: "How do you customize your financial solutions?",
-    answer: "We begin with a comprehensive assessment of your financial situation, goals, and risk tolerance. Then we develop personalized strategies that align with your unique circumstances and objectives."
+    answer:
+      "We begin with a comprehensive assessment of your financial situation, goals, and risk tolerance. Then we develop personalized strategies that align with your unique circumstances and objectives.",
   },
   {
     id: 5,
     question: "What makes SS Advisory different from other firms?",
-    answer: "Our commitment to personalized service, transparent communication, and innovative financial strategies sets us apart. We prioritize long-term relationships and deliver results that exceed expectations."
-  }
+    answer:
+      "Our commitment to personalized service, transparent communication, and innovative financial strategies sets us apart. We prioritize long-term relationships and deliver results that exceed expectations.",
+  },
 ];
 
 const FAQ: React.FC = () => {
@@ -62,15 +74,18 @@ const FAQ: React.FC = () => {
     <section className="bg-white py-6 px-4 sm:py-25 sm:px-30 max-w-[1440px] mx-auto">
       {/* Header */}
       <div className="flex flex-col gap-4 mb-8 sm:flex-row sm:items-center sm:gap-6 sm:mb-16">
-        <SectionLabel 
-          label="FAQ" 
-          lineWidth="w-[150px] sm:w-[250px]" 
+        <SectionLabel
+          label="FAQ"
+          lineWidth="w-[150px] sm:w-[250px]"
           textSize="text-lg sm:text-xl"
         />
-        <h2 className="text-3xl sm:text-6xl font-semibold font-['Urbanist'] leading-[40px] sm:leading-[77px] tracking-[-1.2px] sm:tracking-[-2.56px] sm:flex-1">
-          <span className="text-[#535967]">What You&nbsp;</span>
-          <span className="text-[#204199]">Need to Know</span>
-        </h2>
+
+        <HTwoTextAnimation
+          text="What You Need To Know"
+          highlightStart="What You"
+          highlightEnd="Need To Know"
+          className="text-[#204199] font-urbanist text-2xl font-medium leading-[29px] tracking-[-0.96px] w-full"
+        />
       </div>
 
       {/* Content */}
@@ -89,14 +104,14 @@ const FAQ: React.FC = () => {
         <div className="flex-1 space-y-4 sm:space-y-6">
           {faqData.map((item) => {
             const isExpanded = expandedItem === item.id;
-            
+
             return (
-              <div 
+              <div
                 key={item.id}
                 className="border border-[#dde2eb] rounded-xl bg-[#f8f8f8] overflow-hidden transition-all duration-300 ease-in-out"
               >
                 {/* Question Header - Always Visible */}
-                <button 
+                <button
                   onClick={() => toggleItem(item.id)}
                   className="w-full flex items-center justify-between p-4 sm:p-6 text-left hover:bg-gray-50 transition-colors duration-200"
                   aria-expanded={isExpanded}
@@ -105,18 +120,18 @@ const FAQ: React.FC = () => {
                     {item.question}
                   </p>
                   <div className="flex-shrink-0 w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center">
-                    <ChevronDown 
+                    <ChevronDown
                       className={`w-6 h-6 sm:w-7 sm:h-7 text-[#1d1f2c] transition-transform duration-300 ease-in-out ${
-                        isExpanded ? 'rotate-180' : 'rotate-0'
-                      }`} 
+                        isExpanded ? "rotate-180" : "rotate-0"
+                      }`}
                     />
                   </div>
                 </button>
-                
+
                 {/* Answer Content - Expandable */}
-                <div 
+                <div
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    isExpanded ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
                   <div className="px-4 pb-4 sm:px-6 sm:pb-6">
