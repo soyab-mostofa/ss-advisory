@@ -46,7 +46,9 @@ export default function ContactForm() {
           highlightStart="Send Us A"
           highlightEnd="Message"
           text="Send Us A Message"
+          className="md:w-full"
           fontClass="text-2xl md:text-3xl font-semibold text-gray-900 leading-tight"
+          wrapperClass="h-0 md:h-[40px]"
         />
 
         {/* Form Fields */}

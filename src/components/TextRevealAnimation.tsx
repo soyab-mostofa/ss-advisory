@@ -10,6 +10,7 @@ interface TextRevealAnimationProps {
   highlightStart?: string;
   highlightEnd?: string;
   fontClass?: HTMLParagraphElement["className"];
+  wrapperClass?: string
 }
 
 const TextRevealAnimation: React.FC<TextRevealAnimationProps> = ({
@@ -18,6 +19,7 @@ const TextRevealAnimation: React.FC<TextRevealAnimationProps> = ({
   highlightStart,
   highlightEnd,
   fontClass,
+  wrapperClass
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [wrappedLines, setWrappedLines] = useState<string[][]>([]);
@@ -37,7 +39,7 @@ const TextRevealAnimation: React.FC<TextRevealAnimationProps> = ({
       tempSpan.style.position = "absolute";
       tempSpan.style.fontSize = window.innerWidth >= 768 ? "48px" : "24px";
       tempSpan.style.fontWeight = "300";
-      tempSpan.style.lineHeight = window.innerWidth >= 768 ? "58px" : "29px";
+      tempSpan.style.lineHeight = window.innerWidth >= 768 ? "70px" : "35px";
       document.body.appendChild(tempSpan);
 
       const containerWidth = container.offsetWidth;
@@ -103,7 +105,7 @@ const TextRevealAnimation: React.FC<TextRevealAnimationProps> = ({
 
     // Set initial state for all spans
     gsap.set(spans, {
-      y: 100,
+      y: 80,
       skewY: 7,
     });
 
@@ -195,7 +197,7 @@ const TextRevealAnimation: React.FC<TextRevealAnimationProps> = ({
       {wrappedLines.map((line, lineIndex) => (
         <div
           key={lineIndex}
-          className="line overflow-hidden h-[29px] md:h-[58px]"
+          className={cn("line overflow-hidden h-[35px] md:h-[70px]", wrapperClass)}
         >
           {line.map((word, wordIndex) => {
             const colorClass = getInitialWordColor();
@@ -205,7 +207,7 @@ const TextRevealAnimation: React.FC<TextRevealAnimationProps> = ({
                 className={cn(
                   "word-span",
                   colorClass,
-                  "inline-block text-[24px] md:text-[48px] leading-[29px] md:leading-[58px] font-medium  mr-[0.25em]",
+                  "inline-block text-[24px] md:text-[48px] leading-[35px] md:leading-[70px] font-medium  mr-[0.25em]",
                   fontClass
                 )}
               >
