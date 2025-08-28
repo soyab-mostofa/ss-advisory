@@ -108,7 +108,7 @@ const About = () => {
               />
               <TextRevealAnimation
                 text="Specialized in comprehensive accounting, tax planning, and compliance services that drive business growth and financial stability."
-                className="text-black font-urbanist text-5xl font-medium leading-[58px] tracking-[-1.92px] w-[789px]"
+                className="text-black font-urbanist text-5xl font-medium leading-[58px] tracking-[-1.92px] w-[789px] md:w-full"
                 highlightStart="Specialized in"
                 highlightEnd="financial stability."
               />

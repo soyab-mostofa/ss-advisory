@@ -513,7 +513,7 @@ const Hero = () => {
               </p>
               <p
                 data-animate="description-desktop"
-                className="text-[#535967] font-urbanist text-base leading-6 w-[511px]"
+                className="text-[#535967] font-urbanist text-base leading-6 w-[545px]"
               >
                 Navigate complex accounting regulations with confidence. We
                 streamline your accounting processes, optimize tax strategies,

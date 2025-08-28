@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { SectionLabel } from '@/components/ui/SectionLabel';
 
 interface Testimonial {
@@ -60,15 +60,52 @@ const testimonials: Testimonial[] = [
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const nextTestimonial = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    setTimeout(() => setIsAnimating(false), 500);
   };
 
-
-
   const goToTestimonial = (index: number) => {
+    if (isAnimating || index === currentIndex) return;
+    setIsAnimating(true);
     setCurrentIndex(index);
+    setTimeout(() => setIsAnimating(false), 500);
+    // Reset auto-rotation timer
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    startAutoRotation();
+  };
+
+  const startAutoRotation = () => {
+    intervalRef.current = setInterval(() => {
+      nextTestimonial();
+    }, 3000);
+  };
+
+  useEffect(() => {
+    startAutoRotation();
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, []);
+
+  // Pause auto-rotation on hover
+  const handleMouseEnter = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    startAutoRotation();
   };
 
   const currentTestimonial = testimonials[currentIndex];
@@ -91,21 +128,31 @@ const Testimonials = () => {
           {/* Mobile Layout */}
           <div className="flex flex-col items-start w-full gap-8 md:hidden">
             {/* Mobile Testimonial Card */}
-            <div className="flex relative flex-col items-start w-full gap-8">
-              <Image
-                src={currentTestimonial.avatar}
-                alt={`${currentTestimonial.name} avatar`}
-                width={80}
-                height={80}
-                className="rounded-full flex-shrink-0"
-              />
+            <div className="flex relative flex-col items-start w-full gap-8 transition-all duration-500 ease-in-out"
+                 onMouseEnter={handleMouseEnter}
+                 onMouseLeave={handleMouseLeave}>
+              <div className="relative overflow-hidden rounded-full w-20 h-20">
+                <Image
+                  src={currentTestimonial.avatar}
+                  alt={`${currentTestimonial.name} avatar`}
+                  width={80}
+                  height={80}
+                  className={`rounded-full flex-shrink-0 transition-all duration-500 ease-in-out transform ${
+                    isAnimating ? 'scale-95 opacity-80' : 'scale-100 opacity-100'
+                  }`}
+                />
+              </div>
               <div className="flex flex-col w-full gap-5">
-                <p className="text-white font-urbanist text-lg leading-[25px] w-full">
+                <p className={`text-white font-urbanist text-lg leading-[25px] w-full transition-all duration-500 ease-in-out transform ${
+                  isAnimating ? 'translate-y-2 opacity-80' : 'translate-y-0 opacity-100'
+                }`}>
                   {currentTestimonial.text}
                 </p>
                 <div className="w-full h-px bg-[#ffffff1a]"></div>
                 <div className="flex items-end justify-between w-full">
-                  <div className="flex flex-col gap-1">
+                  <div className={`flex flex-col gap-1 transition-all duration-500 ease-in-out transform ${
+                    isAnimating ? 'translate-x-2 opacity-80' : 'translate-x-0 opacity-100'
+                  }`}>
                     <p className="text-white font-urbanist text-lg leading-[25px] font-semibold">{currentTestimonial.name}</p>
                     <p className="text-white font-urbanist text-sm leading-[22px]">{currentTestimonial.role}</p>
                   </div>
@@ -114,7 +161,9 @@ const Testimonials = () => {
                     alt={`${currentTestimonial.company} logo`} 
                     width={100} 
                     height={30} 
-                    className="flex-shrink-0"
+                    className={`flex-shrink-0 transition-all duration-500 ease-in-out transform ${
+                      isAnimating ? 'scale-95 opacity-80' : 'scale-100 opacity-100'
+                    }`}
                   />
                 </div>
               </div>
@@ -135,9 +184,9 @@ const Testimonials = () => {
                 <button
                   key={index}
                   onClick={() => goToTestimonial(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ease-in-out transform hover:scale-125 ${
                     index === currentIndex 
-                      ? 'bg-[#dde2eb]' 
+                      ? 'bg-[#dde2eb] scale-110' 
                       : index === (currentIndex + 1) % testimonials.length
                       ? 'bg-[#b5bac5]'
                       : 'bg-[#535967]'
@@ -148,23 +197,33 @@ const Testimonials = () => {
           </div>
 
           {/* Desktop Layout */}
-          <div className="hidden md:flex md:items-center md:gap-[100px] md:w-full">
+          <div className="hidden md:flex md:items-center md:gap-[100px] md:w-full"
+               onMouseEnter={handleMouseEnter}
+               onMouseLeave={handleMouseLeave}>
             {/* Main Testimonial */}
-            <div className="flex relative items-center gap-[60px] w-[800px]">
-              <Image
-                src={currentTestimonial.avatar}
-                alt={`${currentTestimonial.name} avatar`}
-                width={173}
-                height={173}
-                className="rounded-full flex-shrink-0"
-              />
+            <div className="flex relative items-center gap-[60px] w-[800px] transition-all duration-500 ease-in-out">
+              <div className="relative overflow-hidden rounded-full w-[173px] h-[173px]">
+                <Image
+                  src={currentTestimonial.avatar}
+                  alt={`${currentTestimonial.name} avatar`}
+                  width={173}
+                  height={173}
+                  className={`rounded-full flex-shrink-0 transition-all duration-500 ease-in-out transform ${
+                    isAnimating ? 'scale-95 opacity-80' : 'scale-100 opacity-100'
+                  }`}
+                />
+              </div>
               <div className="flex flex-col flex-grow gap-6">
-                <p className="text-white font-urbanist text-[32px] leading-[38px] w-[567px]">
+                <p className={`text-white font-urbanist text-[32px] leading-[38px] w-[567px] transition-all duration-500 ease-in-out transform ${
+                  isAnimating ? 'translate-y-2 opacity-80' : 'translate-y-0 opacity-100'
+                }`}>
                   {currentTestimonial.text}
                 </p>
                 <div className="w-full h-px bg-[#ffffff1a]"></div>
                 <div className="flex items-end justify-between w-full">
-                  <div className="flex flex-col gap-1">
+                  <div className={`flex flex-col gap-1 transition-all duration-500 ease-in-out transform ${
+                    isAnimating ? 'translate-x-2 opacity-80' : 'translate-x-0 opacity-100'
+                  }`}>
                     <p className="text-white font-urbanist text-xl leading-7 font-semibold">{currentTestimonial.name}</p>
                     <p className="text-white font-urbanist text-base leading-6">{currentTestimonial.role}</p>
                   </div>
@@ -173,7 +232,9 @@ const Testimonials = () => {
                     alt={`${currentTestimonial.company} logo`} 
                     width={133} 
                     height={40} 
-                    className="flex-shrink-0"
+                    className={`flex-shrink-0 transition-all duration-500 ease-in-out transform ${
+                      isAnimating ? 'scale-95 opacity-80' : 'scale-100 opacity-100'
+                    }`}
                   />
                 </div>
               </div>
@@ -191,7 +252,10 @@ const Testimonials = () => {
             {/* Navigation Arrow */}
             <button 
               onClick={nextTestimonial}
-              className="inline-flex items-center justify-center w-24 h-24 bg-[#ffffff1a] rounded-full p-[18px] hover:bg-[#ffffff2a] transition-colors"
+              disabled={isAnimating}
+              className={`inline-flex items-center justify-center w-24 h-24 bg-[#ffffff1a] rounded-full p-[18px] hover:bg-[#ffffff2a] transition-all duration-300 ease-in-out transform hover:scale-105 ${
+                isAnimating ? 'opacity-50 cursor-not-allowed' : 'opacity-100'
+              }`}
             >
               <Image 
                 src="/images/megyde84-9vgw2g8.svg" 
@@ -202,14 +266,18 @@ const Testimonials = () => {
             </button>
             
             {/* Next Testimonial Preview */}
-            <div className="relative">
-              <Image
-                src={nextTestimonialData.avatar}
-                alt={`${nextTestimonialData.name} avatar`}
-                width={173}
-                height={173}
-                className="rounded-full flex-shrink-0"
-              />
+            <div className="relative transition-all duration-500 ease-in-out transform hover:scale-105">
+              <div className="relative overflow-hidden rounded-full w-[173px] h-[173px]">
+                <Image
+                  src={nextTestimonialData.avatar}
+                  alt={`${nextTestimonialData.name} avatar`}
+                  width={173}
+                  height={173}
+                  className={`rounded-full flex-shrink-0 transition-all duration-500 ease-in-out transform ${
+                    isAnimating ? 'scale-110 opacity-90' : 'scale-100 opacity-70'
+                  }`}
+                />
+              </div>
               <div className="absolute bottom-[17px] left-[63px] inline-flex items-center justify-center w-12 h-12 bg-[#204199] rounded-full p-3">
                 <Image 
                   src={nextTestimonialData.quoteIcon} 
