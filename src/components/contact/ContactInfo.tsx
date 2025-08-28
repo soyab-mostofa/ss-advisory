@@ -17,10 +17,10 @@ export default function ContactInfo() {
 
         {/* Main Title */}
         <TextRevealAnimation
-          text="Get in touch with our expert team for personalized financial solutions."
+          text="Get in touch with our expert team for personalized accounting solutions."
           className="text-3xl sm:text-4xl lg:text-5xl font-medium  w-full max-w-md"
           highlightStart="Get in touch"
-          highlightEnd="financial solutions."
+          highlightEnd="accounting solutions."
         />
       </div>
 

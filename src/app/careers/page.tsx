@@ -1,26 +1,29 @@
-import type { Metadata } from 'next';
-import React from "react";
+import type { Metadata } from "next";
 import CareerHero from "@/components/careers/CareerHero";
 import WhyWorkWithUs from "@/components/careers/WhyWorkWithUs";
 import OpeningRoles from "@/components/careers/OpeningRoles";
 import CareerTestimonials from "@/components/careers/CareerTestimonials";
 
 export const metadata: Metadata = {
-  title: 'Careers - SS Advisory | Join Our Financial Advisory Team',
-  description: 'Explore career opportunities at SS Advisory. Join our team of financial professionals and help clients achieve their financial goals. View open positions and apply today.',
-  keywords: 'financial advisor jobs, careers SS Advisory, financial planning careers, investment advisor positions, finance jobs',
+  title: "Careers - SS Advisory | Join Our Accounting & Tax Team",
+  description:
+    "Explore career opportunities at SS Advisory. Join our team of accounting and tax professionals and help businesses achieve financial success. View open positions and apply today.",
+  keywords:
+    "accounting jobs, tax professional careers, bookkeeper positions, CPA jobs, accounting firm careers, tax preparation jobs, compliance specialist positions",
 
   openGraph: {
-    title: 'Careers - SS Advisory | Join Our Financial Advisory Team',
-    description: 'Explore career opportunities at SS Advisory. Join our team of financial professionals and help clients achieve their financial goals.',
-    type: 'website',
+    title: "Careers - SS Advisory | Join Our Accounting & Tax Team",
+    description:
+      "Explore career opportunities at SS Advisory. Join our team of accounting and tax professionals and help businesses achieve financial success.",
+    type: "website",
   },
 
   twitter: {
-    card: 'summary_large_image',
-    title: 'Careers - SS Advisory | Join Our Financial Advisory Team',
-    description: 'Explore career opportunities at SS Advisory. Join our team of financial professionals and help clients achieve their financial goals.',
-  }
+    card: "summary_large_image",
+    title: "Careers - SS Advisory | Join Our Accounting & Tax Team",
+    description:
+      "Explore career opportunities at SS Advisory. Join our team of accounting and tax professionals and help businesses achieve financial success.",
+  },
 };
 
 const CareersPage = () => {

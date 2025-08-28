@@ -28,21 +28,27 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "SS Advisory - Expert Financial Guidance & Strategic Advocacy",
-  description: "Professional financial advisory services providing strategic guidance, investment planning, and advocacy for your financial future. Expert consultation and personalized solutions.",
-  keywords: "financial advisory, investment planning, strategic guidance, financial consultation, wealth management",
+  title: "SS Advisory - Expert Accounting & Tax Solutions for Business Success",
+  description:
+    "Professional accounting, tax planning, and compliance services providing comprehensive financial solutions for businesses. Expert CPA consultation and personalized accounting strategies.",
+  keywords:
+    "accounting services, tax planning, CPA firm, bookkeeping, financial reporting, tax preparation, compliance, business advisory, payroll processing",
   authors: [{ name: "SS Advisory" }],
   robots: "index, follow",
   openGraph: {
-    title: "SS Advisory - Expert Financial Guidance & Strategic Advocacy",
-    description: "Professional financial advisory services providing strategic guidance, investment planning, and advocacy for your financial future.",
+    title:
+      "SS Advisory - Expert Accounting & Tax Solutions for Business Success",
+    description:
+      "Professional accounting, tax planning, and compliance services providing comprehensive financial solutions for businesses and individuals.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SS Advisory - Expert Financial Guidance & Strategic Advocacy",
-    description: "Professional financial advisory services providing strategic guidance, investment planning, and advocacy for your financial future.",
+    title:
+      "SS Advisory - Expert Accounting & Tax Solutions for Business Success",
+    description:
+      "Professional accounting, tax planning, and compliance services providing comprehensive financial solutions for businesses and individuals.",
   },
 };
 
@@ -53,33 +59,36 @@ export default function RootLayout({
 }>) {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "FinancialService",
-    "name": "SS Advisory",
-    "description": "Professional financial advisory services providing strategic guidance, investment planning, and advocacy for your financial future.",
-    "url": "https://ss-advisory.com",
-    "logo": "https://ss-advisory.com/logo.png",
-    "contactPoint": {
+    "@type": "AccountingService",
+    name: "SS Advisory",
+    description:
+      "Professional accounting, tax planning, and compliance services providing comprehensive financial solutions for businesses and individuals.",
+    url: "https://ss-advisory.com",
+    logo: "https://ss-advisory.com/logo.png",
+    contactPoint: {
       "@type": "ContactPoint",
-      "telephone": "+1-XXX-XXX-XXXX",
-      "contactType": "customer service",
-      "availableLanguage": "English"
+      telephone: "+1-XXX-XXX-XXXX",
+      contactType: "customer service",
+      availableLanguage: "English",
     },
-    "address": {
+    address: {
       "@type": "PostalAddress",
-      "addressCountry": "US"
+      addressCountry: "US",
     },
-    "sameAs": [
+    sameAs: [
       "https://linkedin.com/company/ss-advisory",
-      "https://twitter.com/ssadvisory"
+      "https://twitter.com/ssadvisory",
     ],
-    "serviceType": [
-      "Investment Management",
-      "Financial Planning",
-      "Retirement Planning",
-      "Tax Strategy",
-      "Estate Planning",
-      "Risk Management"
-    ]
+    serviceType: [
+      "Accounting Services",
+      "Tax Planning",
+      "Bookkeeping",
+      "Financial Reporting",
+      "Tax Preparation",
+      "Compliance Services",
+      "Payroll Processing",
+      "Business Advisory",
+    ],
   };
 
   return (

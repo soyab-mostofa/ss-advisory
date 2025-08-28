@@ -8,18 +8,18 @@ import HTwoTextAnimation from '../HTwoTextAnimation';
 const OpeningRoles = () => {
   const jobListings = [
     {
-      title: 'UI/UX Designer',
-      tags: ['Onsite', 'Fulltime', 'Dhaka'],
-      deadline: '18 Aug 2025',
-      description: "We're looking for a creative and user-focused UI/UX Designer to help craft intuitive, elegant, and engaging digital experiences.",
-      salary: '60,000'
+      title: 'Senior Tax Accountant',
+      tags: ['Onsite', 'Fulltime', 'Singapore'],
+      deadline: '30 Dec 2024',
+      description: "Join our tax team to provide comprehensive tax planning, compliance, and advisory services to our diverse client portfolio.",
+      salary: '75,000'
     },
     {
-      title: 'UI/UX Designer',
-      tags: ['Onsite', 'Fulltime', 'Dhaka'],
-      deadline: '18 Aug 2025',
-      description: "We're looking for a creative and user-focused UI/UX Designer to help craft intuitive, elegant, and engaging digital experiences.",
-      salary: '60,000'
+      title: 'Audit Associate',
+      tags: ['Hybrid', 'Fulltime', 'Singapore'],
+      deadline: '15 Jan 2025',
+      description: "Support audit engagements and compliance reviews while developing expertise in financial reporting and regulatory requirements.",
+      salary: '55,000'
     }
   ];
 

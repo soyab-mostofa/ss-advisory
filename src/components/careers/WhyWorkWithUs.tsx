@@ -10,34 +10,34 @@ import HTwoTextAnimation from "../HTwoTextAnimation";
 const WhyWorkWithUs = () => {
   const values = [
     {
-      title: "Lorem ipsum",
+      title: "Professional Growth",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Aenean habitant neque tincidunt viverra.",
+        "Advance your career with comprehensive training programs, professional certifications support, and mentorship opportunities.",
     },
     {
-      title: "Lorem ipsum",
+      title: "Work-Life Balance",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Aenean habitant neque tincidunt viverra.",
+        "Enjoy flexible working arrangements, competitive leave policies, and a supportive environment that values your personal time.",
     },
     {
-      title: "Lorem ipsum",
+      title: "Collaborative Culture",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Aenean habitant neque tincidunt viverra.",
+        "Work alongside experienced professionals in a team-oriented environment that encourages knowledge sharing and innovation.",
     },
     {
-      title: "Lorem ipsum",
+      title: "Competitive Benefits",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Aenean habitant neque tincidunt viverra.",
+        "Receive comprehensive health coverage, retirement planning assistance, and performance-based incentives.",
     },
     {
-      title: "Lorem ipsum",
+      title: "Diverse Clientele",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Aenean habitant neque tincidunt viverra.",
+        "Gain valuable experience working with clients across various industries, from startups to established enterprises.",
     },
     {
-      title: "Lorem ipsum",
+      title: "Technology Forward",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Aenean habitant neque tincidunt viverra.",
+        "Utilize cutting-edge accounting software and digital tools to deliver efficient, accurate financial solutions.",
     },
   ];
 
@@ -119,7 +119,7 @@ const WhyWorkWithUs = () => {
         {/* Section Title */}
         <div className="w-full md:w-[387px]">
           <SectionLabel
-            label="SERVICES"
+            label="BENEFITS"
             lineWidth="w-[120px] md:w-[191px]"
             className="md:py-[10px] md:w-[387px]"
           />

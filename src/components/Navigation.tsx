@@ -63,7 +63,6 @@ const Navigation = () => {
       {/* Mobile Navigation */}
       <div className="flex md:hidden items-center justify-between w-full px-4 py-4 bg-white">
         <Link href="/">
-   
           <Image
             src="/images/megv1vhw-25cglug.svg"
             alt="SS Advisory Logo"

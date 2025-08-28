@@ -19,9 +19,9 @@ const testimonials: Testimonial[] = [
   {
     id: 1,
     name: "Dora Dybala",
-    role: "CEO & Founder of Company",
+    role: "CEO & Founder",
     company: "SHIPIT",
-    text: "Professional, reliable, and attentive—SS Advisory helped me achieve my financial goals while advocating for my best interests.",
+    text: "SS Advisory transformed our accounting processes and tax strategy. Their expertise in compliance saved us from costly mistakes and streamlined our operations.",
     avatar: "/images/megyde84-rrcf6eb.png",
     logo: "/images/megyde84-pff617o.svg",
     quoteIcon: "/images/megyde84-chqoh82.svg"
@@ -29,9 +29,9 @@ const testimonials: Testimonial[] = [
   {
     id: 2,
     name: "Sarah Johnson",
-    role: "Investment Director",
+    role: "Business Owner",
     company: "FINTECH",
-    text: "Exceptional service and strategic insights that transformed our portfolio performance. SS Advisory's expertise is unmatched in the industry.",
+    text: "Their proactive tax planning and meticulous bookkeeping services have been invaluable to our business growth. SS Advisory truly understands our industry.",
     avatar: "/images/megyde84-7jvgzsr.png",
     logo: "/images/megyde84-oqvono2.svg",
     quoteIcon: "/images/megyde84-lwbnl5n.svg"
@@ -41,7 +41,7 @@ const testimonials: Testimonial[] = [
     name: "Michael Chen",
     role: "Startup Founder",
     company: "TECHCORP",
-    text: "Their personalized approach and deep market knowledge helped us navigate complex financial decisions with confidence and success.",
+    text: "From day one, SS Advisory provided comprehensive accounting support and tax guidance that helped us navigate complex regulatory requirements with confidence.",
     avatar: "/images/megv1vhw-tjsfnpp.png",
     logo: "/images/megv1vhw-6lhmxqd.svg",
     quoteIcon: "/images/megyde84-chqoh82.svg"
@@ -51,7 +51,7 @@ const testimonials: Testimonial[] = [
     name: "Emma Rodriguez",
     role: "CFO",
     company: "GROWTH",
-    text: "Outstanding advisory services that delivered measurable results. Their team's dedication to client success is truly remarkable.",
+    text: "Outstanding accounting services and audit preparation. Their attention to detail and compliance expertise gives us peace of mind during tax season.",
     avatar: "/images/megv1vhw-o3h4v7c.png",
     logo: "/images/megyde84-pff617o.svg",
     quoteIcon: "/images/megyde84-lwbnl5n.svg"

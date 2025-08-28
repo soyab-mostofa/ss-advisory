@@ -22,10 +22,10 @@ const About = () => {
                 </p>
               </div>
               <TextRevealAnimation
-                text="Dedicated to empowering clients through strategic financial guidance and reliable, results-focused advocacy."
+                text="Specialized in comprehensive accounting, tax planning, and compliance services that drive business growth and financial stability."
                 className="text-black font-urbanist text-2xl font-medium leading-[29px] tracking-[-0.96px] w-full"
-                highlightStart="Dedicated to"
-                highlightEnd="results-focused advocacy."
+                highlightStart="Specialized in"
+                highlightEnd="financial stability."
               />
             </div>
           </div>
@@ -107,10 +107,10 @@ const About = () => {
                 className="mr-[605px]"
               />
               <TextRevealAnimation
-                text="Dedicated to empowering clients through strategic financial guidance and reliable, results-focused advocacy."
+                text="Specialized in comprehensive accounting, tax planning, and compliance services that drive business growth and financial stability."
                 className="text-black font-urbanist text-5xl font-medium leading-[58px] tracking-[-1.92px] w-[789px]"
-                highlightStart="Dedicated to"
-                highlightEnd="results-focused advocacy."
+                highlightStart="Specialized in"
+                highlightEnd="financial stability."
               />
             </div>
           </div>

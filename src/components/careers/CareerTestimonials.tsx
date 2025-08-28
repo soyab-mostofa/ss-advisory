@@ -15,23 +15,23 @@ const CareerTestimonials: React.FC = () => {
   const testimonials: TestimonialData[] = [
     {
       id: 1,
-      text: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.",
-      name: "Annette Black",
-      company: "ABC Pharmacy",
+      text: "Working at SS Advisory has been incredibly rewarding. The mentorship program helped me advance from junior to senior accountant, and the team's collaborative approach makes complex projects manageable.",
+      name: "Sarah Chen",
+      company: "Senior Tax Accountant",
       avatar: "https://cdn.pixabay.com/photo/2023/11/02/00/19/ai-generated-8359510_1280.jpg"
     },
     {
       id: 2,
-      text: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.",
-      name: "Annette Black",
-      company: "ABC Pharmacy",
+      text: "The work-life balance here is exceptional. SS Advisory truly values their employees' well-being while maintaining the highest standards of professional service for our clients.",
+      name: "Michael Rodriguez",
+      company: "Audit Manager",
       avatar: "https://cdn.pixabay.com/photo/2023/11/02/00/19/ai-generated-8359510_1280.jpg"
     },
     {
       id: 3,
-      text: "Lorem ipsum dolor sit amet consectetur. In nulla euismod ut et lacus. Viverra lectus lacus aliquet et dignissim quam sed. Sed.",
-      name: "Annette Black",
-      company: "ABC Pharmacy",
+      text: "I appreciate the diverse client portfolio and continuous learning opportunities. Every day brings new challenges that help me grow as a compliance specialist.",
+      name: "Emily Watson",
+      company: "Compliance Specialist",
       avatar: "https://cdn.pixabay.com/photo/2023/11/02/00/19/ai-generated-8359510_1280.jpg"
     }
   ];

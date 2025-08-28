@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Check, ArrowRight } from 'lucide-react';
-import ImageRevealAnimation from '../ImageRevealAnimation';
-import SectionLabel from '../ui/SectionLabel';
-import HTwoTextAnimation from '../HTwoTextAnimation';
+import React from "react";
+import { Check, ArrowRight } from "lucide-react";
+import ImageRevealAnimation from "../ImageRevealAnimation";
+import SectionLabel from "../ui/SectionLabel";
+import HTwoTextAnimation from "../HTwoTextAnimation";
 
 interface Service {
   title: string;
@@ -18,25 +18,29 @@ interface ServicesListProps {
   className?: string;
 }
 
-const ServicesList: React.FC<ServicesListProps> = ({ services, className = '' }) => {
+const ServicesList: React.FC<ServicesListProps> = ({
+  services,
+  className = "",
+}) => {
   return (
-    <section className={`bg-[#f8f8f8] overflow-hidden px-4 md:px-[120px] py-16 md:py-[100px] ${className}`}>
+    <section
+      className={`bg-[#f8f8f8] overflow-hidden px-4 md:px-[120px] py-16 md:py-[100px] ${className}`}
+    >
       <div className="flex flex-col gap-12 md:gap-16">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-6">
           {/* Section Title */}
-            <SectionLabel  
-              label="SERVICES" 
-              lineWidth="w-[100px] md:w-[191px]" 
-              
-            />
-        
+          <SectionLabel label="SERVICES" lineWidth="w-[100px] md:w-[191px]" />
+
           {/* Main Title */}
           <div className="flex-1">
-            <HTwoTextAnimation text="Expertise You Can Trust" className="w-[250px] md:w-full" />
+            <HTwoTextAnimation
+              text="Expertise You Can Trust"
+              className="w-[250px] md:w-full"
+            />
           </div>
         </div>
-        
+
         {/* Services List */}
         <div className="flex flex-col gap-8 md:gap-12">
           {services.map((service, index) => (
@@ -45,12 +49,19 @@ const ServicesList: React.FC<ServicesListProps> = ({ services, className = '' })
                 {/* Service Header */}
                 <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-[71px]">
                   <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-[72px] md:w-[616px]">
-                    <span className="text-xl md:text-2xl font-medium text-[#535967] md:w-[31px]">{String(index + 1).padStart(2, '0')}</span>
-                   <HTwoTextAnimation className='text-xl md:text-[40px] md:leading-[40px] md:tracking-[-1.6px] font-bold text-[#0d1321] flex-1' text={service.title}/>
+                    <span className="text-xl md:text-2xl font-medium text-[#535967] md:w-[31px]">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <HTwoTextAnimation
+                      className="text-xl md:text-[40px] md:leading-[40px] md:tracking-[-1.6px] font-bold text-[#0d1321] flex-1"
+                      text={service.title}
+                    />
                   </div>
-                  <p className="text-sm md:text-lg lg:text-xl lg:leading-7 text-[#535967] md:w-[513px] md:h-14 flex items-center">{service.description}</p>
+                  <p className="text-sm md:text-lg lg:text-xl lg:leading-7 text-[#535967] md:w-[513px] md:h-14 flex items-center">
+                    {service.description}
+                  </p>
                 </div>
-                
+
                 {/* Service Content */}
                 <div className="flex flex-col justify-between lg:flex-row gap-8 md:gap-[71px] md:ml-[103px]">
                   {/* Text and Features */}
@@ -58,25 +69,32 @@ const ServicesList: React.FC<ServicesListProps> = ({ services, className = '' })
                     {/* Features List */}
                     <div className="flex flex-col gap-4">
                       {service.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center gap-2">
+                        <div
+                          key={featureIndex}
+                          className="flex items-center gap-2"
+                        >
                           <Check className="w-6 h-6 text-[#204199] flex-shrink-0" />
-                          <span className="text-sm md:text-lg lg:text-xl lg:leading-7 text-[#545a62] flex-1">{feature}</span>
+                          <span className="text-sm md:text-lg lg:text-xl lg:leading-7 text-[#545a62] flex-1">
+                            {feature}
+                          </span>
                         </div>
                       ))}
                     </div>
-                    
+
                     {/* Button */}
                     <button className="flex items-center justify-center gap-2 border border-[#204199] bg-[#eef8ff] rounded-xl px-4 py-[15px] w-full md:w-[205px] hover:bg-[#d4e4ff] transition-colors">
                       <ArrowRight className="w-5 h-5 text-[#204199]" />
-                      <span className="text-sm md:text-base font-medium text-[#204199]">Learn More</span>
+                      <span className="text-sm md:text-base font-medium text-[#204199]">
+                        Learn More
+                      </span>
                       <ArrowRight className="w-5 h-5 text-[#204199]" />
                     </button>
                   </div>
-                  
+
                   {/* Service Image */}
                   <div className="flex-shrink-0">
                     <ImageRevealAnimation
-                      src={`https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20financial%20service%20${service.title.toLowerCase().replace(/[^a-z0-9]/g, '%20')}%20modern%20office%20business%20setting&image_size=landscape_4_3`}
+                      src={service.image}
                       alt={service.title}
                       className="w-full md:w-[540px] h-[250px] md:h-[332px]"
                       aspectRatio="4 / 3"
@@ -88,7 +106,7 @@ const ServicesList: React.FC<ServicesListProps> = ({ services, className = '' })
                   </div>
                 </div>
               </div>
-              
+
               {/* Divider */}
               {index < services.length - 1 && (
                 <div className="h-px bg-[#dde2eb] mt-8 md:mt-12"></div>

@@ -1,134 +1,152 @@
-import type { Metadata } from 'next';
-import React from 'react';
-import ServicesHero from '@/components/services/ServicesHero';
-import ServicesList from '@/components/services/ServicesList';
-import CoreValues from '@/components/services/CoreValues';
-import Testimonials from '@/components/Testimonials';
+import type { Metadata } from "next";
+import ServicesHero from "@/components/services/ServicesHero";
+import ServicesList from "@/components/services/ServicesList";
+import CoreValues from "@/components/services/CoreValues";
+import Testimonials from "@/components/Testimonials";
 
 export const metadata: Metadata = {
-  title: 'Financial Services - SS Advisory | Investment Management & Planning',
-  description: 'Comprehensive financial services including investment management, retirement planning, tax strategy, estate planning, and risk management. Expert financial advisory services tailored to your goals.',
-  keywords: 'investment management, financial planning, retirement planning, tax strategy, estate planning, risk management, financial advisor, wealth management',
+  title:
+    "Accounting & Tax Services - SS Advisory | Professional Business Solutions",
+  description:
+    "Comprehensive accounting, tax planning, and compliance services including bookkeeping, financial reporting, tax preparation, audit support, and regulatory compliance. Expert accounting services tailored to your business needs.",
+  keywords:
+    "accounting services, tax planning, bookkeeping, financial reporting, tax preparation, compliance, audit support, payroll processing, business advisory, regulatory compliance",
 
   openGraph: {
-    title: 'Financial Services - SS Advisory | Investment Management & Planning',
-    description: 'Comprehensive financial services including investment management, retirement planning, tax strategy, estate planning, and risk management.',
-    type: 'website',
+    title:
+      "Accounting & Tax Services - SS Advisory | Professional Business Solutions",
+    description:
+      "Comprehensive accounting, tax planning, and compliance services including bookkeeping, financial reporting, tax preparation, and audit support.",
+    type: "website",
   },
 
   twitter: {
-    card: 'summary_large_image',
-    title: 'Financial Services - SS Advisory | Investment Management & Planning',
-    description: 'Comprehensive financial services including investment management, retirement planning, tax strategy, estate planning, and risk management.',
-  }
+    card: "summary_large_image",
+    title:
+      "Accounting & Tax Services - SS Advisory | Professional Business Solutions",
+    description:
+      "Comprehensive accounting, tax planning, and compliance services including bookkeeping, financial reporting, tax preparation, and audit support.",
+  },
 };
 
 const ServicesPage = () => {
   const services = [
     {
-      title: "Investment Management",
-      description: "Comprehensive portfolio management tailored to your risk tolerance and financial goals.",
+      title: "Comprehensive Accounting Services",
+      description:
+        "Complete bookkeeping and financial reporting solutions to keep your business organized and compliant.",
       features: [
-        "Diversified portfolio construction",
-        "Risk assessment and management",
-        "Performance monitoring and reporting",
-        "Tax-efficient investment strategies"
+        "Monthly bookkeeping and reconciliation",
+        "Financial statement preparation",
+        "Cash flow management and analysis",
+        "Accounts payable and receivable management",
       ],
-      image: "/images/investment-management.png"
+      image: "/images/megv1vhw-9xzmxbt.png",
     },
     {
-      title: "Financial Planning",
-      description: "Strategic financial roadmaps to help you achieve your short and long-term objectives.",
+      title: "Strategic Tax Planning",
+      description:
+        "Proactive tax strategies and preparation services to minimize your tax liability while ensuring compliance.",
       features: [
-        "Goal-based financial planning",
-        "Cash flow analysis and budgeting",
-        "Debt management strategies",
-        "Emergency fund planning"
+        "Individual and business tax preparation",
+        "Quarterly tax planning and estimates",
+        "Tax optimization strategies",
+        "Multi-state tax compliance",
       ],
-      image: "/images/financial-planning.png"
+      image: "/images/megv1vhw-9xzmxbt.png",
     },
     {
-      title: "Retirement Planning",
-      description: "Secure your future with comprehensive retirement planning and wealth preservation strategies.",
+      title: "Business Advisory & Consulting",
+      description:
+        "Strategic business guidance to help you make informed decisions and drive growth.",
       features: [
-        "401(k) and IRA optimization",
-        "Social Security planning",
-        "Healthcare cost planning",
-        "Estate planning coordination"
+        "Financial analysis and reporting",
+        "Business performance metrics",
+        "Growth strategy development",
+        "Cash flow forecasting",
       ],
-      image: "/images/retirement-planning.png"
+      image: "/images/megv1vhw-9xzmxbt.png",
     },
     {
-      title: "Tax Strategy",
-      description: "Minimize your tax burden through strategic planning and optimization techniques.",
+      title: "Payroll Processing",
+      description:
+        "Reliable payroll services ensuring accurate and timely compensation for your employees.",
       features: [
-        "Tax-loss harvesting",
-        "Asset location strategies",
-        "Charitable giving planning",
-        "Business tax optimization"
+        "Bi-weekly and monthly payroll processing",
+        "Tax withholding and remittance",
+        "Employee benefits administration",
+        "Payroll tax compliance",
       ],
-      image: "/images/tax-strategy.png"
+      image: "/images/megv1vhw-9xzmxbt.png",
     },
     {
-      title: "Estate Planning",
-      description: "Protect and transfer your wealth efficiently to future generations.",
+      title: "Compliance & Regulatory Services",
+      description:
+        "Comprehensive compliance support to ensure your business meets all regulatory requirements.",
       features: [
-        "Will and trust creation",
-        "Beneficiary designations",
-        "Tax-efficient wealth transfer",
-        "Legacy planning strategies"
+        "Regulatory compliance reviews",
+        "Audit preparation and support",
+        "Documentation and filing services",
+        "Internal controls assessment",
       ],
-      image: "/images/estate-planning.png"
+      image: "/images/megv1vhw-9xzmxbt.png",
     },
     {
-      title: "Risk Management",
-      description: "Comprehensive insurance and risk assessment to protect your financial well-being.",
+      title: "Financial Reporting & Analysis",
+      description:
+        "Detailed financial insights and reporting to help you understand and improve your business performance.",
       features: [
-        "Life and disability insurance",
-        "Property and casualty review",
-        "Liability protection strategies",
-        "Business continuity planning"
+        "Monthly financial statements",
+        "Budget vs. actual analysis",
+        "Key performance indicators (KPIs)",
+        "Management reporting dashboards",
       ],
-      image: "/images/risk-management.png"
-    }
+      image: "/images/megv1vhw-9xzmxbt.png",
+    },
   ];
 
   const coreValues = [
     {
       icon: "/images/meh65pgq-0jv0fmr.svg",
-      title: "Client-First Approach",
-      description: "We prioritize your financial goals and objectives above all else, ensuring every recommendation serves your best interests."
+      title: "Accuracy & Precision",
+      description:
+        "We maintain the highest standards of accuracy in all accounting, tax, and compliance work to ensure your business stays on track.",
     },
     {
       icon: "/images/meh65pgq-3dijsh8.svg",
       title: "Transparent Communication",
-      description: "Clear, honest communication about fees, strategies, and market conditions helps you make informed financial decisions."
+      description:
+        "Clear, honest communication about your financial position, tax obligations, and compliance requirements helps you make informed business decisions.",
     },
     {
       icon: "/images/meh65pgq-3qqmufv.svg",
-      title: "Fiduciary Responsibility",
-      description: "As fiduciaries, we are legally and ethically bound to act in your best interest at all times."
+      title: "Regulatory Compliance",
+      description:
+        "We stay current with all tax laws and regulations to ensure your business remains compliant and avoids costly penalties.",
     },
     {
       icon: "/images/meh65pgq-5h8z45g.svg",
-      title: "Long-term Partnership",
-      description: "We build lasting relationships focused on your evolving needs throughout different life stages and market cycles."
+      title: "Proactive Advisory",
+      description:
+        "We provide forward-thinking advice and strategic planning to help your business grow while maintaining financial health.",
     },
     {
       icon: "/images/meh65pgq-7z52jg9.svg",
-      title: "Evidence-Based Strategies",
-      description: "Our investment approach is grounded in academic research and proven methodologies, not market speculation."
+      title: "Technology-Driven Solutions",
+      description:
+        "Our modern accounting systems and digital processes ensure efficient, secure, and accessible financial management.",
     },
     {
       icon: "/images/meh65pgq-9tvih1a.svg",
-      title: "Comprehensive Planning",
-      description: "We consider all aspects of your financial life to create holistic strategies that address your complete financial picture."
-    }
+      title: "Comprehensive Support",
+      description:
+        "We provide end-to-end accounting and tax services, from daily bookkeeping to strategic business planning and compliance.",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      <ServicesHero/>
+      <ServicesHero />
       <ServicesList services={services} />
       <Testimonials />
       <CoreValues coreValues={coreValues} />

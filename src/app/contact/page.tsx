@@ -1,24 +1,30 @@
-import type { Metadata } from 'next';
-import ContactInfo from '@/components/contact/ContactInfo';
-import ContactForm from '@/components/contact/ContactForm';
-import MapSection from '@/components/contact/MapSection';
+import type { Metadata } from "next";
+import ContactInfo from "@/components/contact/ContactInfo";
+import ContactForm from "@/components/contact/ContactForm";
+import MapSection from "@/components/contact/MapSection";
 
 export const metadata: Metadata = {
-  title: 'Contact Us - SS Advisory | Get Expert Financial Consultation',
-  description: 'Contact SS Advisory for professional financial consultation and advisory services. Schedule a meeting with our expert financial advisors. Phone, email, and office location available.',
-  keywords: 'contact financial advisor, financial consultation, SS Advisory contact, financial planning meeting, investment consultation',
+  title: "Contact Us - SS Advisory | Get Expert Accounting & Tax Consultation",
+  description:
+    "Contact SS Advisory for professional accounting and tax consultation services. Schedule a meeting with our expert CPAs and tax professionals. Phone, email, and office location available.",
+  keywords:
+    "contact accountant, tax consultation, SS Advisory contact, accounting services meeting, CPA consultation, tax planning appointment",
 
   openGraph: {
-    title: 'Contact Us - SS Advisory | Get Expert Financial Consultation',
-    description: 'Contact SS Advisory for professional financial consultation and advisory services. Schedule a meeting with our expert financial advisors.',
-    type: 'website',
+    title:
+      "Contact Us - SS Advisory | Get Expert Accounting & Tax Consultation",
+    description:
+      "Contact SS Advisory for professional accounting and tax consultation services. Schedule a meeting with our expert CPAs and tax professionals.",
+    type: "website",
   },
 
   twitter: {
-    card: 'summary_large_image',
-    title: 'Contact Us - SS Advisory | Get Expert Financial Consultation',
-    description: 'Contact SS Advisory for professional financial consultation and advisory services. Schedule a meeting with our expert financial advisors.',
-  }
+    card: "summary_large_image",
+    title:
+      "Contact Us - SS Advisory | Get Expert Accounting & Tax Consultation",
+    description:
+      "Contact SS Advisory for professional accounting and tax consultation services. Schedule a meeting with our expert CPAs and tax professionals.",
+  },
 };
 
 export default function ContactPage() {
@@ -30,16 +36,19 @@ export default function ContactPage() {
         <div className="w-full lg:w-auto  lg:flex-1">
           <ContactInfo />
         </div>
-        
+
         {/* Vertical Divider - Hidden on mobile */}
-        <div className="hidden lg:block w-px h-[700px] bg-gray-200 flex-shrink-0" aria-hidden="true"></div>
-        
+        <div
+          className="hidden lg:block w-px h-[700px] bg-gray-200 flex-shrink-0"
+          aria-hidden="true"
+        ></div>
+
         {/* Right Side - Contact Form */}
         <div className="w-full lg:w-auto lg:flex-1 lg:max-w-lg">
           <ContactForm />
         </div>
       </div>
-      
+
       {/* Map Section */}
       <MapSection />
     </div>

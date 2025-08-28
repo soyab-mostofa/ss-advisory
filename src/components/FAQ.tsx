@@ -33,33 +33,33 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     id: 1,
-    question: "What types of financial services do you offer?",
+    question: "What accounting services does SS Advisory provide?",
     answer:
-      "We offer comprehensive financial services including investment management, financial planning, retirement planning, tax optimization, and wealth preservation strategies tailored to your specific needs.",
+      "We offer comprehensive accounting services including bookkeeping, financial reporting, payroll processing, cash flow management, and monthly financial statements tailored to your business needs.",
   },
   {
     id: 2,
-    question: "How does your advocacy service work?",
+    question: "How can SS Advisory help with tax planning and preparation?",
     answer:
-      "Our advocacy team supports clients in legal, regulatory, and business matters to protect their interests and resolve challenges.",
+      "Our tax professionals provide strategic tax planning, preparation of all tax returns, compliance reviews, audit support, and tax optimization strategies to minimize your liability while ensuring full compliance.",
   },
   {
     id: 3,
-    question: "Who can benefit from your services?",
+    question: "What types of businesses do you work with?",
     answer:
-      "Our services are designed for individuals, families, and businesses seeking professional financial guidance, from young professionals starting their wealth journey to established entrepreneurs and retirees.",
+      "We serve small to medium-sized businesses, startups, established corporations, and individual entrepreneurs across various industries who need professional accounting, tax, and compliance services.",
   },
   {
     id: 4,
-    question: "How do you customize your financial solutions?",
+    question: "How do you ensure regulatory compliance for my business?",
     answer:
-      "We begin with a comprehensive assessment of your financial situation, goals, and risk tolerance. Then we develop personalized strategies that align with your unique circumstances and objectives.",
+      "We stay current with all regulatory requirements, provide comprehensive compliance reviews, assist with documentation and filing services, and prepare your business for audits to ensure you meet all legal obligations.",
   },
   {
     id: 5,
-    question: "What makes SS Advisory different from other firms?",
+    question: "What makes SS Advisory different from other accounting firms?",
     answer:
-      "Our commitment to personalized service, transparent communication, and innovative financial strategies sets us apart. We prioritize long-term relationships and deliver results that exceed expectations.",
+      "Our personalized approach, deep expertise in accounting and tax matters, proactive advisory services, and commitment to helping businesses grow while maintaining compliance sets us apart in the industry.",
   },
 ];
 
@@ -93,8 +93,8 @@ const FAQ: React.FC = () => {
         {/* Image */}
         <div className="flex-shrink-0 w-full sm:w-auto">
           <ImageRevealAnimation
-            src="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20business%20meeting%20two%20men%20in%20suits%20discussing%20financial%20documents%20laptop%20modern%20office%20setting%20corporate%20environment%20consultation&image_size=portrait_4_3"
-            alt="Business consultation meeting"
+            src="/images/megv1vhw-9xzmxbt.png"
+            alt="Accounting consultation meeting"
             className="w-full h-[280px] sm:w-[445px] sm:h-[558px] rounded-xl object-cover"
             borderRadius="0.75rem"
           />

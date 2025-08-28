@@ -9,7 +9,11 @@ const Footer = () => {
         <div className="flex flex-col gap-10 lg:gap-12">
           {/* Header Section */}
           <div className="flex relative flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-0">
-            <HTwoTextAnimation dark text="Let&apos;s make something great work together" className="w-full" />
+            <HTwoTextAnimation
+              dark
+              text="Let's make something great work together"
+              className="w-full"
+            />
             <div className="flex-shrink-0 absolute right-0 -top-10 w-32 h-32 lg:w-[200px] lg:h-[200px] self-start lg:self-center">
               <Image
                 src="/images/megz9w7k-m7yknei.svg"
@@ -30,16 +34,16 @@ const Footer = () => {
               </h3>
               <div className="flex flex-col gap-3">
                 <p className="text-white/80 font-urbanist text-lg leading-[25px]">
-                  Financial Planning & Advisory
+                  Comprehensive Accounting
                 </p>
                 <p className="text-white/80 font-urbanist text-lg leading-[25px]">
-                  Portfolio Management
+                  Strategic Tax Planning
                 </p>
                 <p className="text-white/80 font-urbanist text-lg leading-[25px]">
-                  Business & Legal Advocacy
+                  Business Advisory & Consulting
                 </p>
                 <p className="text-white/80 font-urbanist text-lg leading-[25px]">
-                  Tax & Compliance Services
+                  Compliance & Regulatory Services
                 </p>
               </div>
             </div>
@@ -123,7 +127,7 @@ const Footer = () => {
           <p className="text-white/80 font-urbanist text-center text-lg leading-[25px] max-w-[280px] mx-auto lg:mx-0">
             Copyright © 2025 SS Advisory
           </p>
-          
+
           <div className="flex flex-col items-center gap-4">
             <p className="text-white font-urbanist text-lg leading-[25px] text-center">
               FOLLOW US
@@ -136,11 +140,9 @@ const Footer = () => {
               className="w-32 h-8"
             />
           </div>
-          
+
           <div className="text-white/80 font-urbanist text-lg w-full leading-[25px] md:max-w-[280px] text-center md:text-center lg:text-right">
-            <p>
-              Made with Love by Jamroll Studio
-            </p>
+            <p>Made with Love by Jamroll Studio</p>
           </div>
         </div>
       </div>

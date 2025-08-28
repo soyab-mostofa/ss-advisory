@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import React from 'react';
-import PageHero from '../PageHero';
+import React from "react";
+import PageHero from "../PageHero";
 
 interface ServicesHeroProps {
   className?: string;
 }
 
-const ServicesHero: React.FC<ServicesHeroProps> = ({ className = '' }) => {
+const ServicesHero: React.FC<ServicesHeroProps> = ({ className = "" }) => {
   return (
     <PageHero
       sectionLabel="SERVICES"
-      title="Dedicated to empowering clients through strategic financial guidance and reliable, results-focused advocacy."
+      title="Dedicated to empowering clients through comprehensive accounting solutions and strategic tax planning expertise."
       highlightedText="Dedicated to"
-      imageSrc="https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20financial%20advisory%20office%20meeting%20room%20with%20modern%20furniture%20laptops%20documents%20business%20atmosphere%20clean%20corporate%20style&image_size=landscape_16_9"
-      imageAlt="Professional financial advisory meeting"
+      imageSrc="/images/megv1vhw-9xzmxbt.png"
+      imageAlt="Professional accounting services meeting"
       useTextReveal={true}
       className={className}
     />
