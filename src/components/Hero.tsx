@@ -375,7 +375,7 @@ const Hero = () => {
                 <div className="flex flex-col items-start w-full gap-3">
                   <p
                     data-animate="strategic-mobile"
-                    className="text-[#535967] font-urbanist text-[40px] font-bold leading-[40px] tracking-[-1.6px] w-full"
+                    className="text-[#535967] font-urbanist text-[40px] font-bold leading-[40px] tracking-[-1.6px] w-full opacity-0"
                   >
                     Expert Accounting
                   </p>
@@ -385,11 +385,11 @@ const Hero = () => {
                     alt="Hero image"
                     width={161}
                     height={60}
-                    className="rounded-[48px] flex-shrink-0"
+                    className="rounded-[48px] flex-shrink-0 opacity-0"
                   />
                   <p
                     data-animate="result-mobile"
-                    className="text-black font-urbanist text-[40px] font-bold leading-[40px] tracking-[-1.6px] w-full"
+                    className="text-black font-urbanist text-[40px] font-bold leading-[40px] tracking-[-1.6px] w-full opacity-0"
                   >
                     <span className="text-[#0d1321]">That&nbsp;</span>
                     <span className="text-[#204199]">Delivers&nbsp;</span>
@@ -406,14 +406,14 @@ const Hero = () => {
                 <div className="flex flex-col items-start w-full gap-3">
                   <p
                     data-animate="subtitle-mobile"
-                    className="text-[#0d1321] font-urbanist text-base font-semibold leading-6 w-[343px]"
+                    className="text-[#0d1321] font-urbanist text-base font-semibold leading-6 w-[343px] opacity-0"
                   >
                     Professional Accounting, Tax & Compliance Services for
                     Business Growth
                   </p>
                   <p
                     data-animate="description-mobile"
-                    className="text-[#535967] font-urbanist text-sm leading-[22px] w-[343px]"
+                    className="text-[#535967] font-urbanist text-sm leading-[22px] w-[343px] opacity-0"
                   >
                     Navigate complex accounting regulations with confidence. We
                     streamline your accounting processes, optimize tax
@@ -425,7 +425,7 @@ const Hero = () => {
               <div
                 ref={contactButtonRef}
                 data-animate="contact-mobile"
-                className="flex items-center justify-center gap-2 rounded-xl bg-[#204199] px-4 py-3 w-[181px] h-12 cursor-pointer transition-all duration-300 hover:shadow-lg"
+                className="flex items-center justify-center gap-2 rounded-xl bg-[#204199] px-4 py-3 w-[181px] h-12 cursor-pointer transition-all duration-300 hover:shadow-lg opacity-0"
               >
                 <p className="text-white font-urbanist text-lg font-medium leading-[25px]">
                   Contact
@@ -441,7 +441,7 @@ const Hero = () => {
             </div>
             <p
               data-animate="advisory-mobile"
-              className="text-[#b5bac5] font-playfair text-[40px] italic leading-[40px] tracking-[-1.6px] w-full"
+              className="text-[#b5bac5] font-playfair text-[40px] italic leading-[40px] tracking-[-1.6px] w-full opacity-0"
             >
               Advisory
             </p>
@@ -452,7 +452,7 @@ const Hero = () => {
             alt="Vector decoration"
             width={100}
             height={99}
-            className="absolute right-4 bottom-4 flex-shrink-0 rotate-180"
+            className="absolute right-4 bottom-4 flex-shrink-0 rotate-180 opacity-0"
           />
         </div>
       </div>
@@ -466,7 +466,7 @@ const Hero = () => {
           <div className="flex flex-col items-start w-full gap-6">
             <p
               data-animate="strategic-desktop"
-              className="text-[#535967] font-urbanist text-[100px] font-bold leading-[100px] tracking-[-4px]"
+              className="text-[#535967] font-urbanist text-[100px] font-bold leading-[100px] tracking-[-4px] opacity-0"
             >
               Expert Accounting
             </p>
@@ -477,11 +477,11 @@ const Hero = () => {
                 alt="Hero image"
                 width={200}
                 height={80}
-                className="rounded-[100px]"
+                className="rounded-[100px] opacity-0"
               />
               <p
                 data-animate="result-desktop"
-                className="text-black font-urbanist text-[100px] font-bold leading-[100px] tracking-[-4px]"
+                className="text-black font-urbanist text-[100px] font-bold leading-[100px] tracking-[-4px] opacity-0"
               >
                 <span className="text-[#0d1321]">That&nbsp;</span>
                 <span className="text-[#204199]">Delivers&nbsp;</span>
@@ -499,21 +499,21 @@ const Hero = () => {
           <div className="inline-flex items-center w-full gap-[60px] mr-[92px]">
             <p
               data-animate="advisory-desktop"
-              className="text-[#b5bac5] font-playfair text-[100px] italic leading-[100px] tracking-[-4px]"
+              className="text-[#b5bac5] font-playfair text-[100px] italic leading-[100px] tracking-[-4px] opacity-0"
             >
               Advisory
             </p>
             <div className="inline-flex flex-col items-start gap-4">
               <p
                 data-animate="subtitle-desktop"
-                className="text-[#0d1321] font-urbanist text-lg font-semibold leading-[25px]"
+                className="text-[#0d1321] font-urbanist text-lg font-semibold leading-[25px] opacity-0"
               >
                 Professional Accounting, Tax & Compliance Services for Business
                 Growth
               </p>
               <p
                 data-animate="description-desktop"
-                className="text-[#535967] font-urbanist text-base leading-6 w-[545px]"
+                className="text-[#535967] font-urbanist text-base leading-6 w-[545px] opacity-0"
               >
                 Navigate complex accounting regulations with confidence. We
                 streamline your accounting processes, optimize tax strategies,
@@ -529,7 +529,7 @@ const Hero = () => {
           alt="Vector decoration"
           width={212}
           height={211}
-          className="mt-[247px] rotate-180"
+          className="mt-[247px] rotate-180 opacity-0"
         />
       </div>
     </div>
