@@ -32,76 +32,52 @@ export const metadata: Metadata = {
 const ServicesPage = () => {
   const services = [
     {
-      title: "Comprehensive Accounting Services",
+      title: "Financial Planning & Advisory",
       description:
-        "Complete bookkeeping and financial reporting solutions to keep your business organized and compliant.",
+        "Strategic financial guidance to help you make informed decisions and achieve your business goals.",
       features: [
-        "Monthly bookkeeping and reconciliation",
-        "Financial statement preparation",
-        "Cash flow management and analysis",
-        "Accounts payable and receivable management",
+        "Comprehensive financial planning",
+        "Investment strategy development",
+        "Risk assessment and management",
+        "Long-term financial goal setting",
       ],
-      image: "/images/megv1vhw-9xzmxbt.png",
+      image: "/images/services/service-1.png",
     },
     {
-      title: "Strategic Tax Planning",
+      title: "Portfolio Management",
       description:
-        "Proactive tax strategies and preparation services to minimize your tax liability while ensuring compliance.",
+        "Expert portfolio management services to optimize your investments and maximize returns.",
       features: [
-        "Individual and business tax preparation",
-        "Quarterly tax planning and estimates",
-        "Tax optimization strategies",
-        "Multi-state tax compliance",
+        "Asset allocation and diversification",
+        "Performance monitoring and reporting",
+        "Regular portfolio rebalancing",
+        "Market analysis and insights",
       ],
-      image: "/images/megv1vhw-9xzmxbt.png",
+      image: "/images/services/service-2.png",
     },
     {
-      title: "Business Advisory & Consulting",
+      title: "Business & Legal Advocacy",
       description:
-        "Strategic business guidance to help you make informed decisions and drive growth.",
+        "Professional business and legal support to protect your interests and ensure compliance.",
       features: [
-        "Financial analysis and reporting",
-        "Business performance metrics",
-        "Growth strategy development",
-        "Cash flow forecasting",
+        "Business structure consultation",
+        "Contract review and negotiation",
+        "Regulatory compliance guidance",
+        "Legal risk assessment",
       ],
-      image: "/images/megv1vhw-9xzmxbt.png",
+      image: "/images/services/service-3.png",
     },
     {
-      title: "Payroll Processing",
+      title: "Tax & Compliance Services",
       description:
-        "Reliable payroll services ensuring accurate and timely compensation for your employees.",
+        "Comprehensive tax planning and compliance services to minimize liability and ensure adherence to regulations.",
       features: [
-        "Bi-weekly and monthly payroll processing",
-        "Tax withholding and remittance",
-        "Employee benefits administration",
-        "Payroll tax compliance",
+        "Tax planning and optimization",
+        "Tax return preparation and filing",
+        "Compliance monitoring and reporting",
+        "Audit support and representation",
       ],
-      image: "/images/megv1vhw-9xzmxbt.png",
-    },
-    {
-      title: "Compliance & Regulatory Services",
-      description:
-        "Comprehensive compliance support to ensure your business meets all regulatory requirements.",
-      features: [
-        "Regulatory compliance reviews",
-        "Audit preparation and support",
-        "Documentation and filing services",
-        "Internal controls assessment",
-      ],
-      image: "/images/megv1vhw-9xzmxbt.png",
-    },
-    {
-      title: "Financial Reporting & Analysis",
-      description:
-        "Detailed financial insights and reporting to help you understand and improve your business performance.",
-      features: [
-        "Monthly financial statements",
-        "Budget vs. actual analysis",
-        "Key performance indicators (KPIs)",
-        "Management reporting dashboards",
-      ],
-      image: "/images/megv1vhw-9xzmxbt.png",
+      image: "/images/services/service-4.png",
     },
   ];
 

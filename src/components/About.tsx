@@ -32,7 +32,7 @@ const About = () => {
             </div>
           </div>
           <ImageRevealAnimation
-            src="/images/megv1vhw-9xzmxbt.png"
+            src="/images/home/about-main.png"
             alt="Main content image"
             aspectRatio="343 / 229"
             className="w-full h-auto"
@@ -97,7 +97,7 @@ const About = () => {
             </div>
           </div>
           <ImageRevealAnimation
-            src="/images/megv1vhw-9xzmxbt.png"
+            src="/images/home/about-main.png"
             alt="Main content image"
             aspectRatio="1200 / 460"
             className="w-full h-auto max-h-[460px]"

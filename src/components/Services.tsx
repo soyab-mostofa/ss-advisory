@@ -32,7 +32,7 @@ const Services = () => {
       title: "Comprehensive Accounting Services",
       description:
         "Professional bookkeeping, financial reporting, and accounting solutions tailored to your business needs.",
-      image: "/images/megv1vhw-9xzmxbt.png",
+      image: "/images/services/service-1.png",
       tags: [
         "Bookkeeping",
         "Financial Reporting",
@@ -47,7 +47,7 @@ const Services = () => {
       description:
         "Proactive tax strategies and compliance services to minimize liability and maximize savings.",
       isExpanded: true,
-      image: "/images/megv1vhw-9xzmxbt.png",
+      image: "/images/services/service-4.png",
       tags: [
         "Tax Preparation",
         "Strategic Planning",
@@ -62,7 +62,7 @@ const Services = () => {
       title: "Business Advisory & Consulting",
       description:
         "Expert guidance on business growth, strategic planning, and operational efficiency.",
-      image: "/images/megv1vhw-9xzmxbt.png",
+      image: "/images/services/service-3.png",
       tags: [
         "Business Planning",
         "Business Analysis",
@@ -76,7 +76,7 @@ const Services = () => {
       title: "Compliance & Regulatory Services",
       description:
         "Ensure your business meets all regulatory requirements with our comprehensive compliance solutions.",
-      image: "/images/megv1vhw-9xzmxbt.png",
+      image: "/images/services/service-2.png",
       tags: [
         "Regulatory Compliance",
         "Filing Services",

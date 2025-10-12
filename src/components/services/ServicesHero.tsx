@@ -13,7 +13,7 @@ const ServicesHero: React.FC<ServicesHeroProps> = ({ className = "" }) => {
       sectionLabel="SERVICES"
       title="Dedicated to empowering clients through comprehensive accounting solutions and strategic tax planning expertise."
       highlightedText="Dedicated to"
-      imageSrc="/images/megv1vhw-9xzmxbt.png"
+      imageSrc="/images/services/hero.png"
       imageAlt="Professional accounting services meeting"
       useTextReveal={true}
       className={className}

@@ -93,7 +93,7 @@ const FAQ: React.FC = () => {
         {/* Image */}
         <div className="flex-shrink-0 w-full sm:w-auto">
           <ImageRevealAnimation
-            src="/images/megv1vhw-9xzmxbt.png"
+            src="/images/home/faq-image.png"
             alt="Accounting consultation meeting"
             className="w-full h-[280px] sm:w-[445px] sm:h-[558px] rounded-xl object-cover"
             borderRadius="0.75rem"
