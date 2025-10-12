@@ -127,7 +127,7 @@ export default function MapSection() {
                   SS Advisory Office
                 </h3>
                 <p className="text-sm text-gray-600 mb-2">
-                  Dhaka, Bangladesh
+                  House 654 (3rd Floor), Road 09 Mirpur DOHS, Dhaka 1216
                 </p>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>

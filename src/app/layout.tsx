@@ -44,9 +44,7 @@ export const metadata: Metadata = {
       { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
       { url: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: [
-      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
     title:
@@ -80,13 +78,16 @@ export default function RootLayout({
     logo: "https://ss-advisory.com/logo.png",
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+1-XXX-XXX-XXXX",
+      telephone: "+880 1752-143459",
       contactType: "customer service",
       availableLanguage: "English",
     },
     address: {
       "@type": "PostalAddress",
-      addressCountry: "US",
+      streetAddress: "House 654 (3rd Floor), Road 09 Mirpur DOHS",
+      addressLocality: "Dhaka",
+      postalCode: "1216",
+      addressCountry: "BD",
     },
     sameAs: [
       "https://linkedin.com/company/ss-advisory",

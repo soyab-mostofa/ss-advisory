@@ -37,7 +37,7 @@ export default function ContactInfo() {
                 Call Us
               </p>
               <p className="text-sm sm:text-base lg:text-lg text-gray-900">
-                +880 1234 567890
+                +880 1752-143459
               </p>
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function ContactInfo() {
                 Office
               </p>
               <p className="text-sm sm:text-base lg:text-lg text-gray-900 leading-5 sm:leading-6">
-                Mirpur DOHS, H: 654, R: 09 Ave: 04, Dhaka
+                House 654 (3rd Floor), Road 09 Mirpur DOHS, Dhaka 1216
               </p>
             </div>
           </div>

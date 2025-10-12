@@ -3,6 +3,8 @@ import TextRevealAnimation from "./TextRevealAnimation";
 import ImageRevealAnimation from "./ImageRevealAnimation";
 import { SectionLabel } from "./ui/SectionLabel";
 import Counter from "./Counter";
+import { clientLogos } from "../data/clients";
+import InfiniteScroll from "./ui/InfiniteScroll";
 
 const About = () => {
   return (
@@ -36,55 +38,35 @@ const About = () => {
             className="w-full h-auto"
           />
         </div>
-        <div className="flex flex-col items-start w-full h-[145px] gap-1">
-          <div className="flex items-center w-full justify-between h-[70px] gap-4">
-            <div className="flex items-center p-0 overflow-hidden">
-              <div className="w-[148px] h-[27px] overflow-hidden">
-                <Image
-                  src="/images/megv1vhw-2uipje2.svg"
-                  alt="Partner logo 1"
-                  width={148}
-                  height={27}
-                  className="w-full h-full object-contain"
-                />
-              </div>
+        <div
+          className="flex flex-col items-start w-full gap-1"
+          aria-label="Client logos"
+        >
+          <InfiniteScroll speed={25} direction="left" className="py-1">
+            <div className="flex items-center gap-6">
+              {clientLogos.map((logo, idx) => {
+                const width = Math.min(120, logo.width); // slightly smaller on mobile
+                const height = Math.max(
+                  16,
+                  Math.round((width / logo.width) * logo.height)
+                );
+                return (
+                  <div
+                    key={`${logo.src}-${idx}`}
+                    className="flex items-center justify-center"
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={width}
+                      height={height}
+                      className="object-contain opacity-90"
+                    />
+                  </div>
+                );
+              })}
             </div>
-            <div className="flex items-center p-0 overflow-hidden">
-              <div className="w-[148px] h-[27px] overflow-hidden">
-                <Image
-                  src="/images/megv1vhw-2uipje2.svg"
-                  alt="Partner logo 2"
-                  width={148}
-                  height={27}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center w-full gap-4 justify-evenly h-[70px] md:justify-between">
-            <div className="flex items-center p-0 overflow-hidden">
-              <div className="w-[148px] h-[27px] overflow-hidden">
-                <Image
-                  src="/images/megv1vhw-2uipje2.svg"
-                  alt="Partner logo 3"
-                  width={148}
-                  height={27}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            </div>
-            <div className="flex items-center p-0 overflow-hidden">
-              <div className="w-[148px] h-[27px] overflow-hidden">
-                <Image
-                  src="/images/megv1vhw-2uipje2.svg"
-                  alt="Partner logo 4"
-                  width={148}
-                  height={27}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            </div>
-          </div>
+          </InfiniteScroll>
         </div>
       </div>
 

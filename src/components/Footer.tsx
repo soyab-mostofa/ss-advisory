@@ -85,10 +85,10 @@ const Footer = () => {
               </div>
               <div className="flex flex-col gap-3">
                 <p className="text-white/80 font-urbanist text-lg leading-[25px]">
-                  +1234 5678900
+                  +880 1752-143459
                 </p>
                 <p className="text-white/80 font-urbanist text-lg leading-[25px]">
-                  +1234 5678900
+                  +880 1752-143459
                 </p>
               </div>
             </div>

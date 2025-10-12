@@ -1,24 +1,28 @@
 import Image from "next/image";
+import { clientLogos } from "../data/clients";
 
 const LogoSection = () => {
   return (
-    <div className=" items-center w-full hidden md:flex gap-16 bg-[#f8f8f8] px-[120px] pb-[100px]">
-      <div className="flex items-center py-7 overflow-hidden">
-        <Image src="/images/megv1vhw-2uipje2.svg" alt="Logo 1" width={189} height={34} />
-      </div>
-      <div className="flex items-center py-7 overflow-hidden">
-        <Image src="/images/megv1vhw-g81p5yu.svg" alt="Logo 2" width={189} height={34} />
-      </div>
-      <div className="flex items-center py-7 overflow-hidden">
-        <Image src="/images/megv1vhw-8yk32pg.svg" alt="Logo 3" width={189} height={34} />
-      </div>
-      <div className="flex items-center py-7 overflow-hidden">
-        <Image src="/images/megv1vhw-9ii3cry.svg" alt="Logo 4" width={189} height={34} />
-      </div>
-      <div className="flex items-center py-7 overflow-hidden">
-        <Image src="/images/megv1vhw-bpjvtjl.svg" alt="Logo 5" width={189} height={34} />
-      </div>
-    </div>
+    <section
+      aria-label="Client logos"
+      className="w-full hidden md:flex bg-[#f8f8f8] px-[120px] pb-[100px]"
+    >
+      <ul className="flex items-center gap-16 w-full" role="list">
+        {clientLogos.map((logo, idx) => (
+          <li
+            key={`${logo.src}-${idx}`}
+            className="flex items-center py-7 overflow-hidden"
+          >
+            <Image
+              src={logo.src}
+              alt={logo.alt}
+              width={logo.width}
+              height={logo.height}
+            />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 };
 
