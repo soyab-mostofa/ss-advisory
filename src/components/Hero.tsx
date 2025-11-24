@@ -14,32 +14,9 @@ const Hero = () => {
   const rotatingWordDesktopRef = useRef<HTMLSpanElement>(null);
 
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [hasAnimationStarted, setHasAnimationStarted] = useState(false);
   const rotatingWords = ["Growth", "Compliance", "Success"];
 
-  // One-time text rotation effect that cycles through all words once
-  useEffect(() => {
-    if (hasAnimationStarted) return;
 
-    setHasAnimationStarted(true);
-
-    // Create a sequence that plays through all words once
-    const playSequence = async () => {
-      // Start with first transition after 2 seconds
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-
-      // Animate through remaining words (Results -> Security -> Safety)
-      for (let i = 1; i < rotatingWords.length; i++) {
-        animateWordChange();
-        if (i < rotatingWords.length - 1) {
-          // Don't wait after the last word
-          await new Promise((resolve) => setTimeout(resolve, 4000));
-        }
-      }
-    };
-
-    playSequence();
-  }, [hasAnimationStarted]);
 
   const animateWordChange = useCallback(() => {
     const mobileElement = rotatingWordMobileRef.current;
@@ -80,13 +57,7 @@ const Hero = () => {
     // Word change happens exactly when out animation completes
     masterTimeline.call(
       () => {
-        setCurrentWordIndex((prevIndex) => {
-          const nextIndex = prevIndex + 1;
-          // Increment to next word in sequence, no cycling back to start
-          return nextIndex < rotatingWords.length
-            ? nextIndex
-            : rotatingWords.length - 1;
-        });
+        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % rotatingWords.length);
       },
       [],
       0.5
@@ -127,6 +98,15 @@ const Hero = () => {
       );
     }
   }, []);
+
+  // Infinite text rotation effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      animateWordChange();
+    }, 3000); // Change word every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [animateWordChange]);
 
   useGSAP(
     () => {
@@ -365,11 +345,11 @@ const Hero = () => {
       {/* Mobile Layout */}
       <div
         ref={mobileContainerRef}
-        className="flex flex-col items-center bg-white w-full mt-  overflow-hidden md:hidden"
+        className="flex flex-col items-center bg-white w-full px-4  overflow-hidden md:hidden"
       >
         {/* Mobile Hero Content */}
-        <div className="relative flex items-center w-full px-4 pt-6 pb-[60px]">
-          <div className="flex flex-col flex-grow items-start gap-[30px]">
+        <div className="relative flex items-center w-full pt-6 pb-[60px]">
+          <div className="flex flex-col flex-grow items-start gap-[30px] w-full">
             <div className="flex flex-col items-start w-full gap-7">
               <div className="flex flex-col items-start w-full gap-6">
                 <div className="flex flex-col items-start w-full gap-3">
@@ -392,8 +372,8 @@ const Hero = () => {
                     className="text-black font-urbanist text-[40px] font-bold leading-[40px] tracking-[-1.6px] w-full opacity-0"
                   >
                     <span className="text-[#0d1321]">That&nbsp;</span>
-                    <span className="text-[#204199]">Delivers&nbsp;</span>
-                    <span className="text-[#204199] inline-block w-[140px] text-left">
+                    <span className="text-[#204199]">Delivers</span>
+                    <span className="block text-[#204199] w-full text-left">
                       <span
                         ref={rotatingWordMobileRef}
                         className="inline-block transform-gpu"
@@ -406,14 +386,14 @@ const Hero = () => {
                 <div className="flex flex-col items-start w-full gap-3">
                   <p
                     data-animate="subtitle-mobile"
-                    className="text-[#0d1321] font-urbanist text-base font-semibold leading-6 w-[343px] opacity-0"
+                    className="text-[#0d1321] font-urbanist text-base font-semibold leading-6 w-full opacity-0"
                   >
                     Professional Accounting, Tax & Compliance Services for
                     Business Growth
                   </p>
                   <p
                     data-animate="description-mobile"
-                    className="text-[#535967] font-urbanist text-sm leading-[22px] w-[343px] opacity-0"
+                    className="text-[#535967] font-urbanist text-sm leading-[22px] w-full opacity-0"
                   >
                     Navigate complex accounting regulations with confidence. We
                     streamline your accounting processes, optimize tax
