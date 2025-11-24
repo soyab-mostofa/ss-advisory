@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import CareerHero from "@/components/careers/CareerHero";
 import WhyWorkWithUs from "@/components/careers/WhyWorkWithUs";
 import OpeningRoles from "@/components/careers/OpeningRoles";
-import CareerTestimonials from "@/components/careers/CareerTestimonials";
 
 export const metadata: Metadata = {
   title: "Careers - SS Advisory | Join Our Accounting & Tax Team",
@@ -32,7 +31,6 @@ const CareersPage = () => {
       <CareerHero />
       <WhyWorkWithUs />
       <OpeningRoles />
-      <CareerTestimonials />
     </div>
   );
 };

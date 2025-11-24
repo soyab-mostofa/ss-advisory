@@ -211,7 +211,7 @@ const Testimonials = () => {
                         alt={`${testimonial.company} logo`}
                         width={100}
                         height={30}
-                        className="flex-shrink-0 object-cover"
+                        className="flex-shrink-0 object-contain"
                       />
                     </div>
                   </div>
