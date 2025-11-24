@@ -87,9 +87,6 @@ const Footer = () => {
                 <p className="text-white/80 font-urbanist text-lg leading-[25px]">
                   +880 1752-143459
                 </p>
-                <p className="text-white/80 font-urbanist text-lg leading-[25px]">
-                  +880 1752-143459
-                </p>
               </div>
             </div>
 
@@ -109,10 +106,7 @@ const Footer = () => {
               </div>
               <div className="flex flex-col gap-3">
                 <p className="text-white/80 font-urbanist text-lg leading-[25px]">
-                  hello@example.com
-                </p>
-                <p className="text-white/80 font-urbanist text-lg leading-[25px]">
-                  hello@example.com
+                  contact@ssadvisorybd.com
                 </p>
               </div>
             </div>
